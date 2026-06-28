@@ -2,7 +2,7 @@
   *{box-sizing:border-box;}
   body{margin:0;font-family:'Poppins',system-ui,sans-serif;color:var(--navy);background:var(--bg);}
   .app{display:grid;grid-template-columns:400px 1fr;min-height:100vh;}
-  .panel{background:var(--navy);color:#fff;padding:24px 24px 48px;overflow-y:auto;max-height:100vh;align-self:start;}
+  .panel{background:var(--navy);color:#fff;padding:24px 24px 24px;align-self:start;}
   .brand-logo{display:block;height:58px;width:auto;max-width:100%;}
   .brand-logo--inv{filter:brightness(0) invert(1);}
   .brand-tag{font-size:10px;color:#9fb2bc;letter-spacing:3px;text-transform:uppercase;margin-top:8px;}
