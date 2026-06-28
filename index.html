@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gerador de Certificados — Vetor SST</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+</head>
+<body>
+<div class="app">
+  <aside class="panel">
+    <img class="brand-logo" src="assets/logo-branco.png" alt="Vetor Saúde e Segurança do Trabalho"
+         onerror="this.onerror=null;this.src='assets/logo-horizontal.png';this.classList.add('brand-logo--inv');">
+    <div class="brand-tag">Gerador de Certificados</div>
+
+    <div class="tabs">
+      <button id="tab-ind" class="active" onclick="setMode('ind')">Individual</button>
+      <button id="tab-lote" onclick="setMode('lote')">Lote (turma)</button>
+    </div>
+
+    <!-- modelo NR -->
+    <div class="pickwrap">
+      <label>Modelo de certificado</label>
+      <select id="c-nrpick" class="pick" onchange="applyTemplate()"></select>
+      <div class="ro" id="model-summary"></div>
+    </div>
+
+    <!-- participantes -->
+    <div id="form-ind">
+      <label>Nome do participante</label>
+      <input id="f-nome" placeholder="Maria Aparecida da Silva" oninput="render()">
+      <div class="row">
+        <div><label>CPF</label><input id="f-cpf" placeholder="000.000.000-00" maxlength="14" oninput="onCPF()"></div>
+        <div><label>Data de realização</label><input id="f-data" type="date" oninput="onDate()"></div>
+      </div>
+    </div>
+    <div id="form-lote" style="display:none">
+      <label>Data de realização (vale p/ turma)</label>
+      <input id="f-data-lote" type="date" oninput="onDate()">
+      <label>Colar lista da turma (nome e CPF)</label>
+      <textarea id="f-batch" placeholder="Maria A. da Silva,000.000.000-00&#10;João Pereira,111.111.111-11" oninput="parseBatch()"></textarea>
+      <div style="display:flex;gap:8px;margin-top:8px;">
+        <button class="btn btn-ghost" onclick="document.getElementById('csv-file').click()">Importar arquivo</button>
+        <button class="btn btn-ghost" onclick="downloadTemplate()">Baixar modelo</button>
+        <input id="csv-file" type="file" accept=".csv,.tsv,.txt" style="display:none" onchange="importFile(event)">
+      </div>
+      <div id="batch-info" class="batch-info" style="display:none"></div>
+      <div id="batch-nav" class="batch-nav" style="display:none">
+        <button onclick="navBatch(-1)">‹</button><span id="batch-pos"></span><button onclick="navBatch(1)">›</button>
+      </div>
+      <label class="chk"><input type="checkbox" id="c-lote-sep" checked onchange="render()"><span>Baixar 1 PDF por participante (separados)</span></label>
+      <div class="hint">Separado: o navegador abre um "Salvar como PDF" para cada pessoa, já com o nome no arquivo. Desmarque para um único PDF com a turma inteira.</div>
+    </div>
+
+    <div class="hint" style="margin-top:14px">Validade calculada: <b id="valid-show">—</b></div>
+
+    <!-- ajustar modelo (opcional) -->
+    <details class="sec">
+      <summary>Ajustar modelo (opcional)</summary>
+      <label>Curso / treinamento</label>
+      <input id="c-curso" oninput="render()">
+      <div class="row">
+        <div><label>Norma</label><input id="c-nr" oninput="render()"></div>
+        <div><label>Base legal</label><input id="c-base" oninput="render()"></div>
+      </div>
+      <div class="row">
+        <div><label>Carga horária</label><input id="c-carga" oninput="render()"></div>
+        <div><label>Validade (meses)</label><input id="c-vmeses" type="number" oninput="onDate()"></div>
+      </div>
+      <label>Cidade</label>
+      <input id="c-cidade" value="Porto Alegre" oninput="render()">
+      <label>Fecho do texto</label>
+      <input id="c-fecho" oninput="render()">
+      <label class="chk"><input type="checkbox" id="c-inst-on" onchange="render()"><span>Incluir assinatura de instrutor</span></label>
+      <div id="inst-fields" style="display:none">
+        <div class="row"><div><label>Instrutor</label><input id="c-inst" oninput="render()"></div>
+        <div><label>Função</label><input id="c-instrole" oninput="render()"></div></div>
+        <label>CBO (opcional)</label><input id="c-instcbo" oninput="render()">
+      </div>
+      <label class="chk"><input type="checkbox" id="c-verso-on" checked onchange="render()"><span>Gerar verso (conteúdo programático)</span></label>
+      <label>Conteúdo programático</label>
+      <textarea id="c-conteudo" style="min-height:120px" oninput="render()"></textarea>
+      <div class="hint">Já vem preenchido pelo modelo. Edite só se precisar.</div>
+    </details>
+
+    <!-- empresa/RT -->
+    <details class="sec">
+      <summary>Empresa e responsável técnico</summary>
+      <label>Razão social</label>
+      <input id="e-razao" value="Vetor Saúde e Segurança do Trabalho" oninput="render()">
+      <div class="row">
+        <div><label>CNPJ</label><input id="e-cnpj" value="53.747.600/0001-84" oninput="render()"></div>
+        <div><label>Telefone</label><input id="e-tel" value="(51) 9 9734-1945" oninput="render()"></div>
+      </div>
+      <label>Endereço</label>
+      <input id="e-end" value="R. Mostardeiro, nº 777 - 15º andar - Independência, Porto Alegre - RS, 90430-001" oninput="render()">
+      <div class="row">
+        <div><label>E-mail</label><input id="e-email" value="contato@vetorsst.com.br" oninput="render()"></div>
+        <div><label>Site</label><input id="e-site" value="www.vetorsst.com.br" oninput="render()"></div>
+      </div>
+      <label>Responsável técnico</label>
+      <input id="r-nome" value="Leonardo Pérez Martinez" oninput="render()">
+      <div class="row">
+        <div><label>Registro</label><input id="r-reg" value="Reg. MTE nº 0027636/RS" oninput="render()"></div>
+        <div><label>Titulação</label><input id="r-tit" value="Técnico em Segurança do Trabalho" oninput="render()"></div>
+      </div>
+      <div class="hint">Registro de TST = <b>nº no MTE/SRTE</b>. (Eng. de Segurança → CREA; Médico do Trabalho → CRM.)</div>
+      <div id="reg-warn" class="warn" style="display:none;background:rgba(255,90,90,.15);border-color:rgba(255,90,90,.5);color:#ffc9c9"></div>
+    </details>
+
+    <div class="actions">
+      <button class="btn btn-primary" id="btn-pdf" onclick="exportPDF()">Baixar PDF</button>
+      <div class="hint">Frente + verso por participante.</div>
+    </div>
+  </aside>
+
+  <main class="stage">
+    <div class="stagebar">
+      <span class="meta">Pré-visualização — A4 paisagem</span>
+      <div class="pageflip">
+        <button id="pf-front" class="active" onclick="showPage('front')">Frente</button>
+        <button id="pf-back" onclick="showPage('back')">Verso</button>
+      </div>
+    </div>
+    <div class="scaler" id="scaler">
+      <div class="cert" id="cert-front">
+        <img class="wm" id="wm1" alt="">
+        <div class="cframe"></div>
+        <div class="cinner">
+          <img class="clogo" id="logo1" alt="Vetor SST">
+          <h1 class="ctitle">CERTIFICADO DE CONCLUSÃO</h1>
+          <div class="corp" id="o-corp"></div>
+          <div class="name-wrap"><div class="cname" id="o-nome">Nome do Participante</div><div class="name-rule"></div></div>
+          <div class="desc" id="o-desc"></div>
+          <div class="place" id="o-place"></div>
+          <div class="signs" id="o-signs"></div>
+        </div>
+      </div>
+      <div class="cert" id="cert-back" style="display:none">
+        <div class="cframe"></div>
+        <div class="v-inner">
+          <div class="v-title" id="v-curso"></div>
+          <div class="v-sub" id="v-sub"></div>
+          <div class="v-rule"></div>
+          <div class="v-h">CONTEÚDO PROGRAMÁTICO DO CURSO</div>
+          <div class="v-body" id="v-body"></div>
+          <div class="v-foot"><img id="logo2" alt="Vetor SST"><div class="info" id="v-info"></div></div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+<div id="print-area"></div>
+<script src="templates.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
