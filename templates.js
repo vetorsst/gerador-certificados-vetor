@@ -10,6 +10,11 @@
 //   NR-34 — trabalho a quente no item 34.5 (34.3 é a capacitação geral);
 //           periódico ANUAL (12 meses), mín. 4h.
 //   NR-35 — capacitação no item 35.3; periódico BIENAL (24 meses), 8h.
+//   NR-33 — espaços confinados; periódico ANUAL (12 meses).
+//   NR-6  — EPI/EPC; validade 24 meses (prática da empresa; a NR-6 não fixa prazo).
+//   NR-12 — máquinas e equipamentos; validade 24 meses (prática da empresa).
+// (NR-6/12/33 vieram dos PDFs da Vetor; baseLegal ficou vazio porque os
+//  certificados citam só "em conformidade com a NR-X", sem item específico.)
 const TEMPLATES = {
   "NR-18": {
     "nr": "NR-18",
@@ -37,5 +42,32 @@ const TEMPLATES = {
     "validadeMeses": 24,
     "fecho": "tendo obtido rendimento satisfatório",
     "conteudo": "Noções de 1º Socorros e Resgate (Módulo 03): Conceitos de Emergência/Priorização de atendimento; Suporte básico à vida; Avaliação da Vítima; Ataque Cardíaco; Lesões; Queimaduras; Quedas; Técnica de Transporte; Tríplice manobra; Resgate.\n\nEquipamentos de Proteção (Módulo 08A): Tipos de equipamentos de segurança - EPI/EPC; Funcionamento dos Equipamentos de proteção coletivo e individual para proteção da Cabeça, Olhos, Face, Membros inferiores e superiores; Proteção coletiva e individual contra queda com diferença de nível; Inspeções diárias dos equipamentos e itens de segurança; Exigências e obrigatoriedade quanto ao uso, guarda, conservação e higienização dos EPI's e/ou EPC's; Obrigações do Empregador; Obrigações do empregado; Informações sobre as condições e meio ambiente de trabalho (NR-18, item 18.12); Uso adequado de EPI (NR-18, item 18.12); Informações sobre EPC (NR-18, item 18.12).\n\nTrabalho em Altura (Módulo 10A): Objetivo; Campo de Aplicação; Normas e Regulamentos aplicáveis ao trabalho em altura; Riscos potenciais inerentes ao trabalho em altura e medidas de prevenção e controle; Utilização de cordas; Sistemas, Equipamentos e Procedimentos de Proteção Coletiva; Equipamento de Proteção Individual para Trabalho em Altura; Acidentes Típicos em Trabalhos em Altura.\n\nTrabalho em Altura (Módulo 10B): Trabalho em Poste tipo Padrão, Poste de Madeira e Poste de Concreto; Trabalho em altura durante acesso em caixa subterrânea; Trabalho em Altura quando encontrado obstáculo (árvores, animais, insetos, etc.); Trabalho em Marquises; EPI para Trabalho em Altura: Seleção, Inspeção, Conservação e Limitação de Uso; LVM – Linha de Vida móvel: Objetivo, Campo de Aplicação, Componentes do kit, Orientação para Instalação, Guarda e Conservação; Obrigatoriedade, Montagem e Utilização da garra para cordoalha de aço (garra meio de vão); Resgate.\n\nAnálise de Risco e Permissão de Trabalho (Módulo 11B): Técnicas de Análise de Risco; Análise Preliminar de Risco (APR); Formalização da APR; Condições adversas e impeditivas; Riscos Adicionais; Riscos inerentes ao trabalho em altura; Riscos inerentes ao Espaço Confinado; Risco inerente ao trabalho em proximidade de redes elétricas; Riscos inerentes ao trabalho a quente; Colocação e remoção de postes; Permissão de Trabalho (PT); Risco inerente à sua função (NR-18, item 18.12); Travessia de via – Análise e meios de neutralizar o risco."
+  },
+  "NR-6": {
+    "nr": "NR-6",
+    "curso": "CURSO DE FORMAÇÃO DE EQUIPAMENTO DE PROTEÇÃO INDIVIDUAL (EPI) E EQUIPAMENTO DE PROTEÇÃO COLETIVA (EPC)",
+    "baseLegal": "",
+    "carga": "06 horas",
+    "validadeMeses": 24,
+    "fecho": "obtendo o grau de conclusão ao final do curso",
+    "conteudo": "1. Definições da Norma Regulamentadora;\n2. Tipos de E.P.I. e E.P.C. conforme atividade exercida;\n3. Uso adequado;\n4. Substituição e Devolução;\n5. Higienização de EPI's;\n6. Equipamento de uso Permanente (Pessoal);\n7. Equipamentos Reserva;\n8. Capacete de segurança, bota de segurança, óculos de segurança, protetor auricular, luvas;\n9. EPI Específico;\n10. EPIs exclusivos para funções ou atividades específicas: cinto de segurança, vestimenta para arco voltaico;\n11. Vestimenta química, máscara autônoma, luva de malha de aço, protetor facial, vestimenta de aproximação ao fogo;\n12. Circunstâncias para uso do E.P.I. e E.P.C;\n13. Responsabilidade do empregador, do empregado, do fabricante e do importador;\n14. Certificado de aprovação."
+  },
+  "NR-12": {
+    "nr": "NR-12",
+    "curso": "CURSO DE SEGURANÇA NO TRABALHO EM MÁQUINAS E EQUIPAMENTOS",
+    "baseLegal": "",
+    "carga": "04 horas",
+    "validadeMeses": 24,
+    "fecho": "obtendo o grau de conclusão ao final do curso",
+    "conteudo": "1. Introdução à NR-12;\n2. Instalações e dispositivos elétricos;\n3. Dispositivos de partida, acionamento e parada e parada de emergência;\n4. Sistemas de segurança;\n5. Descrição e identificação dos riscos associados com cada máquina e equipamento e as proteções específicas contra cada um deles;\n6. Funcionamento das proteções; como e porque devem ser usadas;\n7. Como, e em que circunstâncias e por quem uma proteção pode ser removida;\n8. O que fazer se uma proteção foi danificada ou se perdeu sua função;\n9. Princípios de segurança na utilização da máquina ou equipamento;\n10. Segurança para riscos mecânicos, elétricos e outros relevantes;\n11. Método de trabalho seguro;\n12. Permissão de trabalho;\n13. Sistema de bloqueio de funcionamento da máquina e equipamento durante operações de inspeção, limpeza, lubrificação e manutenção;\n14. Noções sobre legislação de trânsito e de legislação de segurança e saúde no trabalho;\n15. Medidas de controle dos riscos; EPC e EPI;\n16. Sinalização de segurança;\n17. Procedimentos em situação de emergência;\n18. Noções básicas de Primeiros Socorros;\n19. O colaborador foi treinado e capacitado para a utilização de ferramentas tais como: furadeiras, parafusadeira elétrica (a bateria) e esmerilhadeira."
+  },
+  "NR-33": {
+    "nr": "NR-33",
+    "curso": "CURSO DE SEGURANÇA EM ESPAÇOS CONFINADOS",
+    "baseLegal": "",
+    "carga": "16 horas",
+    "validadeMeses": 12,
+    "fecho": "obtendo o grau de conclusão ao final do curso",
+    "conteudo": "Definições; Identificação dos espaços confinados; Legislação de segurança e saúde no trabalho; Reconhecimento, avaliação e controle de risco; Riscos em espaços confinados; Tipos de nós utilizados em espaços confinados; Sistema 4/1 com polias e cordas; Utilização do tripé; Funcionamento dos equipamentos utilizados; Noções de resgate em espaços confinados e primeiros socorros; Procedimento para utilização da permissão de entrada de trabalho.\n\nCapacitado para Trabalhos em: Caldeiras, Caixas d'água, Caminhão Tanque, Cisternas, Digestores, Dutos, Fornos, Forros, Galerias, Moinhos, Poços, Porões, Silos, Tanques, Tubulações, Valas e locais similares aos descritos, para as atividades de Construção, Manutenção, Inspeção, Limpeza, Medição e Arqueação.\n\nOBS: Este certificado não capacita o aluno como multiplicador/instrutor deste treinamento; não pode ser usado por outra empresa. Apenas o conteúdo programático e a carga horária podem ser aproveitados, nos termos da NR-01, item 1.7.7."
   }
 };
