@@ -41,6 +41,8 @@ function showPage(p){
   document.getElementById('pf-back').classList.toggle('active',p==='back');
   document.getElementById('cert-front').style.display=p==='front'?'block':'none';
   document.getElementById('cert-back').style.display=p==='back'?'block':'none';
+  /* reajusta a fonte do verso só quando ele fica visível (oculto mede altura 0) */
+  if(p==='back')fitBody(document.getElementById('v-body'));
 }
 function v(id){const e=document.getElementById(id);return e?(e.value||'').trim():'';}
 function chk(id){return document.getElementById(id).checked;}
