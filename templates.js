@@ -13,8 +13,11 @@
 //   NR-33 — espaços confinados; periódico ANUAL (12 meses).
 //   NR-6  — EPI/EPC; validade 24 meses (prática da empresa; a NR-6 não fixa prazo).
 //   NR-12 — máquinas e equipamentos; validade 24 meses (prática da empresa).
-//   NR-5  — CIPA (Comissão Interna de Prevenção de Acidentes e de Assédio,
-//           nome atualizado pela Lei 14.457/2022); validade 24 meses.
+//   NR-5  — CIPA (nome atualizado pela Lei 14.457/2022). Carga MÍNIMA por grau de
+//           risco: GR1 8h, GR2 12h, GR3 16h, GR4 20h (Portaria MTP 4.219/2022).
+//           ⚠ 6h é ILEGAL (abaixo do piso de 8h). Os 24 meses NÃO são reciclagem
+//           fixa: renova-se a cada posse de mandato (anual + 1 recondução) e
+//           aproveita-se treino anterior de até 2 anos.
 // (NR-6/12/33 vieram dos PDFs da Vetor; baseLegal ficou vazio porque os
 //  certificados citam só "em conformidade com a NR-X", sem item específico.)
 const TEMPLATES = {
@@ -74,11 +77,11 @@ const TEMPLATES = {
   },
   "NR-5": {
     "nr": "NR-5",
-    "curso": "CURSO DE COMISSÃO INTERNA DE PREVENÇÃO DE ACIDENTES E DE ASSÉDIO - CIPA",
+    "curso": "CURSO DE FORMAÇÃO DA COMISSÃO INTERNA DE PREVENÇÃO DE ACIDENTES E DE ASSÉDIO (CIPA)",
     "baseLegal": "",
     "carga": "06 horas",
     "validadeMeses": 24,
     "fecho": "obtendo o grau de conclusão ao final do curso",
-    "conteudo": "Introdução;\nA Semana Interna de Prevenção de Acidentes do Trabalho;\nEstudo do ambiente, das condições de trabalho, bem como dos riscos originados do processo produtivo;\nNoções sobre acidentes e doenças relacionadas ao trabalho decorrentes das condições de trabalho e da exposição aos riscos existentes no estabelecimento e suas medidas de prevenção;\nMetodologia de investigação e análise de acidentes e doenças relacionadas ao trabalho;\nPrincípios gerais de higiene do trabalho e de medidas de prevenção dos riscos;\nNoções sobre as legislações trabalhista e previdenciária relativas à segurança e saúde no trabalho;\nNoções sobre a inclusão de pessoas com deficiência reabilitadas nos processos de trabalho;\nOrganização da CIPA e outros assuntos necessários ao exercício das atribuições da Comissão;\nPrevenção e combate ao assédio sexual e a outras formas de violência no trabalho."
+    "conteudo": "Introdução;\nA Semana Interna de Prevenção de Acidentes do Trabalho;\nEstudo do ambiente, das condições de trabalho, bem como dos riscos originados do processo produtivo;\nNoções sobre acidentes e doenças relacionadas ao trabalho decorrentes das condições de trabalho e da exposição aos riscos existentes no estabelecimento e suas medidas de prevenção;\nMetodologia de investigação e análise de acidentes e doenças relacionadas ao trabalho;\nPrincípios gerais de higiene do trabalho e de medidas de prevenção dos riscos;\nNoções sobre as legislações trabalhista e previdenciária relativas à segurança e saúde no trabalho;\nNoções sobre a inclusão de pessoas com deficiência e reabilitados nos processos de trabalho;\nOrganização da CIPA e outros assuntos necessários ao exercício das atribuições da Comissão;\nPrevenção e combate ao assédio sexual e a outras formas de violência no trabalho."
   }
 };
