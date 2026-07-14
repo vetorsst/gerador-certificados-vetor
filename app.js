@@ -23,7 +23,8 @@ function loadFields(){
 
 (function(){
   const sel=document.getElementById('c-nrpick');
-  Object.keys(TEMPLATES).forEach(k=>{const o=document.createElement('option');o.value=k;o.textContent=k+' — '+TEMPLATES[k].curso.slice(0,40)+(TEMPLATES[k].curso.length>40?'…':'');sel.appendChild(o);});
+  const num=k=>parseInt((k.match(/\d+/)||[999])[0],10);
+  Object.keys(TEMPLATES).sort((a,b)=>num(a)-num(b)).forEach(k=>{const o=document.createElement('option');o.value=k;o.textContent=k+' — '+TEMPLATES[k].curso.slice(0,40)+(TEMPLATES[k].curso.length>40?'…':'');sel.appendChild(o);});
 })();
 
 function setMode(m){
