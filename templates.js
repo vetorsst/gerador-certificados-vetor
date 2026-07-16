@@ -18,6 +18,9 @@
 //           ⚠ 6h é ILEGAL (abaixo do piso de 8h). Os 24 meses NÃO são reciclagem
 //           fixa: renova-se a cada posse de mandato (anual + 1 recondução) e
 //           aproveita-se treino anterior de até 2 anos.
+//   NR-10 — básico Segurança em Eletricidade, 40h; reciclagem BIENAL (24 meses).
+//   NR-23 — proteção contra incêndios, 8h; validade 24 meses (prática da empresa;
+//           treinamento de brigada segue NBR 14276/Corpo de Bombeiros, não a NR-23).
 // (NR-6/12/33 vieram dos PDFs da Vetor; baseLegal ficou vazio porque os
 //  certificados citam só "em conformidade com a NR-X", sem item específico.)
 const TEMPLATES = {
@@ -83,5 +86,23 @@ const TEMPLATES = {
     "validadeMeses": 24,
     "fecho": "obtendo o grau de conclusão ao final do curso",
     "conteudo": "Introdução;\nA Semana Interna de Prevenção de Acidentes do Trabalho;\nEstudo do ambiente, das condições de trabalho, bem como dos riscos originados do processo produtivo;\nNoções sobre acidentes e doenças relacionadas ao trabalho decorrentes das condições de trabalho e da exposição aos riscos existentes no estabelecimento e suas medidas de prevenção;\nMetodologia de investigação e análise de acidentes e doenças relacionadas ao trabalho;\nPrincípios gerais de higiene do trabalho e de medidas de prevenção dos riscos;\nNoções sobre as legislações trabalhista e previdenciária relativas à segurança e saúde no trabalho;\nNoções sobre a inclusão de pessoas com deficiência e reabilitados nos processos de trabalho;\nOrganização da CIPA e outros assuntos necessários ao exercício das atribuições da Comissão;\nPrevenção e combate ao assédio sexual e a outras formas de violência no trabalho."
+  },
+  "NR-10": {
+    "nr": "NR-10",
+    "curso": "CURSO DE FORMAÇÃO EM SEGURANÇA EM INSTALAÇÕES E SERVIÇOS EM ELETRICIDADE",
+    "baseLegal": "",
+    "carga": "40 horas",
+    "validadeMeses": 24,
+    "fecho": "obtendo o grau de conclusão ao final do curso",
+    "conteudo": "1. Introdução à segurança com eletricidade;\n2. Riscos em instalações e serviços com eletricidade: o choque elétrico, mecanismos e efeitos, arcos elétricos, queimaduras e quedas, campos eletromagnéticos;\n3. Técnicas de Análise de Risco;\n4. Medidas de Controle do Risco Elétrico: desenergização, aterramento funcional (TN/TT/IT), de proteção, temporário, equipotencialização, seccionamento automático da alimentação, dispositivos a corrente de fuga;\n5. Extra baixa tensão, barreiras e invólucros, bloqueios e impedimentos, obstáculos e anteparos, isolamento das partes vivas, isolação dupla ou reforçada, colocação fora de alcance, separação elétrica;\n6. Normas Técnicas Brasileiras - NBR da ABNT: NBR-5410, NBR 14039 e outras;\n7. Regulamentações do MTE: NRs; NR-10 (Segurança em Instalações e Serviços com Eletricidade), qualificação, habilitação, capacitação e autorização;\n8. Equipamentos de proteção coletiva;\n9. Equipamentos de proteção individual;\n10. Rotinas de trabalho – Procedimentos: instalações desenergizadas, liberação para serviços, sinalização, inspeções de áreas, serviços, ferramental e equipamento;\n11. Documentação de instalações elétricas;\n12. Riscos adicionais: altura, ambientes confinados, áreas classificadas, umidade, condições atmosféricas;\n13. Proteção e combate a incêndios: noções básicas, medidas preventivas, métodos de extinção, prática;\n14. Acidentes de origem elétrica: causas diretas e indiretas; discussão de casos;\n15. Primeiros socorros: noções sobre lesões, priorização do atendimento, aplicação de respiração artificial, massagem cardíaca, técnicas para remoção e transporte de acidentados e práticas."
+  },
+  "NR-23": {
+    "nr": "NR-23",
+    "curso": "CURSO DE PROTEÇÃO CONTRA INCÊNDIOS",
+    "baseLegal": "",
+    "carga": "08 horas",
+    "validadeMeses": 24,
+    "fecho": "obtendo o grau de conclusão ao final do curso",
+    "conteudo": "Introdução;\nLegislação pertinente;\nTeoria do fogo;\nMeios de propagação do fogo;\nClassificação do fogo;\nEquipamentos de combate ao fogo;\nTécnicas de combate ao fogo;\nAbandono de área;\nTécnicas de prevenção de incêndios;\nReconhecimento e utilização de extintores de incêndio e hidrantes;\nProcedimentos para evacuação dos locais de trabalho com segurança;\nAnálise primária;\nManobras de reanimação;\nFerimentos e hemorragias;\nFraturas e imobilização;\nQueimaduras;\nEmergências clínicas;\nRealização de manobras de reanimação cardíaca em manequim de treinamento."
   }
 };
