@@ -27,6 +27,15 @@
       <label>Modelo de certificado</label>
       <select id="c-nrpick" class="pick" onchange="applyTemplate()"></select>
       <div class="ro" id="model-summary"></div>
+      <div id="gr-wrap" style="display:none;margin-top:10px">
+        <label>Grau de risco do estabelecimento (define a carga da CIPA)</label>
+        <select id="c-gr" class="pick" onchange="applyGR()">
+          <option value="8">GR1 — 8 horas</option>
+          <option value="12">GR2 — 12 horas</option>
+          <option value="16">GR3 — 16 horas</option>
+          <option value="20">GR4 — 20 horas</option>
+        </select>
+      </div>
     </div>
 
     <!-- participantes -->

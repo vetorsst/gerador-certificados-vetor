@@ -48,15 +48,26 @@ function v(id){const e=document.getElementById(id);return e?(e.value||'').trim()
 function chk(id){return document.getElementById(id).checked;}
 function setV(id,val){document.getElementById(id).value=val;}
 
-function applyTemplate(){
+/* NR com carga por grau de risco (seletor GR na UI) */
+const GR_MODELS=['NR-5'];
+function grHours(){return String(v('c-gr')||'8').padStart(2,'0')+' horas';}
+function updateSummary(){
   const t=TEMPLATES[v('c-nrpick')];if(!t)return;
+  const vm=parseInt(v('c-vmeses'),10);
+  document.getElementById('model-summary').textContent='Carga '+v('c-carga')+' · '+(vm>0?('validade '+vm+' meses'):'sem validade (não vence)')+' · conteúdo programático incluído';
+}
+function applyTemplate(){
+  const key=v('c-nrpick'),t=TEMPLATES[key];if(!t)return;
   setV('c-curso',t.curso);setV('c-nr',t.nr);setV('c-base',t.baseLegal);
   setV('c-carga',t.carga);setV('c-fecho',t.fecho);setV('c-conteudo',t.conteudo);
   setV('c-vmeses',t.validadeMeses);
-  const vm=parseInt(t.validadeMeses,10);
-  document.getElementById('model-summary').textContent='Carga '+t.carga+' · '+(vm>0?('validade '+vm+' meses'):'sem validade (não vence)')+' · conteúdo programático incluído';
+  const isGR=GR_MODELS.includes(key);
+  document.getElementById('gr-wrap').style.display=isGR?'block':'none';
+  if(isGR)setV('c-carga',grHours());
+  updateSummary();
   render();
 }
+function applyGR(){setV('c-carga',grHours());updateSummary();render();}
 
 /* ===== datas ===== */
 const MESES=['janeiro','fevereiro','março','abril','maio','junho','julho','agosto','setembro','outubro','novembro','dezembro'];
