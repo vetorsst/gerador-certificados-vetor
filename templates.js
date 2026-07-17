@@ -21,8 +21,8 @@
 //   NR-10 — básico Segurança em Eletricidade, 40h; reciclagem BIENAL (24 meses).
 //   NR-23 — proteção contra incêndios, 8h; validade 24 meses (prática da empresa;
 //           treinamento de brigada segue NBR 14276/Corpo de Bombeiros, não a NR-23).
-//   NR-37 — plataformas de petróleo. 3 variantes: Integração (básico, item 37.9.6.3,
-//           8h) · Avançado (item 37.9.6.5, 8h + 1h prática) · Reciclagem (item 37.9.6.6,
+//   NR-37 — plataformas de petróleo. 3 variantes: Básico (integração/1º embarque,
+//           item 37.9.6.3, 8h) · Avançado (item 37.9.6.5, 8h + 1h prática) · Reciclagem (item 37.9.6.6,
 //           4h). ⚠ No Avançado e na Reciclagem o RT DEVE ser ENGENHEIRO DE SEGURANÇA
 //           (CREA), não Técnico — flag "rtEngenheiro" dispara aviso na UI. validade 24m
 //           = ciclo da empresa; a reciclagem legal do avançado é a cada 5 anos.
@@ -110,9 +110,9 @@ const TEMPLATES = {
     "fecho": "obtendo o grau de conclusão ao final do curso",
     "conteudo": "Introdução;\nLegislação pertinente;\nTeoria do fogo;\nMeios de propagação do fogo;\nClassificação do fogo;\nEquipamentos de combate ao fogo;\nTécnicas de combate ao fogo;\nAbandono de área;\nTécnicas de prevenção de incêndios;\nReconhecimento e utilização de extintores de incêndio e hidrantes;\nProcedimentos para evacuação dos locais de trabalho com segurança;\nAvaliação primária;\nManobras de reanimação;\nFerimentos e hemorragias;\nFraturas e imobilização;\nQueimaduras;\nEmergências clínicas;\nRealização de manobras de reanimação cardíaca em manequim de treinamento."
   },
-  "NR-37 Integração": {
+  "NR-37 Básico": {
     "nr": "NR-37",
-    "curso": "CURSO DE SEGURANÇA E SAÚDE EM PLATAFORMAS DE PETRÓLEO (INTEGRAÇÃO)",
+    "curso": "CURSO DE SEGURANÇA E SAÚDE EM PLATAFORMAS DE PETRÓLEO (BÁSICO)",
     "baseLegal": "item 37.9.6.3",
     "carga": "08 horas",
     "validadeMeses": 24,
