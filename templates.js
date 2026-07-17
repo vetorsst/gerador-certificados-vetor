@@ -21,10 +21,11 @@
 //   NR-10 — básico Segurança em Eletricidade, 40h; reciclagem BIENAL (24 meses).
 //   NR-23 — proteção contra incêndios, 8h; validade 24 meses (prática da empresa;
 //           treinamento de brigada segue NBR 14276/Corpo de Bombeiros, não a NR-23).
-//   NR-37 — TREINAMENTO AVANÇADO em plataformas de petróleo (item 37.9.6.5), 8h com
-//           1h prática obrigatória a bordo. ⚠ O RT DEVE ser ENGENHEIRO DE SEGURANÇA
-//           (CREA), não Técnico (item 37.9.6.1). validade 24m = ciclo da empresa; a
-//           reciclagem legal é 4h a cada 5 anos. (Integração = básico, item 37.9.6.3.)
+//   NR-37 — plataformas de petróleo. 3 variantes: Integração (básico, item 37.9.6.3,
+//           8h) · Avançado (item 37.9.6.5, 8h + 1h prática) · Reciclagem (item 37.9.6.6,
+//           4h). ⚠ No Avançado e na Reciclagem o RT DEVE ser ENGENHEIRO DE SEGURANÇA
+//           (CREA), não Técnico — flag "rtEngenheiro" dispara aviso na UI. validade 24m
+//           = ciclo da empresa; a reciclagem legal do avançado é a cada 5 anos.
 // (NR-6/12/33 vieram dos PDFs da Vetor; baseLegal ficou vazio porque os
 //  certificados citam só "em conformidade com a NR-X", sem item específico.)
 const TEMPLATES = {
@@ -109,13 +110,33 @@ const TEMPLATES = {
     "fecho": "obtendo o grau de conclusão ao final do curso",
     "conteudo": "Introdução;\nLegislação pertinente;\nTeoria do fogo;\nMeios de propagação do fogo;\nClassificação do fogo;\nEquipamentos de combate ao fogo;\nTécnicas de combate ao fogo;\nAbandono de área;\nTécnicas de prevenção de incêndios;\nReconhecimento e utilização de extintores de incêndio e hidrantes;\nProcedimentos para evacuação dos locais de trabalho com segurança;\nAvaliação primária;\nManobras de reanimação;\nFerimentos e hemorragias;\nFraturas e imobilização;\nQueimaduras;\nEmergências clínicas;\nRealização de manobras de reanimação cardíaca em manequim de treinamento."
   },
-  "NR-37": {
+  "NR-37 Integração": {
     "nr": "NR-37",
+    "curso": "CURSO DE SEGURANÇA E SAÚDE EM PLATAFORMAS DE PETRÓLEO (INTEGRAÇÃO)",
+    "baseLegal": "item 37.9.6.3",
+    "carga": "08 horas",
+    "validadeMeses": 24,
+    "fecho": "obtendo o grau de conclusão ao final do curso",
+    "conteudo": "1. Condições e meio ambiente de trabalho na plataforma marítima;\n2. Meios e procedimentos seguros de acesso e movimentação na plataforma;\n3. Riscos inerentes às atividades e as respectivas medidas preventivas e de controle;\n4. Substâncias inflamáveis, tóxicas e perigosas presentes a bordo;\n5. Uso correto, guarda e conservação de Equipamentos de Proteção Individual (EPI) e Coletiva (EPC);\n6. Procedimentos em situações de emergência e alarmes da unidade;\n7. Rotas de fuga, pontos de encontro e estações de abandono;\n8. Localização e noções de uso de equipamentos de salvatagem e de combate a incêndios;\n9. Procedimentos para relato de incidentes, acidentes e condições de risco."
+  },
+  "NR-37 Avançado": {
+    "nr": "NR-37",
+    "rtEngenheiro": true,
     "curso": "CURSO DE SEGURANÇA E SAÚDE EM PLATAFORMAS DE PETRÓLEO (TREINAMENTO AVANÇADO)",
     "baseLegal": "item 37.9.6.5",
     "carga": "08 horas",
     "validadeMeses": 24,
     "fecho": "obtendo o grau de conclusão ao final do curso",
     "conteudo": "1. Análise preliminar de riscos da tarefa (APR): conceitos e exercícios;\n2. Permissão para trabalho, a frio ou a quente, na presença de combustíveis e inflamáveis;\n3. Aditivos químicos e composição dos fluidos empregados nas operações de perfuração, completação, restauração e estimulação, quando aplicável;\n4. Noções dos sistemas de prevenção e combate a incêndio da plataforma;\n5. Acidentes com inflamáveis: suas causas e as medidas preventivas existentes na área operacional;\n6. Resposta a emergências com combustíveis e inflamáveis, segundo o Plano de Resposta a Emergências (PRE), descrito no capítulo 37.28 da NR-37;\n7. Noções de segurança de processo para plataformas;\n8. Segurança na operação das instalações elétricas em atmosferas explosivas;\n9. Atividade prática a bordo, de no mínimo uma hora, com a indicação in loco dos sistemas e equipamentos disponíveis para o combate a incêndio."
+  },
+  "NR-37 Reciclagem": {
+    "nr": "NR-37",
+    "rtEngenheiro": true,
+    "curso": "CURSO DE SEGURANÇA E SAÚDE EM PLATAFORMAS DE PETRÓLEO (RECICLAGEM DO TREINAMENTO AVANÇADO)",
+    "baseLegal": "item 37.9.6.6",
+    "carga": "04 horas",
+    "validadeMeses": 24,
+    "fecho": "obtendo o grau de conclusão ao final do curso",
+    "conteudo": "Reciclagem do treinamento avançado (mantida a parte prática obrigatória a bordo, item 37.9.6.6.1):\n\n1. Análise preliminar de riscos da tarefa (APR): revisão;\n2. Permissão para trabalho, a frio ou a quente, na presença de combustíveis e inflamáveis;\n3. Sistemas de prevenção e combate a incêndio da plataforma;\n4. Resposta a emergências com combustíveis e inflamáveis, segundo o Plano de Resposta a Emergências (PRE);\n5. Noções de segurança de processo e de instalações elétricas em atmosferas explosivas;\n6. Atividade prática a bordo, de no mínimo uma hora, com a indicação in loco dos sistemas e equipamentos de combate a incêndio."
   }
 };
