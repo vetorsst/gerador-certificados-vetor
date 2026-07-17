@@ -144,10 +144,13 @@ function checkReg(){
   const reg=v('r-reg').toUpperCase(),tit=v('r-tit').toLowerCase();
   const box=document.getElementById('reg-warn');if(!box)return;
   const tecnico=/(técnic|tecnic|engenh|médic|medic)/.test(tit);
+  let msg='';
   if(/\bCRP\b/.test(reg)&&tecnico){
-    box.style.display='block';
-    box.innerHTML='⚠ <b>CRP</b> é o registro do Conselho de <b>Psicologia</b> — incompatível com a titulação informada. Para TST o correto costuma ser o <b>registro no MTE/SRTE</b>; Eng. de Segurança → <b>CREA</b>; Médico do Trabalho → <b>CRM</b>. Confirme com o profissional.';
-  }else box.style.display='none';
+    msg='⚠ <b>CRP</b> é o registro do Conselho de <b>Psicologia</b> — incompatível com a titulação informada. Para TST o correto costuma ser o <b>registro no MTE/SRTE</b>; Eng. de Segurança → <b>CREA</b>; Médico do Trabalho → <b>CRM</b>. Confirme com o profissional.';
+  }else if(v('c-nrpick')==='NR-37'&&!/engenh/.test(tit)){
+    msg='⚠ <b>NR-37 (treinamento avançado):</b> o responsável técnico deve ser <b>Engenheiro de Segurança do Trabalho</b> (registro no <b>CREA</b>), não Técnico — exigência do item 37.9.6.1. Ajuste o RT para este modelo antes de emitir.';
+  }
+  box.style.display=msg?'block':'none';box.innerHTML=msg;
 }
 
 /* ===== preview ===== */

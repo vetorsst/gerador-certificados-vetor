@@ -21,6 +21,10 @@
 //   NR-10 — básico Segurança em Eletricidade, 40h; reciclagem BIENAL (24 meses).
 //   NR-23 — proteção contra incêndios, 8h; validade 24 meses (prática da empresa;
 //           treinamento de brigada segue NBR 14276/Corpo de Bombeiros, não a NR-23).
+//   NR-37 — TREINAMENTO AVANÇADO em plataformas de petróleo (item 37.9.6.5), 8h com
+//           1h prática obrigatória a bordo. ⚠ O RT DEVE ser ENGENHEIRO DE SEGURANÇA
+//           (CREA), não Técnico (item 37.9.6.1). validade 24m = ciclo da empresa; a
+//           reciclagem legal é 4h a cada 5 anos. (Integração = básico, item 37.9.6.3.)
 // (NR-6/12/33 vieram dos PDFs da Vetor; baseLegal ficou vazio porque os
 //  certificados citam só "em conformidade com a NR-X", sem item específico.)
 const TEMPLATES = {
@@ -104,5 +108,14 @@ const TEMPLATES = {
     "validadeMeses": 24,
     "fecho": "obtendo o grau de conclusão ao final do curso",
     "conteudo": "Introdução;\nLegislação pertinente;\nTeoria do fogo;\nMeios de propagação do fogo;\nClassificação do fogo;\nEquipamentos de combate ao fogo;\nTécnicas de combate ao fogo;\nAbandono de área;\nTécnicas de prevenção de incêndios;\nReconhecimento e utilização de extintores de incêndio e hidrantes;\nProcedimentos para evacuação dos locais de trabalho com segurança;\nAvaliação primária;\nManobras de reanimação;\nFerimentos e hemorragias;\nFraturas e imobilização;\nQueimaduras;\nEmergências clínicas;\nRealização de manobras de reanimação cardíaca em manequim de treinamento."
+  },
+  "NR-37": {
+    "nr": "NR-37",
+    "curso": "CURSO DE SEGURANÇA E SAÚDE EM PLATAFORMAS DE PETRÓLEO (TREINAMENTO AVANÇADO)",
+    "baseLegal": "item 37.9.6.5",
+    "carga": "08 horas",
+    "validadeMeses": 24,
+    "fecho": "obtendo o grau de conclusão ao final do curso",
+    "conteudo": "1. Análise preliminar de riscos da tarefa (APR): conceitos e exercícios;\n2. Permissão para trabalho, a frio ou a quente, na presença de combustíveis e inflamáveis;\n3. Aditivos químicos e composição dos fluidos empregados nas operações de perfuração, completação, restauração e estimulação, quando aplicável;\n4. Noções dos sistemas de prevenção e combate a incêndio da plataforma;\n5. Acidentes com inflamáveis: suas causas e as medidas preventivas existentes na área operacional;\n6. Resposta a emergências com combustíveis e inflamáveis, segundo o Plano de Resposta a Emergências (PRE), descrito no capítulo 37.28 da NR-37;\n7. Noções de segurança de processo para plataformas;\n8. Segurança na operação das instalações elétricas em atmosferas explosivas;\n9. Atividade prática a bordo, de no mínimo uma hora, com a indicação in loco dos sistemas e equipamentos disponíveis para o combate a incêndio."
   }
 };
