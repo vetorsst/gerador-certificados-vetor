@@ -16,6 +16,9 @@
 //   NR-5  — CIPA (nome atualizado pela Lei 14.457/2022). Carga por grau de risco:
 //           GR1 8h, GR2 12h, GR3 16h, GR4 20h (Portaria MTP 4.219/2022) — a UI tem
 //           um seletor de grau de risco que preenche a carga (default GR1 = 8h).
+//           O seletor tem também "GR1 — 6 horas" para turmas de 6h; atenção: 6h fica
+//           ABAIXO do mínimo legal de 8h do GR1 — use só quando houver aproveitamento
+//           de treinamento anterior (NR-01, item 1.7.7 / NR-5) que justifique a redução.
 //           Os 24 meses NÃO são reciclagem fixa: renova-se a cada posse de mandato
 //           (anual + 1 recondução) e aproveita-se treino anterior de até 2 anos.
 //   NR-10 — básico Segurança em Eletricidade, 40h; reciclagem BIENAL (24 meses).
