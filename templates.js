@@ -44,7 +44,12 @@
 //
 //   Integração SST (+ Reciclagem) — NÃO é uma NR específica: é o treinamento de
 //           informação sobre riscos + EPI da NR-01 (itens 1.4.1 e 1.7), com
-//           NR-06 item 6.6.1 "d". Conteúdo montado a partir do inventário de
+//           NR-06 item 6.6.1 "d". A baseLegal cita as cinco normas da atividade,
+//           mas com precisão diferente de propósito: NR-01 e NR-06 são a base
+//           legal do treinamento; NR-20, NR-33 e NR-35 entram como "abordagem",
+//           porque o conteúdo as trata em nível informativo — a capacitação
+//           normativa de cada uma é separada (ver a OBS no fim do conteúdo).
+//           Conteúdo montado a partir do inventário de
 //           riscos do PGR do cliente (benzeno/tolueno/xileno, ruído, ergonômicos,
 //           psicossocial, queda de mesmo nível, altura, espaço confinado) e do
 //           conjunto de normas da atividade dele: NR-01, NR-06, NR-20, NR-33 e
@@ -181,7 +186,7 @@ const TEMPLATES = {
     "titulo": "CERTIFICADO DE TREINAMENTO DE INTEGRAÇÃO",
     "sigla": "Integração",
     "curso": "TREINAMENTO DE INTEGRAÇÃO EM SEGURANÇA DO TRABALHO – RISCOS OCUPACIONAIS E USO DE EPI",
-    "baseLegal": "itens 1.4.1 e 1.7 (informação sobre riscos e capacitação) e NR-06, item 6.6.1 'd'",
+    "baseLegal": "itens 1.4.1 e 1.7, e NR-06, item 6.6.1 'd', com abordagem das NR-20, NR-33 e NR-35 aplicáveis à atividade",
     "carga": "04 horas",
     "cargaLabel": "Carga horária da turma",
     "cargaOpcoes": [
@@ -198,7 +203,7 @@ const TEMPLATES = {
     "titulo": "CERTIFICADO DE RECICLAGEM DA INTEGRAÇÃO",
     "sigla": "Integração (Reciclagem)",
     "curso": "TREINAMENTO DE RECICLAGEM DA INTEGRAÇÃO EM SEGURANÇA DO TRABALHO – RISCOS OCUPACIONAIS E USO DE EPI",
-    "baseLegal": "itens 1.4.1 e 1.7 (informação sobre riscos e capacitação) e NR-06, item 6.6.1 'd'",
+    "baseLegal": "itens 1.4.1 e 1.7, e NR-06, item 6.6.1 'd', com abordagem das NR-20, NR-33 e NR-35 aplicáveis à atividade",
     "carga": "04 horas",
     "cargaLabel": "Carga horária da turma",
     "cargaOpcoes": [
