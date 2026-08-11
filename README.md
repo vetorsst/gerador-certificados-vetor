@@ -59,6 +59,60 @@ Edite só o `templates.js`. Copie um bloco e ajuste:
 
 O dropdown e o preenchimento automático se atualizam sozinhos.
 
+Para deixar a **carga horária selecionável** (como na CIPA e na Integração SST),
+acrescente `cargaOpcoes` — aparece um seletor abaixo do modelo, e o campo
+`carga` define a opção pré-selecionada:
+
+```js
+cargaLabel: "Carga horária da turma",     // opcional; default "Carga horária"
+cargaOpcoes: [{h:4, label:"04 horas — integração padrão"},{h:6},{h:8}]
+```
+
+Outros dois campos opcionais:
+
+```js
+titulo: "CERTIFICADO DE TREINAMENTO DE INTEGRAÇÃO",  // manchete; default "CERTIFICADO DE CONCLUSÃO"
+sigla:  "Integração",                                 // nome do arquivo PDF; default = campo "nr"
+```
+
+O `titulo` encolhe sozinho para caber numa linha (46px → mínimo 24px), então
+título longo é seguro. Ele também é editável em "Ajustar modelo".
+
+## Integração SST (módulo do cliente com NR-01/06/20/33/35)
+
+Dois modelos — `Integração SST` e `Integração SST (Reciclagem)` — para o
+treinamento de **informação sobre riscos + EPI** da NR-01 (itens 1.4.1 e 1.7)
+com NR-06 (item 6.6.1 "d"). Não é uma NR específica: o conteúdo é montado a
+partir do **inventário de riscos do PGR do cliente** (benzeno, tolueno, xileno,
+ruído, ergonômicos, psicossociais, queda de mesmo nível, altura e espaço
+confinado) e do conjunto de normas da atividade dele — **NR-01, NR-06, NR-20,
+NR-33 e NR-35**, sem NR-18 (não é canteiro de obras).
+
+O certificado diz **explicitamente** que é integração, em quatro pontos: a
+manchete (`CERTIFICADO DE TREINAMENTO DE INTEGRAÇÃO` / `CERTIFICADO DE
+RECICLAGEM DA INTEGRAÇÃO`), o nome do curso no corpo do texto, o título do verso
+e o nome do arquivo PDF (`Certificado - Fulano - Integração.pdf`).
+
+- Carga selecionável: 4/6/8h na inicial, 2/4/6h na reciclagem. A NR-01 não fixa
+  carga nem periodicidade — os **24 meses** são prática comercial, igual a
+  NR-6/12/23.
+- A **OBS ao final do conteúdo é obrigatória**: o certificado não habilita
+  trabalho em altura (NR-35) nem espaço confinado (NR-33), não substitui a
+  capacitação da NR-20 (graduada pela classe da instalação) e não cobre o
+  controle específico da exposição ao benzeno. Não remova essa ressalva.
+
+**Campo "Empresa do participante / obra"** (opcional, no painel): entra no
+certificado como "…colaborador(a) da **MATICX**, participou do…" e no verso como
+"Empresa: …". De propósito **não** fica salvo entre sessões — é dado de turma,
+e carregar de um cliente para o outro colocaria empresa errada num documento
+legal.
+
+**Aviso de verso cortado:** o conteúdo programático encolhe até 7px para caber
+no verso. Se nem assim couber, o painel mostra um alerta vermelho e o "Baixar
+PDF" pede confirmação antes de emitir com corte — antes isso acontecia em
+silêncio. O verso da Integração SST é o mais denso da biblioteca (~3,9 mil
+caracteres); confira a pré-visualização do verso antes de emitir em lote.
+
 ## Deploy com acesso restrito (recomendado)
 
 GitHub Pages não tem senha. Para uma ferramenta interna, use
@@ -111,4 +165,15 @@ bloqueada caso o campo seja apagado.
 - **Conteúdo programático da NR-35** — as referências internas a "NR-18 item
   18.28.2" (capítulo revogado) foram remapeadas para o item **18.12**; revisar
   se o conteúdo de cada módulo segue adequado.
+- **Integração SST** — confirmar com o RT os incisos citados na base legal
+  (NR-01 itens 1.4.1 e 1.7; NR-06 item 6.6.1 "d") e a **fonte do benzeno** no
+  inventário do cliente: se vier de combustível derivado de petróleo, o Anexo
+  13-A da NR-15 (PPEOB) em regra não se aplica e o controle corre por NR-20 +
+  PCMSO; se vier de solvente/produto com ≥1% de benzeno, o PPEOB é exigível e
+  este certificado não o supre.
+- **NR-20 não está na biblioteca** — a capacitação da NR-20 é graduada pela
+  classe da instalação e pela função (integração/básico/intermediário/avançado),
+  com cargas e reciclagens próprias. A Integração SST cobre só o bloco
+  informativo de inflamáveis; o treinamento normativo da NR-20 precisa de
+  modelo próprio.
 ```

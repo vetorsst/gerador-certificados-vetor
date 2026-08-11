@@ -27,17 +27,16 @@
       <label>Modelo de certificado</label>
       <select id="c-nrpick" class="pick" onchange="applyTemplate()"></select>
       <div class="ro" id="model-summary"></div>
-      <div id="gr-wrap" style="display:none;margin-top:10px">
-        <label>Grau de risco do estabelecimento (define a carga da CIPA)</label>
-        <select id="c-gr" class="pick" onchange="applyGR()">
-          <option value="6">GR1 — 6 horas</option>
-          <option value="8" selected>GR1 — 8 horas</option>
-          <option value="12">GR2 — 12 horas</option>
-          <option value="16">GR3 — 16 horas</option>
-          <option value="20">GR4 — 20 horas</option>
-        </select>
+      <div id="carga-wrap" style="display:none;margin-top:10px">
+        <label id="carga-label">Carga horária</label>
+        <select id="c-cargapick" class="pick" onchange="applyCarga()"></select>
       </div>
     </div>
+
+    <!-- empresa do participante / obra (opcional) -->
+    <label>Empresa do participante / obra (opcional)</label>
+    <input id="c-empresa-part" placeholder="Ex.: Maticx — Obra Refinaria" oninput="render()">
+    <div class="hint">Se preenchido, entra no certificado: "…colaborador(a) da <b>MATICX</b>, participou do…". Não fica salvo entre sessões — confira a cada turma.</div>
 
     <!-- participantes -->
     <div id="form-ind">
@@ -71,6 +70,9 @@
     <!-- ajustar modelo (opcional) -->
     <details class="sec">
       <summary>Ajustar modelo (opcional)</summary>
+      <label>Título do certificado</label>
+      <input id="c-titulo" oninput="render()">
+      <div class="hint">Manchete do certificado. A fonte encolhe sozinha para caber numa linha.</div>
       <label>Curso / treinamento</label>
       <input id="c-curso" oninput="render()">
       <div class="row">
@@ -95,6 +97,7 @@
       <label>Conteúdo programático</label>
       <textarea id="c-conteudo" style="min-height:120px" oninput="render()"></textarea>
       <div class="hint">Já vem preenchido pelo modelo. Edite só se precisar.</div>
+      <div id="verso-warn" class="warn" style="display:none;background:rgba(255,90,90,.15);border-color:rgba(255,90,90,.5);color:#ffc9c9">⚠ O conteúdo programático <b>não cabe no verso</b> — o texto está sendo cortado. Reduza o conteúdo antes de emitir.</div>
     </details>
 
     <!-- empresa/RT -->
@@ -142,7 +145,7 @@
         <div class="cframe"></div>
         <div class="cinner">
           <img class="clogo" id="logo1" alt="Vetor SST">
-          <h1 class="ctitle">CERTIFICADO DE CONCLUSÃO</h1>
+          <h1 class="ctitle" id="o-titulo">CERTIFICADO DE CONCLUSÃO</h1>
           <div class="corp" id="o-corp"></div>
           <div class="name-wrap"><div class="cname" id="o-nome">Nome do Participante</div><div class="name-rule"></div></div>
           <div class="desc" id="o-desc"></div>
