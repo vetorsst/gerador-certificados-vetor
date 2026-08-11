@@ -41,33 +41,44 @@ function showPage(p){
   document.getElementById('pf-back').classList.toggle('active',p==='back');
   document.getElementById('cert-front').style.display=p==='front'?'block':'none';
   document.getElementById('cert-back').style.display=p==='back'?'block':'none';
-  /* reajusta a fonte do verso só quando ele fica visível (oculto mede altura 0) */
-  if(p==='back')fitBody(document.getElementById('v-body'));
+  /* re-renderiza sempre: título, nome e verso só medem certo com a página visível
+     (oculta, mede 0 e cairia no fallback) */
+  render();
 }
 function v(id){const e=document.getElementById(id);return e?(e.value||'').trim():'';}
 function chk(id){return document.getElementById(id).checked;}
 function setV(id,val){document.getElementById(id).value=val;}
 
-/* NR com carga por grau de risco (seletor GR na UI) */
-const GR_MODELS=['NR-5'];
-function grHours(){return String(v('c-gr')||'8').padStart(2,'0')+' horas';}
+/* modelos com carga selecionável (template.cargaOpcoes) */
+function cargaTxt(h){return String(parseInt(h,10)||0).padStart(2,'0')+' horas';}
+function buildCargaPick(t){
+  const wrap=document.getElementById('carga-wrap'),sel=document.getElementById('c-cargapick');
+  sel.innerHTML='';
+  if(!t.cargaOpcoes||!t.cargaOpcoes.length){wrap.style.display='none';return;}
+  document.getElementById('carga-label').textContent=t.cargaLabel||'Carga horária';
+  t.cargaOpcoes.forEach(o=>{const el=document.createElement('option');el.value=String(o.h);el.textContent=o.label||cargaTxt(o.h);sel.appendChild(el);});
+  sel.value=String(parseInt(t.carga,10));            /* pré-seleciona a carga do template */
+  if(!sel.value)sel.selectedIndex=0;
+  wrap.style.display='block';
+  setV('c-carga',cargaTxt(sel.value));
+}
+function applyCarga(){setV('c-carga',cargaTxt(v('c-cargapick')));updateSummary();render();}
 function updateSummary(){
   const t=TEMPLATES[v('c-nrpick')];if(!t)return;
   const vm=parseInt(v('c-vmeses'),10);
   document.getElementById('model-summary').textContent='Carga '+v('c-carga')+' · '+(vm>0?('validade '+vm+' meses'):'sem validade (não vence)')+' · conteúdo programático incluído';
 }
+const TITULO_PADRAO='CERTIFICADO DE CONCLUSÃO';
 function applyTemplate(){
   const key=v('c-nrpick'),t=TEMPLATES[key];if(!t)return;
+  setV('c-titulo',t.titulo||TITULO_PADRAO);
   setV('c-curso',t.curso);setV('c-nr',t.nr);setV('c-base',t.baseLegal);
   setV('c-carga',t.carga);setV('c-fecho',t.fecho);setV('c-conteudo',t.conteudo);
   setV('c-vmeses',t.validadeMeses);
-  const isGR=GR_MODELS.includes(key);
-  document.getElementById('gr-wrap').style.display=isGR?'block':'none';
-  if(isGR)setV('c-carga',grHours());
+  buildCargaPick(t);
   updateSummary();
   render();
 }
-function applyGR(){setV('c-carga',grHours());updateSummary();render();}
 
 /* ===== datas ===== */
 const MESES=['janeiro','fevereiro','março','abril','maio','junho','julho','agosto','setembro','outubro','novembro','dezembro'];
@@ -121,17 +132,19 @@ function fieldData(p){
   const curso=esc(v('c-curso')),nr=esc(v('c-nr')),base=esc(v('c-base')),carga=esc(v('c-carga'));
   const d=dataField(),dataExt=extenso(d),cidade=esc(v('c-cidade')||'Porto Alegre'),fecho=esc(v('c-fecho'));
   const valid=validadeISO();
+  const empPart=v('c-empresa-part');                 /* cru: o verso escapa na hora de imprimir */
   const signs=[sign(p.nome||'Participante','')];
   if(chk('c-inst-on'))signs.push(sign(v('c-inst')||'Instrutor','(INSTRUTOR)'+(v('c-instrole')?'<br>'+esc(v('c-instrole')):'')+(v('c-instcbo')?'<br>'+esc(v('c-instcbo')):'')));
   signs.push(sign(v('r-nome'),'(RESPONSÁVEL TÉCNICO)<br>'+esc(v('r-tit'))+'<br>'+esc(v('r-reg'))));
   return {
+    titulo:v('c-titulo')||TITULO_PADRAO,               /* cru: escapa na impressão */
     corp:'A <b>'+razao+'</b>, inscrita no <b>CNPJ: '+cnpj+'</b>, e localizada na '+endTxt+' certifica que',
     nome:esc(titleCasePT(p.nome||'Nome do Participante')),
-    desc:'inscrito no <b>CPF: '+(esc(p.cpf)||'—')+'</b>, participou do <b>'+curso+'</b> em conformidade com a <b>'+nr+'</b>'+(base?', conforme <b>'+base+'</b>':'')+', realizado em '+dataExt+', com carga horária de <b>'+carga+'</b>, '+fecho+'.',
+    desc:'inscrito no <b>CPF: '+(esc(p.cpf)||'—')+'</b>, '+(empPart?'colaborador(a) da <b>'+esc(empPart)+'</b>, ':'')+'participou do <b>'+curso+'</b> em conformidade com a <b>'+nr+'</b>'+(base?', conforme <b>'+base+'</b>':'')+', realizado em '+dataExt+', com carga horária de <b>'+carga+'</b>, '+fecho+'.',
     place:cidade+', '+dataExt+'.',
     signs:signs.join(''),
-    vCurso:curso,
-    vSub:'Carga horária total: '+carga+'.  Data: '+curto(d)+(valid?'.  Validade: '+curto(valid):'')+'.',
+    vCurso:v('c-curso'),
+    vSub:'Carga horária total: '+v('c-carga')+'.  Data: '+curto(d)+(valid?'.  Validade: '+curto(valid):'')+'.'+(empPart?'  Empresa: '+empPart.replace(/\.+$/,'')+'.':''),
     vBody:v('c-conteudo')||'(Selecione um modelo de NR.)',
     vInfo:'<b>'+razao+'. CNPJ: '+cnpj+'</b><br><b>Endereço:</b> '+endTxt+'<br><b>Telefone:</b> '+esc(v('e-tel'))+'  <b>E-mail:</b> '+esc(v('e-email'))+'  <b>Site:</b> '+esc(v('e-site'))
   };
@@ -161,6 +174,7 @@ function render(){
   const valid=validadeISO();
   document.getElementById('valid-show').textContent=parseInt(v('c-vmeses'),10)>0?(valid?curto(valid):'—'):'não vence';
   const f=fieldData(person());
+  setTitle(f.titulo,document.getElementById('o-titulo'));
   document.getElementById('o-corp').innerHTML=f.corp;
   setName(f.nome,document.getElementById('o-nome'));
   document.getElementById('o-desc').innerHTML=f.desc;
@@ -168,10 +182,21 @@ function render(){
   document.getElementById('o-signs').innerHTML=f.signs;
   document.getElementById('v-curso').textContent=f.vCurso;
   document.getElementById('v-sub').textContent=f.vSub;
-  const vb=document.getElementById('v-body');vb.textContent=f.vBody;fitBody(vb);
+  const vb=document.getElementById('v-body');vb.textContent=f.vBody;
+  const coube=fitBody(vb);
+  /* só vale medir com o verso visível — escondido ele mede altura 0 */
+  document.getElementById('verso-warn').style.display=(page==='back'&&chk('c-verso-on')&&!coube)?'block':'none';
   document.getElementById('v-info').innerHTML=f.vInfo;
   checkReg();
   saveFields();
+}
+/* manchete: encolhe até caber numa linha só (o .ctitle é white-space:nowrap),
+   para o modelo poder ter título longo — ex.: CERTIFICADO DE TREINAMENTO DE INTEGRAÇÃO */
+function setTitle(txt,el){
+  el.textContent=txt;
+  const limit=el.clientWidth||900;
+  let s=46;el.style.fontSize=s+'px';
+  while(el.scrollWidth>limit&&s>24){s--;el.style.fontSize=s+'px';}
 }
 /* nome: encolhe a fonte até caber na largura real do container; régua acompanha */
 function setName(name,el){
@@ -184,14 +209,17 @@ function setName(name,el){
 }
 /* verso: acha o MAIOR tamanho em [min,max] que cabe sem cortar.
    Cresce em listas curtas (ex.: NR-18) e encolhe em conteúdo longo (NR-35).
-   Mede com justify-content:flex-start para o flex:1 não mascarar o overflow. */
+   Mede com justify-content:flex-start para o flex:1 não mascarar o overflow.
+   Devolve false quando nem no menor tamanho coube — aí o overflow:hidden cortaria
+   conteúdo programático sem avisar. */
 function fitBody(el){
-  const max=22,min=7;let best=min;
+  const max=22,min=7;let best=min,coube=false;
   for(let s=max;s>=min;s-=0.5){
     el.style.fontSize=s+'px';
-    if(el.scrollHeight<=el.clientHeight){best=s;break;}
+    if(el.scrollHeight<=el.clientHeight){best=s;coube=true;break;}
   }
   el.style.fontSize=best+'px';
+  return coube;
 }
 
 /* ===== lote ===== */
@@ -233,7 +261,7 @@ function certFrontHTML(f){
     '<div class="cframe"></div>'+
     '<div class="cinner">'+
       '<img class="clogo" src="'+ASSETS.logoV+'">'+
-      '<h1 class="ctitle">CERTIFICADO DE CONCLUSÃO</h1>'+
+      '<h1 class="ctitle">'+escapeHTML(f.titulo)+'</h1>'+
       '<div class="corp">'+f.corp+'</div>'+
       '<div class="name-wrap"><div class="cname">'+f.nome+'</div><div class="name-rule"></div></div>'+
       '<div class="desc">'+f.desc+'</div>'+
@@ -246,8 +274,8 @@ function certBackHTML(f){
   return '<div class="cert">'+
     '<div class="cframe"></div>'+
     '<div class="v-inner">'+
-      '<div class="v-title">'+f.vCurso+'</div>'+
-      '<div class="v-sub">'+f.vSub+'</div>'+
+      '<div class="v-title">'+escapeHTML(f.vCurso)+'</div>'+
+      '<div class="v-sub">'+escapeHTML(f.vSub)+'</div>'+
       '<div class="v-rule"></div>'+
       '<div class="v-h">CONTEÚDO PROGRAMÁTICO DO CURSO</div>'+
       '<div class="v-body">'+escapeHTML(f.vBody)+'</div>'+
@@ -281,7 +309,10 @@ function exportPDF(){
   if(errs.length){alert('Não é possível gerar o PDF. Corrija:\n\n'+errs.join('\n'));return;}
   if(!withBack&&!confirm('O verso (conteúdo programático) está DESATIVADO. O certificado sairá só com a frente, sem conteúdo programático. Gerar mesmo assim?'))return;
 
-  const courseISO=dataField(),nr=v('c-nr')||'NR';
+  /* sigla identifica o treinamento no nome do arquivo — para modelos que não são
+     uma NR ("Integração"), "NR-01" não diria nada a quem recebe o PDF */
+  const tpl=TEMPLATES[v('c-nrpick')];
+  const courseISO=dataField(),nr=(tpl&&tpl.sigla)||v('c-nr')||'NR';
   const separate=(mode==='lote'&&people.length>1&&chk('c-lote-sep'));
 
   const items=people.map(p=>({p,f:fieldData(p)}));
@@ -290,11 +321,20 @@ function exportPDF(){
   const renderSet=its=>{
     let html='';its.forEach(it=>{html+=certFrontHTML(it.f);if(withBack)html+=certBackHTML(it.f);});
     area.innerHTML=html;
+    area.querySelectorAll('.ctitle').forEach(el=>setTitle(el.textContent,el));
     area.querySelectorAll('.cname').forEach(el=>setName(el.textContent,el));
-    area.querySelectorAll('.v-body').forEach(el=>fitBody(el));
+    let cortados=0;
+    area.querySelectorAll('.v-body').forEach(el=>{if(!fitBody(el))cortados++;});
+    return cortados;
   };
 
   whenFontsReady().then(()=>{
+    /* mede o verso já no layout de impressão; o conteúdo é o mesmo para a turma
+       inteira, então basta conferir o primeiro certificado */
+    if(withBack&&renderSet([items[0]])>0&&
+       !confirm('O conteúdo programático NÃO cabe no verso e sairá CORTADO no PDF.\n\nReduza o texto em "Ajustar modelo → Conteúdo programático" antes de emitir.\n\nGerar mesmo assim (com corte)?')){
+      area.innerHTML='';document.title=oldTitle;render();return;
+    }
     if(separate){
       if(!confirm('Serão gerados '+items.length+' PDFs separados.\nO navegador abrirá uma janela "Salvar como PDF" para cada participante, um de cada vez, já com o nome no arquivo.\n\nContinuar?')){document.title=oldTitle;render();return;}
       /* print() é bloqueante no Chrome/Edge: cada diálogo aparece em sequência */

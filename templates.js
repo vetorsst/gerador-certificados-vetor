@@ -4,6 +4,16 @@
 // pelo campo "nr". validadeMeses = periodicidade do treinamento periódico
 // (use 0 para suprimir a linha "Validade" no verso).
 //
+// titulo (opcional) = manchete do certificado; default "CERTIFICADO DE CONCLUSÃO".
+// A fonte encolhe sozinha para caber numa linha, então títulos longos são OK.
+// sigla (opcional) = o que vai no nome do arquivo PDF no lugar de "nr"
+// (ex.: "Certificado - Maria Silva - Integração.pdf").
+//
+// cargaOpcoes (opcional) = lista de cargas selecionáveis na UI. Quando
+// presente, aparece um seletor logo abaixo do modelo e o campo "carga" do
+// template define a opção pré-selecionada. cargaLabel troca o texto do rótulo.
+//   cargaOpcoes: [{h:4},{h:6,label:"06 horas — turma estendida"}]
+//
 // Bases legais e periodicidades atualizadas conforme texto vigente (jun/2026):
 //   NR-18 — Portaria SEPRT 3.733/2020: capacitação no item 18.12 + Anexo I;
 //           treinamento inicial 4h; periódico BIENAL (24 meses).
@@ -14,8 +24,8 @@
 //   NR-6  — EPI/EPC; validade 24 meses (prática da empresa; a NR-6 não fixa prazo).
 //   NR-12 — máquinas e equipamentos; validade 24 meses (prática da empresa).
 //   NR-5  — CIPA (nome atualizado pela Lei 14.457/2022). Carga por grau de risco:
-//           GR1 8h, GR2 12h, GR3 16h, GR4 20h (Portaria MTP 4.219/2022) — a UI tem
-//           um seletor de grau de risco que preenche a carga (default GR1 = 8h).
+//           GR1 8h, GR2 12h, GR3 16h, GR4 20h (Portaria MTP 4.219/2022) — o seletor
+//           de grau de risco vem de cargaOpcoes e preenche a carga (default GR1 = 8h).
 //           O seletor tem também "GR1 — 6 horas" para turmas de 6h; atenção: 6h fica
 //           ABAIXO do mínimo legal de 8h do GR1 — use só quando houver aproveitamento
 //           de treinamento anterior (NR-01, item 1.7.7 / NR-5) que justifique a redução.
@@ -31,6 +41,22 @@
 //           = ciclo da empresa; a reciclagem legal do avançado é a cada 5 anos.
 // (NR-6/12/33 vieram dos PDFs da Vetor; baseLegal ficou vazio porque os
 //  certificados citam só "em conformidade com a NR-X", sem item específico.)
+//
+//   Integração SST (+ Reciclagem) — NÃO é uma NR específica: é o treinamento de
+//           informação sobre riscos + EPI da NR-01 (itens 1.4.1 e 1.7), com
+//           NR-06 item 6.6.1 "d". Conteúdo montado a partir do inventário de
+//           riscos do PGR do cliente (benzeno/tolueno/xileno, ruído, ergonômicos,
+//           psicossocial, queda de mesmo nível, altura, espaço confinado) e do
+//           conjunto de normas da atividade dele: NR-01, NR-06, NR-20, NR-33 e
+//           NR-35 (SEM NR-18 — não é canteiro de obras; é instalação com
+//           inflamáveis/combustíveis, o que também explica os aromáticos).
+//           Carga selecionável (4/6/8h inicial; 2/4/6h reciclagem) — a NR-01 não
+//           fixa carga nem periodicidade; os 24 meses são prática comercial,
+//           igual a NR-6/12/23.
+//           ⚠ A OBS final do conteúdo é obrigatória: o certificado NÃO habilita
+//           trabalho em altura (NR-35) nem espaço confinado (NR-33), não substitui
+//           a capacitação da NR-20 (que é graduada pela classe da instalação) e
+//           não cobre o controle específico da exposição ao benzeno.
 const TEMPLATES = {
   "NR-18": {
     "nr": "NR-18",
@@ -91,6 +117,14 @@ const TEMPLATES = {
     "curso": "CURSO DE FORMAÇÃO DA COMISSÃO INTERNA DE PREVENÇÃO DE ACIDENTES E DE ASSÉDIO (CIPA)",
     "baseLegal": "",
     "carga": "08 horas",
+    "cargaLabel": "Grau de risco do estabelecimento (define a carga da CIPA)",
+    "cargaOpcoes": [
+      { "h": 6, "label": "GR1 — 6 horas" },
+      { "h": 8, "label": "GR1 — 8 horas" },
+      { "h": 12, "label": "GR2 — 12 horas" },
+      { "h": 16, "label": "GR3 — 16 horas" },
+      { "h": 20, "label": "GR4 — 20 horas" }
+    ],
     "validadeMeses": 24,
     "fecho": "obtendo o grau de conclusão ao final do curso",
     "conteudo": "Introdução;\nA Semana Interna de Prevenção de Acidentes do Trabalho;\nEstudo do ambiente, das condições de trabalho, bem como dos riscos originados do processo produtivo;\nNoções sobre acidentes e doenças relacionadas ao trabalho decorrentes das condições de trabalho e da exposição aos riscos existentes no estabelecimento e suas medidas de prevenção;\nMetodologia de investigação e análise de acidentes e doenças relacionadas ao trabalho;\nPrincípios gerais de higiene do trabalho e de medidas de prevenção dos riscos;\nNoções sobre as legislações trabalhista e previdenciária relativas à segurança e saúde no trabalho;\nNoções sobre a inclusão de pessoas com deficiência e reabilitados nos processos de trabalho;\nOrganização da CIPA e outros assuntos necessários ao exercício das atribuições da Comissão;\nPrevenção e combate ao assédio sexual e a outras formas de violência no trabalho."
@@ -141,5 +175,39 @@ const TEMPLATES = {
     "validadeMeses": 24,
     "fecho": "obtendo o grau de conclusão ao final do curso",
     "conteudo": "Reciclagem do treinamento avançado (mantida a parte prática obrigatória a bordo, item 37.9.6.6.1):\n\n1. Análise preliminar de riscos da tarefa (APR): revisão;\n2. Permissão para trabalho, a frio ou a quente, na presença de combustíveis e inflamáveis;\n3. Sistemas de prevenção e combate a incêndio da plataforma;\n4. Resposta a emergências com combustíveis e inflamáveis, segundo o Plano de Resposta a Emergências (PRE);\n5. Noções de segurança de processo e de instalações elétricas em atmosferas explosivas;\n6. Atividade prática a bordo, de no mínimo uma hora, com a indicação in loco dos sistemas e equipamentos de combate a incêndio."
+  },
+  "Integração SST": {
+    "nr": "NR-01",
+    "titulo": "CERTIFICADO DE TREINAMENTO DE INTEGRAÇÃO",
+    "sigla": "Integração",
+    "curso": "TREINAMENTO DE INTEGRAÇÃO EM SEGURANÇA DO TRABALHO – RISCOS OCUPACIONAIS E USO DE EPI",
+    "baseLegal": "itens 1.4.1 e 1.7 (informação sobre riscos e capacitação) e NR-06, item 6.6.1 'd'",
+    "carga": "04 horas",
+    "cargaLabel": "Carga horária da turma",
+    "cargaOpcoes": [
+      { "h": 4, "label": "04 horas — integração padrão" },
+      { "h": 6, "label": "06 horas" },
+      { "h": 8, "label": "08 horas" }
+    ],
+    "validadeMeses": 24,
+    "fecho": "tendo sido informado dos riscos ocupacionais de suas atividades e capacitado quanto às medidas de prevenção e ao uso dos equipamentos de proteção",
+    "conteudo": "1. NORMAS DE SEGURANÇA E RESPONSABILIDADES: Objetivo do treinamento; Normas Regulamentadoras aplicáveis à atividade – NR-01, NR-06, NR-20, NR-33 e NR-35; Obrigações do empregador e do trabalhador; Ordem de Serviço; Direito de recusa diante de risco grave e iminente; Comunicação de acidentes, incidentes e condições de risco.\n\n2. RISCOS QUÍMICOS – BENZENO, TOLUENO E XILENO: Identificação dos produtos, leitura da FISPQ e da rotulagem GHS; Vias de absorção (respiratória, cutânea e digestiva); Efeitos agudos e crônicos à saúde; BENZENO – agente cancerígeno reconhecido (LINACH, grupo 1): não existe limite seguro de exposição, toda exposição deve ser reduzida ao menor nível tecnicamente possível; Proibição do uso de solventes aromáticos para limpeza da pele, de ferramentas e de EPI; Ventilação, armazenagem e manuseio seguro; Proteção respiratória adequada ao agente; Higiene pessoal e ocupacional; Exames médicos do PCMSO.\n\n3. INFLAMÁVEIS E COMBUSTÍVEIS (NR-20): Propriedades dos inflamáveis e combustíveis presentes na instalação; Atmosfera explosiva e limites de inflamabilidade; Classificação de áreas e controle das fontes de ignição; Eletricidade estática, aterramento e equalização de potencial; Permissão de Trabalho a frio e a quente; Procedimentos operacionais e de bloqueio; Vazamentos e derramamentos – ações imediatas; Plano de Resposta a Emergências da instalação.\n\n4. RISCOS FÍSICOS – RUÍDO CONTÍNUO OU INTERMITENTE: Fontes de ruído na instalação; Perda Auditiva Induzida por Ruído (PAIR); Limites de tolerância e tempo de exposição; Protetor auditivo – seleção, atenuação, colocação correta, higienização e substituição; Programa de Conservação Auditiva e audiometrias.\n\n5. RISCOS ERGONÔMICOS: Levantamento, transporte e descarga individual de materiais; Movimentos com esforço físico e sobrecarga muscular; Movimentos repetitivos de membros superiores; Posições estáticas e posturas forçadas; Organização do posto de trabalho, pausas e revezamento; Alongamento e ginástica laboral; Sinais e sintomas precoces – a quem comunicar.\n\n6. FATORES DE RISCO PSICOSSOCIAIS: Organização do trabalho, ritmo e autonomia; Falta de autonomia na execução das tarefas e seus efeitos sobre a saúde; Canais de comunicação e participação do trabalhador; Prevenção e combate ao assédio e a outras formas de violência no trabalho.\n\n7. RISCOS DE ACIDENTES: Queda de mesmo nível – organização e limpeza da área, pisos, aberturas, cabos e mangueiras, sinalização e iluminação; Queda com diferença de nível (trabalho em altura) – reconhecimento do risco, proteção coletiva, Análise de Risco e Permissão de Trabalho; somente o trabalhador capacitado conforme a NR-35 executa trabalho em altura; Espaços confinados – identificação e sinalização, atmosfera IPVS, entrada PROIBIDA sem Permissão de Entrada e Trabalho e sem capacitação conforme a NR-33.\n\n8. EPI E EPC: Equipamentos de proteção coletiva existentes na instalação; EPI por risco – capacete, óculos, protetor auditivo, luvas, calçado, proteção respiratória, vestimenta antichama e cinturão tipo paraquedista; Certificado de Aprovação (CA) e prazo de validade; Uso adequado, guarda, conservação, higienização e substituição; Inspeção antes do uso e procedimento para EPI danificado; Obrigações do empregador e do empregado quanto ao EPI.\n\n9. EMERGÊNCIAS: Alarme, rotas de fuga e ponto de encontro; Prevenção e combate a princípio de incêndio; Noções de primeiros socorros; Acionamento do socorro e comunicação interna.\n\nOBS: Treinamento de integração e informação sobre riscos ocupacionais, dirigido aos riscos inventariados no PGR do estabelecimento. NÃO substitui as capacitações específicas exigidas para trabalho em altura (NR-35), espaços confinados (NR-33) e inflamáveis e combustíveis (NR-20, conforme a classe da instalação e a função do trabalhador), nem o controle específico da exposição ocupacional ao benzeno."
+  },
+  "Integração SST (Reciclagem)": {
+    "nr": "NR-01",
+    "titulo": "CERTIFICADO DE RECICLAGEM DA INTEGRAÇÃO",
+    "sigla": "Integração (Reciclagem)",
+    "curso": "TREINAMENTO DE RECICLAGEM DA INTEGRAÇÃO EM SEGURANÇA DO TRABALHO – RISCOS OCUPACIONAIS E USO DE EPI",
+    "baseLegal": "itens 1.4.1 e 1.7 (informação sobre riscos e capacitação) e NR-06, item 6.6.1 'd'",
+    "carga": "04 horas",
+    "cargaLabel": "Carga horária da turma",
+    "cargaOpcoes": [
+      { "h": 2, "label": "02 horas" },
+      { "h": 4, "label": "04 horas — reciclagem padrão" },
+      { "h": 6, "label": "06 horas" }
+    ],
+    "validadeMeses": 24,
+    "fecho": "tendo revisado os riscos ocupacionais de suas atividades e as medidas de prevenção e de uso dos equipamentos de proteção",
+    "conteudo": "Reciclagem do treinamento de integração – revisão dos riscos inventariados no PGR do estabelecimento e das medidas de prevenção, à luz da NR-01, NR-06, NR-20, NR-33 e NR-35:\n\n1. NORMAS DE SEGURANÇA E RESPONSABILIDADES: Revisão das obrigações do empregador e do trabalhador; Direito de recusa diante de risco grave e iminente; Comunicação de acidentes, incidentes e condições de risco; Mudanças no processo, nos produtos e nos procedimentos desde o último treinamento.\n\n2. RISCOS QUÍMICOS – BENZENO, TOLUENO E XILENO: Revisão da FISPQ e da rotulagem GHS; Vias de absorção e efeitos à saúde; BENZENO – agente cancerígeno (LINACH, grupo 1), sem limite seguro de exposição; Proibição do uso de solventes aromáticos para limpeza da pele e de ferramentas; Proteção respiratória, higiene ocupacional e exames do PCMSO.\n\n3. INFLAMÁVEIS E COMBUSTÍVEIS (NR-20): Revisão da classificação de áreas e do controle de fontes de ignição; Atmosfera explosiva; Eletricidade estática e aterramento; Permissão de Trabalho a frio e a quente; Vazamentos e derramamentos – ações imediatas; Plano de Resposta a Emergências da instalação.\n\n4. RISCOS FÍSICOS – RUÍDO: Revisão da PAIR, do uso correto e da conservação do protetor auditivo, do Programa de Conservação Auditiva e das audiometrias.\n\n5. RISCOS ERGONÔMICOS: Revisão de levantamento e transporte de cargas, esforço físico, movimentos repetitivos de membros superiores, posições estáticas, pausas e postura; Sinais e sintomas precoces – a quem comunicar.\n\n6. FATORES DE RISCO PSICOSSOCIAIS: Organização do trabalho e autonomia; Canais de comunicação e participação; Prevenção e combate ao assédio e a outras formas de violência no trabalho.\n\n7. RISCOS DE ACIDENTES: Queda de mesmo nível – organização, limpeza e sinalização; Trabalho em altura – reconhecimento do risco e restrição ao trabalhador capacitado conforme a NR-35; Espaços confinados – entrada PROIBIDA sem Permissão de Entrada e Trabalho e sem capacitação conforme a NR-33.\n\n8. EPI E EPC: Revisão da seleção por risco, do CA e da validade, do uso, guarda, conservação, higienização, inspeção e substituição dos equipamentos.\n\n9. EMERGÊNCIAS: Revisão do alarme, das rotas de fuga, do ponto de encontro, do combate a princípio de incêndio e do acionamento do socorro.\n\n10. ANÁLISE DOS ACIDENTES E QUASE-ACIDENTES OCORRIDOS NO PERÍODO E LIÇÕES APRENDIDAS.\n\nOBS: Treinamento de integração e informação sobre riscos ocupacionais, dirigido aos riscos inventariados no PGR do estabelecimento. NÃO substitui as capacitações específicas exigidas para trabalho em altura (NR-35), espaços confinados (NR-33) e inflamáveis e combustíveis (NR-20, conforme a classe da instalação e a função do trabalhador), nem o controle específico da exposição ocupacional ao benzeno."
   }
 };

@@ -60,7 +60,7 @@
   .cframe{position:absolute;top:20px;right:20px;bottom:20px;left:66px;border:1.5px solid rgba(9,39,55,.22);z-index:1;pointer-events:none;}
   .cinner{position:absolute;top:20px;right:20px;bottom:20px;left:66px;z-index:3;padding:30px 44px 44px;display:flex;flex-direction:column;}
   .clogo{display:block;margin:6px auto 0;height:112px;}
-  h1.ctitle{font-weight:800;font-size:46px;letter-spacing:1px;color:var(--navy);text-align:center;margin:14px 0 0;line-height:1;}
+  h1.ctitle{font-weight:800;font-size:46px;letter-spacing:1px;color:var(--navy);text-align:center;margin:14px 0 0;line-height:1;white-space:nowrap;}
   .corp{font-size:15px;line-height:1.55;color:#27434f;text-align:justify;text-align-last:center;margin:22px auto 0;max-width:880px;font-weight:500;}
   .corp b{font-weight:700;color:var(--navy);}
   .name-wrap{text-align:center;margin:18px auto 0;max-width:900px;}
