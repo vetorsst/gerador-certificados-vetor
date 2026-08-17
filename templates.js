@@ -20,6 +20,16 @@
 //   NR-34 — trabalho a quente no item 34.5 (34.3 é a capacitação geral);
 //           periódico ANUAL (12 meses), mín. 4h.
 //   NR-35 — capacitação no item 35.3; periódico BIENAL (24 meses), 8h.
+//   NR-35 Reciclagem — treinamento periódico BIENAL (item 35.3.3), exigido também
+//           fora do prazo: mudança de procedimentos/condições/operações, evento que
+//           indique necessidade, retorno de afastamento acima de 90 dias e mudança
+//           de empresa. Conteúdo espelha os sete itens obrigatórios do 35.3.2 em
+//           forma de revisão. cargaOpcoes começa em 8h — o piso do treinamento
+//           inicial — e NÃO oferece menos: a carga do periódico não é fixada de
+//           forma inequívoca pela norma, então 8h é a escolha conservadora.
+//           Confirmar com o RT se a empresa pratica carga menor com respaldo.
+//           ⚠ Trabalhador autorizado = capacitado (este certificado) + apto em
+//           avaliação de saúde. O certificado sozinho não autoriza a subir.
 //   NR-33 — espaços confinados; periódico ANUAL (12 meses).
 //   NR-33 Reciclagem — reciclagem ANUAL, carga mínima de 8h fixada pela própria
 //           norma (diferente da NR-10, onde a carga é decisão do RT). cargaOpcoes
@@ -107,6 +117,22 @@ const TEMPLATES = {
     "validadeMeses": 24,
     "fecho": "tendo obtido rendimento satisfatório",
     "conteudo": "Noções de 1º Socorros e Resgate (Módulo 03): Conceitos de Emergência/Priorização de atendimento; Suporte básico à vida; Avaliação da Vítima; Ataque Cardíaco; Lesões; Queimaduras; Quedas; Técnica de Transporte; Tríplice manobra; Resgate.\n\nEquipamentos de Proteção (Módulo 08A): Tipos de equipamentos de segurança - EPI/EPC; Funcionamento dos Equipamentos de proteção coletivo e individual para proteção da Cabeça, Olhos, Face, Membros inferiores e superiores; Proteção coletiva e individual contra queda com diferença de nível; Inspeções diárias dos equipamentos e itens de segurança; Exigências e obrigatoriedade quanto ao uso, guarda, conservação e higienização dos EPI's e/ou EPC's; Obrigações do Empregador; Obrigações do empregado; Informações sobre as condições e meio ambiente de trabalho (NR-18, item 18.12); Uso adequado de EPI (NR-18, item 18.12); Informações sobre EPC (NR-18, item 18.12).\n\nTrabalho em Altura (Módulo 10A): Objetivo; Campo de Aplicação; Normas e Regulamentos aplicáveis ao trabalho em altura; Riscos potenciais inerentes ao trabalho em altura e medidas de prevenção e controle; Utilização de cordas; Sistemas, Equipamentos e Procedimentos de Proteção Coletiva; Equipamento de Proteção Individual para Trabalho em Altura; Acidentes Típicos em Trabalhos em Altura.\n\nTrabalho em Altura (Módulo 10B): Trabalho em Poste tipo Padrão, Poste de Madeira e Poste de Concreto; Trabalho em altura durante acesso em caixa subterrânea; Trabalho em Altura quando encontrado obstáculo (árvores, animais, insetos, etc.); Trabalho em Marquises; EPI para Trabalho em Altura: Seleção, Inspeção, Conservação e Limitação de Uso; LVM – Linha de Vida móvel: Objetivo, Campo de Aplicação, Componentes do kit, Orientação para Instalação, Guarda e Conservação; Obrigatoriedade, Montagem e Utilização da garra para cordoalha de aço (garra meio de vão); Resgate.\n\nAnálise de Risco e Permissão de Trabalho (Módulo 11B): Técnicas de Análise de Risco; Análise Preliminar de Risco (APR); Formalização da APR; Condições adversas e impeditivas; Riscos Adicionais; Riscos inerentes ao trabalho em altura; Riscos inerentes ao Espaço Confinado; Risco inerente ao trabalho em proximidade de redes elétricas; Riscos inerentes ao trabalho a quente; Colocação e remoção de postes; Permissão de Trabalho (PT); Risco inerente à sua função (NR-18, item 18.12); Travessia de via – Análise e meios de neutralizar o risco."
+  },
+  "NR-35 Reciclagem": {
+    "nr": "NR-35",
+    "titulo": "CERTIFICADO DE RECICLAGEM — NR-35",
+    "sigla": "NR-35 Reciclagem",
+    "curso": "CURSO DE RECICLAGEM EM TRABALHO EM ALTURA",
+    "baseLegal": "item 35.3.3",
+    "carga": "08 horas",
+    "cargaLabel": "Carga horária da reciclagem",
+    "cargaOpcoes": [
+      { "h": 8, "label": "08 horas — reciclagem padrão" },
+      { "h": 16, "label": "16 horas" }
+    ],
+    "validadeMeses": 24,
+    "fecho": "tendo obtido rendimento satisfatório",
+    "conteudo": "1. ATUALIZAÇÃO DO PERÍODO: Alterações na NR-35 e nas normas técnicas aplicáveis desde o último treinamento; Mudanças nos procedimentos, nas condições e nas operações de trabalho; Novos pontos de ancoragem, equipamentos e sistemas implantados; Eventos ocorridos que motivaram revisão de procedimento.\n\n2. NORMAS E REGULAMENTOS APLICÁVEIS AO TRABALHO EM ALTURA – REVISÃO: NR-35 e sua abrangência; Responsabilidades do empregador e do trabalhador; Trabalhador autorizado – capacitação somada à aptidão em avaliação de saúde; Direito de recusa diante de condição impeditiva.\n\n3. ANÁLISE DE RISCO E CONDIÇÕES IMPEDITIVAS: Elaboração e revisão da Análise de Risco da tarefa; Condições impeditivas – vento, chuva, descarga atmosférica, iluminação insuficiente, condição de saúde do trabalhador; Riscos adicionais na tarefa; Permissão de Trabalho – emissão, validade e encerramento.\n\n4. RISCOS POTENCIAIS E MEDIDAS DE PREVENÇÃO E CONTROLE: Queda com diferença de nível; Queda de materiais e ferramentas; Fator de queda, zona livre de queda e efeito pêndulo; Trauma por suspensão inerte e tempo máximo tolerável; Isolamento e sinalização da área abaixo.\n\n5. SISTEMAS, EQUIPAMENTOS E PROCEDIMENTOS DE PROTEÇÃO COLETIVA: Guarda-corpo, rodapé e fechamento de aberturas; Plataformas e andaimes; Redes de segurança; Prioridade da proteção coletiva sobre a individual; Escadas, rampas e passarelas.\n\n6. EPI PARA TRABALHO EM ALTURA – SELEÇÃO, INSPEÇÃO, CONSERVAÇÃO E LIMITAÇÃO DE USO: Cinturão tipo paraquedista; Talabarte com absorvedor de energia; Trava-quedas retrátil e de linha; Conectores e mosquetões; Linha de vida horizontal e vertical, fixa e móvel; Pontos de ancoragem – identificação, resistência e verificação; Inspeção antes de cada uso e critérios de descarte; Registro das inspeções.\n\n7. ACIDENTES TÍPICOS EM TRABALHOS EM ALTURA: Análise de casos reais; Discussão dos acidentes e quase-acidentes ocorridos no período e lições aprendidas.\n\n8. CONDUTAS EM SITUAÇÕES DE EMERGÊNCIA: Plano de emergência para trabalho em altura; Noções de técnicas de resgate; Resgate do trabalhador suspenso e a urgência do atendimento; Primeiros socorros – avaliação da vítima, ressuscitação cardiopulmonar e imobilização; Acionamento do socorro.\n\n9. PRÁTICA: Inspeção e vestimenta do cinturão paraquedista; Conexão e movimentação com talabarte duplo; Verificação de ponto de ancoragem; Simulado de resgate.\n\nOBS: Treinamento periódico bienal, conforme a NR-35, item 35.3.3, exigido também na mudança de procedimentos, condições ou operações de trabalho, em evento que indique a necessidade de novo treinamento, no retorno de afastamento superior a noventa dias e na mudança de empresa. Pressupõe treinamento inicial válido e não o substitui. A condição de trabalhador autorizado depende também de aptidão em avaliação de saúde — este certificado atesta apenas a capacitação. Não capacita o aluno como multiplicador/instrutor deste treinamento."
   },
   "NR-6": {
     "nr": "NR-6",
