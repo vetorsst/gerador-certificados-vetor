@@ -21,6 +21,15 @@
 //           periódico ANUAL (12 meses), mín. 4h.
 //   NR-35 — capacitação no item 35.3; periódico BIENAL (24 meses), 8h.
 //   NR-33 — espaços confinados; periódico ANUAL (12 meses).
+//   NR-33 Reciclagem — reciclagem ANUAL, carga mínima de 8h fixada pela própria
+//           norma (diferente da NR-10, onde a carga é decisão do RT). cargaOpcoes
+//           oferece 8h (mínimo legal) e 16h; NÃO inclua opção abaixo de 8h.
+//           A reciclagem vale para as três funções — trabalhador autorizado, vigia
+//           e supervisor de entrada. A formação inicial é que difere: 16h para
+//           autorizado/vigia (modelo "NR-33") e 40h para supervisor de entrada,
+//           que ainda não tem modelo próprio na biblioteca.
+//           baseLegal fica vazia pelo mesmo motivo da NR-33 inicial (ver nota
+//           abaixo); se o RT quiser citar o item, confirmar o subitem de 33.3.5.
 //   NR-6  — EPI/EPC; validade 24 meses (prática da empresa; a NR-6 não fixa prazo).
 //   NR-12 — máquinas e equipamentos; validade 24 meses (prática da empresa).
 //   NR-5  — CIPA (nome atualizado pela Lei 14.457/2022). Carga por grau de risco:
@@ -125,6 +134,22 @@ const TEMPLATES = {
     "validadeMeses": 12,
     "fecho": "obtendo o grau de conclusão ao final do curso",
     "conteudo": "Definições; Identificação dos espaços confinados; Legislação de segurança e saúde no trabalho; Reconhecimento, avaliação e controle de risco; Riscos em espaços confinados; Tipos de nós utilizados em espaços confinados; Sistema 4/1 com polias e cordas; Utilização do tripé; Funcionamento dos equipamentos utilizados; Noções de resgate em espaços confinados e primeiros socorros; Procedimento para utilização da permissão de entrada de trabalho.\n\nCapacitado para Trabalhos em: Caldeiras, Caixas d'água, Caminhão Tanque, Cisternas, Digestores, Dutos, Fornos, Forros, Galerias, Moinhos, Poços, Porões, Silos, Tanques, Tubulações, Valas e locais similares aos descritos, para as atividades de Construção, Manutenção, Inspeção, Limpeza, Medição e Arqueação.\n\nOBS: Este certificado não capacita o aluno como multiplicador/instrutor deste treinamento; não pode ser usado por outra empresa. Apenas o conteúdo programático e a carga horária podem ser aproveitados, nos termos da NR-01, item 1.7.7."
+  },
+  "NR-33 Reciclagem": {
+    "nr": "NR-33",
+    "titulo": "CERTIFICADO DE RECICLAGEM — NR-33",
+    "sigla": "NR-33 Reciclagem",
+    "curso": "CURSO DE RECICLAGEM EM SEGURANÇA EM ESPAÇOS CONFINADOS",
+    "baseLegal": "",
+    "carga": "08 horas",
+    "cargaLabel": "Carga horária da reciclagem (mínimo legal: 8 horas)",
+    "cargaOpcoes": [
+      { "h": 8, "label": "08 horas — mínimo exigido pela norma" },
+      { "h": 16, "label": "16 horas" }
+    ],
+    "validadeMeses": 12,
+    "fecho": "obtendo o grau de conclusão ao final do curso",
+    "conteudo": "1. ATUALIZAÇÃO DO PERÍODO: Alterações na legislação e nas normas técnicas aplicáveis; Mudanças nos espaços confinados do estabelecimento, nos equipamentos e nos procedimentos desde o último treinamento; Revisão do inventário e da sinalização dos espaços confinados.\n\n2. DEFINIÇÕES E IDENTIFICAÇÃO – REVISÃO: Conceito de espaço confinado; Identificação e sinalização; Espaços confinados existentes no estabelecimento e suas particularidades.\n\n3. RECONHECIMENTO, AVALIAÇÃO E CONTROLE DE RISCOS: Riscos atmosféricos – deficiência e enriquecimento de oxigênio, gases e vapores inflamáveis, agentes tóxicos e atmosfera IPVS; Riscos físicos, mecânicos, elétricos, químicos, biológicos e ergonômicos; Riscos de engolfamento e de soterramento.\n\n4. MONITORAMENTO E AVALIAÇÃO ATMOSFÉRICA: Sequência correta de medição; Uso, calibração e verificação do detector de gases; Interpretação das leituras e limites de entrada; Monitoramento contínuo durante a permanência.\n\n5. PERMISSÃO DE ENTRADA E TRABALHO (PET): Preenchimento, autorização, validade e encerramento; Condições impeditivas; Suspensão e cancelamento da PET; Arquivamento.\n\n6. FUNÇÕES E RESPONSABILIDADES: Supervisor de entrada, vigia e trabalhador autorizado – atribuições de cada um; Comunicação permanente entre vigia e trabalhador; Autoridade do vigia para determinar a saída imediata.\n\n7. MEDIDAS TÉCNICAS DE PREVENÇÃO: Bloqueio e etiquetagem de energias; Isolamento e purga; Ventilação e exaustão forçada; Iluminação e equipamentos elétricos adequados; Barreiras e sinalização do entorno.\n\n8. EQUIPAMENTOS DE PROTEÇÃO: EPI e EPC aplicáveis; Proteção respiratória – respirador de adução de ar, equipamento autônomo, limites de uso e teste de vedação; Cinturão tipo paraquedista, trava-quedas e talabarte; Inspeção antes do uso e conservação.\n\n9. EQUIPAMENTOS E TÉCNICAS DE RESGATE: Tripé, talha e sistema 4/1 com polias e cordas; Tipos de nós utilizados em espaços confinados; Montagem e verificação do sistema de resgate; Plano de resgate e acionamento.\n\n10. PRIMEIROS SOCORROS E EMERGÊNCIA: Avaliação da vítima; Ressuscitação cardiopulmonar – prática em manequim; Remoção e transporte do acidentado; Por que a tentativa de resgate improvisada é a principal causa de morte múltipla em espaço confinado.\n\n11. ANÁLISE DOS ACIDENTES E QUASE-ACIDENTES DO PERÍODO E LIÇÕES APRENDIDAS.\n\n12. EXERCÍCIO PRÁTICO: Simulado de entrada com preenchimento de PET, monitoramento atmosférico, comunicação vigia–trabalhador e resgate.\n\nCapacitado para Trabalhos em: Caldeiras, Caixas d'água, Caminhão Tanque, Cisternas, Digestores, Dutos, Fornos, Forros, Galerias, Moinhos, Poços, Porões, Silos, Tanques, Tubulações, Valas e locais similares aos descritos, para as atividades de Construção, Manutenção, Inspeção, Limpeza, Medição e Arqueação.\n\nOBS: Reciclagem anual do treinamento de espaços confinados, aplicável ao trabalhador autorizado, ao vigia e ao supervisor de entrada. Pressupõe treinamento inicial válido — não substitui a formação de 16 horas do trabalhador autorizado e do vigia, nem a de 40 horas do supervisor de entrada. Este certificado não capacita o aluno como multiplicador/instrutor deste treinamento; não pode ser usado por outra empresa. Apenas o conteúdo programático e a carga horária podem ser aproveitados, nos termos da NR-01, item 1.7.7."
   },
   "NR-5": {
     "nr": "NR-5",
