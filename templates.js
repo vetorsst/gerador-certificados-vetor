@@ -32,6 +32,15 @@
 //           Os 24 meses NÃO são reciclagem fixa: renova-se a cada posse de mandato
 //           (anual + 1 recondução) e aproveita-se treino anterior de até 2 anos.
 //   NR-10 — básico Segurança em Eletricidade, 40h; reciclagem BIENAL (24 meses).
+//   NR-10 Reciclagem — reciclagem BIENAL do curso básico (item 10.8.8), exigida
+//           também fora do prazo: troca de função/empresa, retorno de afastamento
+//           acima de 3 meses e mudança significativa nas instalações ou métodos.
+//           ⚠ A NR-10 NÃO fixa a carga da reciclagem — quem define é o RT. O
+//           mercado pratica 8h (mais comum), 16h ou 24h em turmas com muita
+//           mudança de instalação. Default 8h, com cargaOpcoes para o RT escolher.
+//           Para refazer as 40h integrais use o modelo "NR-10", não este.
+//           Esta é a reciclagem do BÁSICO; quem
+//           atua em Sistema Elétrico de Potência precisa também do complementar SEP.
 //   NR-23 — proteção contra incêndios, 8h; validade 24 meses (prática da empresa;
 //           treinamento de brigada segue NBR 14276/Corpo de Bombeiros, não a NR-23).
 //   NR-37 — plataformas de petróleo. 3 variantes: Básico (integração/1º embarque,
@@ -142,6 +151,23 @@ const TEMPLATES = {
     "validadeMeses": 24,
     "fecho": "obtendo o grau de conclusão ao final do curso",
     "conteudo": "1. Introdução à segurança com eletricidade;\n2. Riscos em instalações e serviços com eletricidade: o choque elétrico, mecanismos e efeitos, arcos elétricos, queimaduras e quedas, campos eletromagnéticos;\n3. Técnicas de Análise de Risco;\n4. Medidas de Controle do Risco Elétrico: desenergização, aterramento funcional (TN/TT/IT), de proteção, temporário, equipotencialização, seccionamento automático da alimentação, dispositivos a corrente de fuga;\n5. Extra baixa tensão, barreiras e invólucros, bloqueios e impedimentos, obstáculos e anteparos, isolamento das partes vivas, isolação dupla ou reforçada, colocação fora de alcance, separação elétrica;\n6. Normas Técnicas Brasileiras - NBR da ABNT: NBR-5410, NBR 14039 e outras;\n7. Regulamentações do MTE: NRs; NR-10 (Segurança em Instalações e Serviços com Eletricidade), qualificação, habilitação, capacitação e autorização;\n8. Equipamentos de proteção coletiva;\n9. Equipamentos de proteção individual;\n10. Rotinas de trabalho – Procedimentos: instalações desenergizadas, liberação para serviços, sinalização, inspeções de áreas, serviços, ferramental e equipamento;\n11. Documentação de instalações elétricas;\n12. Riscos adicionais: altura, ambientes confinados, áreas classificadas, umidade, condições atmosféricas;\n13. Proteção e combate a incêndios: noções básicas, medidas preventivas, métodos de extinção, prática;\n14. Acidentes de origem elétrica: causas diretas e indiretas; discussão de casos;\n15. Primeiros socorros: noções sobre lesões, priorização do atendimento, aplicação de respiração artificial, massagem cardíaca, técnicas para remoção e transporte de acidentados e práticas;\n16. Responsabilidades: do empregador, dos trabalhadores e dos profissionais que projetam, executam e mantêm as instalações elétricas."
+  },
+  "NR-10 Reciclagem": {
+    "nr": "NR-10",
+    "titulo": "CERTIFICADO DE RECICLAGEM — NR-10",
+    "sigla": "NR-10 Reciclagem",
+    "curso": "CURSO DE RECICLAGEM EM SEGURANÇA EM INSTALAÇÕES E SERVIÇOS EM ELETRICIDADE",
+    "baseLegal": "item 10.8.8",
+    "carga": "08 horas",
+    "cargaLabel": "Carga horária da reciclagem (definida pelo RT)",
+    "cargaOpcoes": [
+      { "h": 8, "label": "08 horas — reciclagem padrão" },
+      { "h": 16, "label": "16 horas" },
+      { "h": 24, "label": "24 horas" }
+    ],
+    "validadeMeses": 24,
+    "fecho": "obtendo o grau de conclusão ao final do curso",
+    "conteudo": "1. ATUALIZAÇÃO NORMATIVA E DAS INSTALAÇÕES: Alterações na NR-10 e nas normas técnicas aplicáveis desde o último treinamento; Modificações significativas nas instalações elétricas, nos métodos, processos e na organização do trabalho; Revisão do prontuário das instalações elétricas.\n\n2. RISCOS EM INSTALAÇÕES E SERVIÇOS COM ELETRICIDADE – REVISÃO: Choque elétrico, mecanismos e efeitos; Arco elétrico; Queimaduras e quedas; Campos eletromagnéticos.\n\n3. TÉCNICAS DE ANÁLISE DE RISCO: Revisão da Análise Preliminar de Risco; Identificação de riscos adicionais na tarefa; Permissão de Trabalho.\n\n4. MEDIDAS DE CONTROLE DO RISCO ELÉTRICO: Desenergização e as etapas da sequência; Aterramento funcional, de proteção e temporário; Equipotencialização; Seccionamento automático da alimentação; Dispositivos a corrente de fuga; Barreiras, invólucros, bloqueios e impedimentos; Isolamento das partes vivas; Colocação fora de alcance.\n\n5. NORMAS TÉCNICAS E REGULAMENTAÇÃO: NBR 5410, NBR 14039 e demais normas aplicáveis; NR-10 – qualificação, habilitação, capacitação e autorização; Manutenção da condição de trabalhador autorizado.\n\n6. ROTINAS DE TRABALHO E PROCEDIMENTOS: Trabalho em instalações desenergizadas; Liberação para serviços; Sinalização e delimitação de área; Inspeção de áreas, serviços, ferramental e equipamentos; Trabalho sob tensão – condições e restrições.\n\n7. EQUIPAMENTOS DE PROTEÇÃO COLETIVA E INDIVIDUAL: Seleção conforme o risco e a tensão de trabalho; Inspeção antes do uso e periodicidade de ensaio dos equipamentos isolantes; Vestimenta para proteção contra arco elétrico; Guarda, conservação e substituição.\n\n8. RISCOS ADICIONAIS: Trabalho em altura; Espaços confinados; Áreas classificadas; Umidade e condições atmosféricas; Trabalho em proximidade de redes energizadas.\n\n9. PROTEÇÃO E COMBATE A INCÊNDIO: Noções básicas; Medidas preventivas; Métodos de extinção aplicáveis a incêndio de origem elétrica.\n\n10. ACIDENTES DE ORIGEM ELÉTRICA: Causas diretas e indiretas; Discussão dos acidentes e quase-acidentes ocorridos no período e lições aprendidas.\n\n11. PRIMEIROS SOCORROS: Priorização do atendimento; Atendimento a vítima de choque elétrico; Ressuscitação cardiopulmonar – prática em manequim; Técnicas de remoção e transporte de acidentados.\n\n12. RESPONSABILIDADES: Do empregador, dos trabalhadores e dos profissionais que projetam, executam e mantêm as instalações elétricas.\n\nOBS: Reciclagem bienal do curso básico, conforme a NR-10, item 10.8.8, exigida também na troca de função ou de empresa, no retorno de afastamento superior a três meses e na modificação significativa das instalações, métodos, processos ou organização do trabalho. NÃO habilita a atuação em Sistema Elétrico de Potência (SEP) e suas proximidades, que exige o curso complementar específico."
   },
   "NR-23": {
     "nr": "NR-23",

@@ -78,6 +78,20 @@ sigla:  "Integração",                                 // nome do arquivo PDF; 
 O `titulo` encolhe sozinho para caber numa linha (46px → mínimo 24px), então
 título longo é seguro. Ele também é editável em "Ajustar modelo".
 
+## Treinamento de vários dias (data de início e término)
+
+O campo **Data de término** é opcional e vale tanto no individual quanto no lote.
+
+- **Vazio** — comportamento de sempre: "realizado em 11 de agosto de 2026".
+- **Preenchido** — "realizado no período de 11 a 13 de agosto de 2026". A
+  formatação se adapta: mesmo mês vira "11 a 13 de agosto de 2026"; meses
+  diferentes viram "11 de agosto a 4 de setembro de 2026".
+
+Com período, **a validade e a data de assinatura contam a partir do término** —
+datar pelo primeiro dia colocaria no certificado uma data anterior ao fim do
+curso. O verso troca "Data:" por "Período: 11/08/2026 a 13/08/2026". A emissão
+é bloqueada se o término for anterior ao início.
+
 ## Integração SST (módulo do cliente com NR-01/06/20/33/35)
 
 Dois modelos — `Integração SST` e `Integração SST (Reciclagem)` — para o

@@ -42,14 +42,19 @@
     <div id="form-ind">
       <label>Nome do participante</label>
       <input id="f-nome" placeholder="Maria Aparecida da Silva" oninput="render()">
+      <label>CPF</label>
+      <input id="f-cpf" placeholder="000.000.000-00" maxlength="14" oninput="onCPF()">
       <div class="row">
-        <div><label>CPF</label><input id="f-cpf" placeholder="000.000.000-00" maxlength="14" oninput="onCPF()"></div>
-        <div><label>Data de realização</label><input id="f-data" type="date" oninput="onDate()"></div>
+        <div><label>Data de início</label><input id="f-data" type="date" oninput="onDate()"></div>
+        <div><label>Data de término</label><input id="f-data-fim" type="date" oninput="onDate()"></div>
       </div>
+      <div class="hint">Deixe o término vazio em treinamento de um dia só. Preenchido, o certificado diz "realizado no período de … a …" e a validade conta a partir do <b>término</b>.</div>
     </div>
     <div id="form-lote" style="display:none">
-      <label>Data de realização (vale p/ turma)</label>
-      <input id="f-data-lote" type="date" oninput="onDate()">
+      <div class="row">
+        <div><label>Data de início (turma)</label><input id="f-data-lote" type="date" oninput="onDate()"></div>
+        <div><label>Data de término</label><input id="f-data-lote-fim" type="date" oninput="onDate()"></div>
+      </div>
       <label>Colar lista da turma (nome e CPF)</label>
       <textarea id="f-batch" placeholder="Maria A. da Silva,000.000.000-00&#10;João Pereira,111.111.111-11" oninput="parseBatch()"></textarea>
       <div style="display:flex;gap:8px;margin-top:8px;">

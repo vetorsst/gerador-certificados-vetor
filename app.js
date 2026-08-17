@@ -94,7 +94,19 @@ function addMonths(iso,months){
   return ty+'-'+pad2(tmod+1)+'-'+pad2(Math.min(d,lastDay));
 }
 function dataField(){return mode==='lote'?v('f-data-lote'):v('f-data');}
-function validadeISO(){return addMonths(dataField(),v('c-vmeses'));}
+function dataFimField(){return mode==='lote'?v('f-data-lote-fim'):v('f-data-fim');}
+/* período só existe quando há término posterior ao início; senão é dia único */
+function temPeriodo(){const i=dataField(),f=dataFimField();return !!(i&&f&&f>i);}
+/* data de conclusão: é dela que correm a validade e a data de assinatura */
+function dataConclusao(){return temPeriodo()?dataFimField():dataField();}
+function validadeISO(){return addMonths(dataConclusao(),v('c-vmeses'));}
+/* "11 a 13 de agosto de 2026" · "30 de julho a 2 de agosto de 2026" · anos diferentes: por extenso nos dois */
+function periodoExtenso(ini,fim){
+  const [y1,m1,d1]=ini.split('-'),[y2,m2,d2]=fim.split('-');
+  if(y1===y2&&m1===m2)return parseInt(d1)+' a '+parseInt(d2)+' de '+MESES[parseInt(m1)-1]+' de '+y1;
+  if(y1===y2)return parseInt(d1)+' de '+MESES[parseInt(m1)-1]+' a '+parseInt(d2)+' de '+MESES[parseInt(m2)-1]+' de '+y1;
+  return extenso(ini)+' a '+extenso(fim);
+}
 
 /* ===== CPF ===== */
 function onlyDigits(s){return (s||'').replace(/\D/g,'');}
@@ -130,7 +142,13 @@ function fieldData(p){
   const razao=esc(v('e-razao')),cnpj=esc(v('e-cnpj')),end=esc(v('e-end'));
   const endTxt=end||'<i>[endereço a confirmar]</i>';
   const curso=esc(v('c-curso')),nr=esc(v('c-nr')),base=esc(v('c-base')),carga=esc(v('c-carga'));
-  const d=dataField(),dataExt=extenso(d),cidade=esc(v('c-cidade')||'Porto Alegre'),fecho=esc(v('c-fecho'));
+  const d=dataField(),dFim=dataFimField(),per=temPeriodo();
+  const cidade=esc(v('c-cidade')||'Porto Alegre'),fecho=esc(v('c-fecho'));
+  /* "realizado no período de X a Y" quando há término; "realizado em X" no dia único.
+     A assinatura leva a data de conclusão — assinar pelo primeiro dia de um curso
+     de vários dias dataria o certificado antes de o curso terminar. */
+  const realizadoTxt=per?('no período de '+periodoExtenso(d,dFim)):('em '+extenso(d));
+  const dataExt=extenso(dataConclusao());
   const valid=validadeISO();
   const empPart=v('c-empresa-part');                 /* cru: o verso escapa na hora de imprimir */
   const signs=[sign(p.nome||'Participante','')];
@@ -140,11 +158,11 @@ function fieldData(p){
     titulo:v('c-titulo')||TITULO_PADRAO,               /* cru: escapa na impressão */
     corp:'A <b>'+razao+'</b>, inscrita no <b>CNPJ: '+cnpj+'</b>, e localizada na '+endTxt+' certifica que',
     nome:esc(titleCasePT(p.nome||'Nome do Participante')),
-    desc:'inscrito no <b>CPF: '+(esc(p.cpf)||'—')+'</b>, '+(empPart?'colaborador(a) da <b>'+esc(empPart)+'</b>, ':'')+'participou do <b>'+curso+'</b> em conformidade com a <b>'+nr+'</b>'+(base?', conforme <b>'+base+'</b>':'')+', realizado em '+dataExt+', com carga horária de <b>'+carga+'</b>, '+fecho+'.',
+    desc:'inscrito no <b>CPF: '+(esc(p.cpf)||'—')+'</b>, '+(empPart?'colaborador(a) da <b>'+esc(empPart)+'</b>, ':'')+'participou do <b>'+curso+'</b> em conformidade com a <b>'+nr+'</b>'+(base?', conforme <b>'+base+'</b>':'')+', realizado '+realizadoTxt+', com carga horária de <b>'+carga+'</b>, '+fecho+'.',
     place:cidade+', '+dataExt+'.',
     signs:signs.join(''),
     vCurso:v('c-curso'),
-    vSub:'Carga horária total: '+v('c-carga')+'.  Data: '+curto(d)+(valid?'.  Validade: '+curto(valid):'')+'.'+(empPart?'  Empresa: '+empPart.replace(/\.+$/,'')+'.':''),
+    vSub:'Carga horária total: '+v('c-carga')+(per?('.  Período: '+curto(d)+' a '+curto(dFim)):('.  Data: '+curto(d)))+(valid?'.  Validade: '+curto(valid):'')+'.'+(empPart?'  Empresa: '+empPart.replace(/\.+$/,'')+'.':''),
     vBody:v('c-conteudo')||'(Selecione um modelo de NR.)',
     vInfo:'<b>'+razao+'. CNPJ: '+cnpj+'</b><br><b>Endereço:</b> '+endTxt+'<br><b>Telefone:</b> '+esc(v('e-tel'))+'  <b>E-mail:</b> '+esc(v('e-email'))+'  <b>Site:</b> '+esc(v('e-site'))
   };
@@ -287,7 +305,8 @@ function certBackHTML(f){
 /* validação obrigatória antes de emitir */
 function validateForExport(people){
   const errs=[];
-  if(!dataField())errs.push('• Informe a data de realização.');
+  if(!dataField())errs.push('• Informe a data de início do treinamento.');
+  if(dataFimField()&&dataField()&&dataFimField()<dataField())errs.push('• A data de término é anterior à de início.');
   if(!v('e-end'))errs.push('• Informe o endereço da empresa (obrigatório no certificado).');
   if(!v('r-nome'))errs.push('• Informe o responsável técnico.');
   people.forEach((p,i)=>{
