@@ -9,6 +9,11 @@
 // sigla (opcional) = o que vai no nome do arquivo PDF no lugar de "nr"
 // (ex.: "Certificado - Maria Silva - Integração.pdf").
 //
+// anuencia (opcional) = texto do bloco de anuência no rodapé da frente. Quando
+// presente, o certificado ganha uma caixa com esse texto à esquerda e linhas em
+// branco de "Assinatura:" e "Identificação:" à direita, para preenchimento manual
+// após a impressão. Há um toggle em "Ajustar modelo" para ligar em qualquer modelo.
+//
 // cargaOpcoes (opcional) = lista de cargas selecionáveis na UI. Quando
 // presente, aparece um seletor logo abaixo do modelo e o campo "carga" do
 // template define a opção pré-selecionada. cargaLabel troca o texto do rótulo.
@@ -31,6 +36,11 @@
 //           ⚠ Trabalhador autorizado = capacitado (este certificado) + apto em
 //           avaliação de saúde. O certificado sozinho não autoriza a subir.
 //   NR-33 — espaços confinados; periódico ANUAL (12 meses).
+//   NR-33 com Anuência — mesma formação de 16h do modelo "NR-33", acrescida do
+//           bloco de anuência do RT no rodapé da frente (campo "anuencia"), com
+//           linhas em branco para Assinatura e Identificação preenchidas à mão.
+//           Use quando o contratante exigir o aceite formal do RT dele; caso
+//           contrário o "NR-33" simples basta.
 //   NR-33 Reciclagem — reciclagem ANUAL, carga mínima de 8h fixada pela própria
 //           norma (diferente da NR-10, onde a carga é decisão do RT). cargaOpcoes
 //           oferece 8h (mínimo legal) e 16h; NÃO inclua opção abaixo de 8h.
@@ -160,6 +170,17 @@ const TEMPLATES = {
     "validadeMeses": 12,
     "fecho": "obtendo o grau de conclusão ao final do curso",
     "conteudo": "Definições; Identificação dos espaços confinados; Legislação de segurança e saúde no trabalho; Reconhecimento, avaliação e controle de risco; Riscos em espaços confinados; Tipos de nós utilizados em espaços confinados; Sistema 4/1 com polias e cordas; Utilização do tripé; Funcionamento dos equipamentos utilizados; Noções de resgate em espaços confinados e primeiros socorros; Procedimento para utilização da permissão de entrada de trabalho.\n\nCapacitado para Trabalhos em: Caldeiras, Caixas d'água, Caminhão Tanque, Cisternas, Digestores, Dutos, Fornos, Forros, Galerias, Moinhos, Poços, Porões, Silos, Tanques, Tubulações, Valas e locais similares aos descritos, para as atividades de Construção, Manutenção, Inspeção, Limpeza, Medição e Arqueação.\n\nOBS: Este certificado não capacita o aluno como multiplicador/instrutor deste treinamento; não pode ser usado por outra empresa. Apenas o conteúdo programático e a carga horária podem ser aproveitados, nos termos da NR-01, item 1.7.7."
+  },
+  "NR-33 com Anuência": {
+    "nr": "NR-33",
+    "sigla": "NR-33 com Anuencia do RT",
+    "curso": "CURSO DE SEGURANÇA EM ESPAÇOS CONFINADOS",
+    "baseLegal": "",
+    "carga": "16 horas",
+    "validadeMeses": 12,
+    "fecho": "obtendo o grau de conclusão ao final do curso",
+    "anuencia": "Anuência do Responsável Técnico por trabalhos em Espaços Confinados conforme 33.6.5 da NR-33",
+    "conteudo": "Definições; Identificação dos espaços confinados; Legislação de segurança e saúde no trabalho; Reconhecimento, avaliação e controle de risco; Riscos em espaços confinados; Tipos de nós utilizados em espaços confinados; Sistema 4/1 com polias e cordas; Utilização do tripé; Funcionamento dos equipamentos utilizados; Noções de resgate em espaços confinados e primeiros socorros; Procedimento para utilização da permissão de entrada de trabalho.\n\nCapacitado para Trabalhos em: Caldeiras, Caixas d'água, Caminhão Tanque, Cisternas, Digestores, Dutos, Fornos, Forros, Galerias, Moinhos, Poços, Porões, Silos, Tanques, Tubulações, Valas e locais similares aos descritos, para as atividades de Construção, Manutenção, Inspeção, Limpeza, Medição e Arqueação.\n\nOBS: Este certificado não capacita o aluno como multiplicador/instrutor deste treinamento; não pode ser usado por outra empresa. Apenas o conteúdo programático e a carga horária podem ser aproveitados, nos termos da NR-01, item 1.7.7.\n\nA anuência do Responsável Técnico, registrada no rodapé da frente deste certificado, deve ser assinada e identificada antes de o trabalhador ser designado para atividades em espaços confinados."
   },
   "NR-33 Reciclagem": {
     "nr": "NR-33",

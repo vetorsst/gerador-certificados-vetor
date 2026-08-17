@@ -78,6 +78,21 @@ sigla:  "Integração",                                 // nome do arquivo PDF; 
 O `titulo` encolhe sozinho para caber numa linha (46px → mínimo 24px), então
 título longo é seguro. Ele também é editável em "Ajustar modelo".
 
+## Bloco de anuência do RT
+
+Campo `anuencia` no template. Quando presente, o certificado ganha no rodapé da
+frente uma caixa com o texto à esquerda e linhas em branco de **Assinatura:** e
+**Identificação:** à direita, para preenchimento à mão depois de impresso.
+
+```js
+anuencia: "Anuência do Responsável Técnico por trabalhos em Espaços Confinados conforme 33.6.5 da NR-33"
+```
+
+O modelo `NR-33 com Anuência` já vem com ele. Há também um toggle
+"Incluir bloco de anuência do RT" em "Ajustar modelo" para ligar e editar o
+texto em qualquer outro modelo — útil quando um contratante específico exige o
+aceite formal. O toggle é redefinido pelo modelo a cada troca no dropdown.
+
 ## Treinamento de vários dias (data de início e término)
 
 O campo **Data de término** é opcional e vale tanto no individual quanto no lote.

@@ -74,6 +74,14 @@
   .sign .ln{border-top:1.5px solid var(--navy);margin-bottom:6px;}
   .sign .nm{font-size:12.5px;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:.3px;line-height:1.2;}
   .sign .rl{font-size:10.5px;color:var(--muted);line-height:1.35;margin-top:2px;}
+  /* bloco de anuência: texto à esquerda, campos manuscritos à direita (NR-33, item 33.6.5) */
+  .anuencia{display:flex;align-items:center;gap:26px;margin-top:12px;padding:9px 16px;
+            border:1.2px solid rgba(9,39,55,.22);border-radius:6px;}
+  .anuencia .an-txt{flex:0 0 38%;font-size:10.5px;line-height:1.35;color:var(--navy);font-weight:600;text-align:center;}
+  .anuencia .an-fields{flex:1;display:flex;flex-direction:column;gap:10px;}
+  .anuencia .an-row{display:flex;align-items:baseline;gap:10px;font-size:10.5px;color:#27434f;font-weight:500;}
+  .anuencia .an-row span{flex:0 0 82px;}
+  .anuencia .an-row i{flex:1;border-bottom:1.5px solid var(--yellow);height:12px;}
   .v-inner{position:absolute;top:20px;right:20px;bottom:20px;left:66px;z-index:3;padding:34px 44px 30px;display:flex;flex-direction:column;}
   .v-title{text-align:center;font-weight:700;font-size:21px;color:var(--navy);letter-spacing:.3px;line-height:1.2;}
   .v-sub{text-align:center;font-size:14px;color:#27434f;margin-top:6px;font-weight:600;}
@@ -103,7 +111,7 @@
     print-color-adjust:exact;
   }
   #print-area .cert:last-child{page-break-after:auto;break-after:auto;}
-  .cert::before,.cert::after,.name-rule,.v-rule,.v-foot,.wm{
+  .cert::before,.cert::after,.name-rule,.v-rule,.v-foot,.wm,.anuencia,.anuencia .an-row i{
     -webkit-print-color-adjust:exact;print-color-adjust:exact;
   }
 }

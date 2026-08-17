@@ -98,6 +98,12 @@
         <div><label>Função</label><input id="c-instrole" oninput="render()"></div></div>
         <label>CBO (opcional)</label><input id="c-instcbo" oninput="render()">
       </div>
+      <label class="chk"><input type="checkbox" id="c-anuencia-on" onchange="render()"><span>Incluir bloco de anuência do RT</span></label>
+      <div id="anuencia-fields" style="display:none">
+        <label>Texto da anuência</label>
+        <textarea id="c-anuencia" style="min-height:56px" oninput="render()"></textarea>
+        <div class="hint">Sai no rodapé da frente, com linhas em branco para <b>Assinatura</b> e <b>Identificação</b> preenchidas à mão depois de impresso.</div>
+      </div>
       <label class="chk"><input type="checkbox" id="c-verso-on" checked onchange="render()"><span>Gerar verso (conteúdo programático)</span></label>
       <label>Conteúdo programático</label>
       <textarea id="c-conteudo" style="min-height:120px" oninput="render()"></textarea>
@@ -156,6 +162,7 @@
           <div class="desc" id="o-desc"></div>
           <div class="place" id="o-place"></div>
           <div class="signs" id="o-signs"></div>
+          <div class="anuencia" id="o-anuencia" style="display:none"></div>
         </div>
       </div>
       <div class="cert" id="cert-back" style="display:none">

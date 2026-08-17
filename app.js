@@ -75,6 +75,8 @@ function applyTemplate(){
   setV('c-curso',t.curso);setV('c-nr',t.nr);setV('c-base',t.baseLegal);
   setV('c-carga',t.carga);setV('c-fecho',t.fecho);setV('c-conteudo',t.conteudo);
   setV('c-vmeses',t.validadeMeses);
+  document.getElementById('c-anuencia-on').checked=!!t.anuencia;
+  setV('c-anuencia',t.anuencia||'');
   buildCargaPick(t);
   updateSummary();
   render();
@@ -161,6 +163,7 @@ function fieldData(p){
     desc:'inscrito no <b>CPF: '+(esc(p.cpf)||'—')+'</b>, '+(empPart?'colaborador(a) da <b>'+esc(empPart)+'</b>, ':'')+'participou do <b>'+curso+'</b> em conformidade com a <b>'+nr+'</b>'+(base?', conforme <b>'+base+'</b>':'')+', realizado '+realizadoTxt+', com carga horária de <b>'+carga+'</b>, '+fecho+'.',
     place:cidade+', '+dataExt+'.',
     signs:signs.join(''),
+    anuencia:chk('c-anuencia-on')?v('c-anuencia'):'',   /* cru: anuenciaHTML escapa */
     vCurso:v('c-curso'),
     vSub:'Carga horária total: '+v('c-carga')+(per?('.  Período: '+curto(d)+' a '+curto(dFim)):('.  Data: '+curto(d)))+(valid?'.  Validade: '+curto(valid):'')+'.'+(empPart?'  Empresa: '+empPart.replace(/\.+$/,'')+'.':''),
     vBody:v('c-conteudo')||'(Selecione um modelo de NR.)',
@@ -169,6 +172,16 @@ function fieldData(p){
 }
 /* nm/sub já chegam escapados onde vêm do usuário; sign monta só marcação fixa */
 function sign(nm,sub){return '<div class="sign"><div class="ln"></div><div class="nm">'+esc((nm||'').toUpperCase())+'</div><div class="rl">'+sub+'</div></div>';}
+/* miolo do bloco de anuência — as linhas ficam em branco de propósito: são
+   preenchidas à mão depois de impresso */
+function anuenciaHTML(txt){
+  if(!txt)return '';
+  return '<div class="an-txt">'+esc(txt)+'</div>'+
+    '<div class="an-fields">'+
+      '<div class="an-row"><span>Assinatura:</span><i></i></div>'+
+      '<div class="an-row"><span>Identificação:</span><i></i></div>'+
+    '</div>';
+}
 
 /* ===== alerta de registro incoerente (CRP em titulação técnica) ===== */
 function checkReg(){
@@ -187,6 +200,7 @@ function checkReg(){
 /* ===== preview ===== */
 function render(){
   document.getElementById('inst-fields').style.display=chk('c-inst-on')?'block':'none';
+  document.getElementById('anuencia-fields').style.display=chk('c-anuencia-on')?'block':'none';
   document.getElementById('pf-back').style.display=chk('c-verso-on')?'inline-block':'none';
   if(!chk('c-verso-on')&&page==='back')showPage('front');
   const valid=validadeISO();
@@ -198,6 +212,8 @@ function render(){
   document.getElementById('o-desc').innerHTML=f.desc;
   document.getElementById('o-place').textContent=f.place;
   document.getElementById('o-signs').innerHTML=f.signs;
+  const an=document.getElementById('o-anuencia');
+  an.innerHTML=anuenciaHTML(f.anuencia);an.style.display=f.anuencia?'flex':'none';
   document.getElementById('v-curso').textContent=f.vCurso;
   document.getElementById('v-sub').textContent=f.vSub;
   const vb=document.getElementById('v-body');vb.textContent=f.vBody;
@@ -285,6 +301,7 @@ function certFrontHTML(f){
       '<div class="desc">'+f.desc+'</div>'+
       '<div class="place">'+f.place+'</div>'+
       '<div class="signs">'+f.signs+'</div>'+
+      (f.anuencia?'<div class="anuencia">'+anuenciaHTML(f.anuencia)+'</div>':'')+
     '</div>'+
   '</div>';
 }
