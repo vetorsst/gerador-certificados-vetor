@@ -52,6 +52,15 @@
 //           abaixo); se o RT quiser citar o item, confirmar o subitem de 33.3.5.
 //   NR-6  — EPI/EPC; validade 24 meses (prática da empresa; a NR-6 não fixa prazo).
 //   NR-12 — máquinas e equipamentos; validade 24 meses (prática da empresa).
+//   NR-12 Reciclagem — a NR-12 NÃO fixa periodicidade nem carga da reciclagem:
+//           exige reciclagem por evento (modificação significativa nas instalações
+//           ou na operação de máquinas, troca de métodos/processos/organização do
+//           trabalho que implique novos riscos), com carga que garanta a execução
+//           segura. Os 24 meses repetem a prática da empresa do modelo "NR-12".
+//           cargaOpcoes começa em 4h — a carga do modelo inicial — e NÃO oferece
+//           menos, mesmo critério conservador da NR-35. baseLegal fica vazia como
+//           na NR-12 inicial; se o RT quiser citar o item, confirmar o subitem de
+//           12.16 (numeração da Portaria SEPRT 916/2019).
 //   NR-5  — CIPA (nome atualizado pela Lei 14.457/2022). Carga por grau de risco:
 //           GR1 8h, GR2 12h, GR3 16h, GR4 20h (Portaria MTP 4.219/2022) — o seletor
 //           de grau de risco vem de cargaOpcoes e preenche a carga (default GR1 = 8h).
@@ -161,6 +170,22 @@ const TEMPLATES = {
     "validadeMeses": 24,
     "fecho": "obtendo o grau de conclusão ao final do curso",
     "conteudo": "1. Introdução à NR-12;\n2. Instalações e dispositivos elétricos;\n3. Dispositivos de partida, acionamento e parada e parada de emergência;\n4. Sistemas de segurança;\n5. Descrição e identificação dos riscos associados com cada máquina e equipamento e as proteções específicas contra cada um deles;\n6. Funcionamento das proteções; como e porque devem ser usadas;\n7. Como, e em que circunstâncias e por quem uma proteção pode ser removida;\n8. O que fazer se uma proteção foi danificada ou se perdeu sua função;\n9. Princípios de segurança na utilização da máquina ou equipamento;\n10. Segurança para riscos mecânicos, elétricos e outros relevantes;\n11. Método de trabalho seguro;\n12. Permissão de trabalho;\n13. Sistema de bloqueio de funcionamento da máquina e equipamento durante operações de inspeção, limpeza, lubrificação e manutenção;\n14. Noções sobre legislação de trânsito e de legislação de segurança e saúde no trabalho;\n15. Medidas de controle dos riscos; EPC e EPI;\n16. Sinalização de segurança;\n17. Procedimentos em situação de emergência;\n18. Noções básicas de Primeiros Socorros;\n19. O colaborador foi treinado e capacitado para a utilização de ferramentas tais como: furadeiras, parafusadeira elétrica (a bateria) e esmerilhadeira."
+  },
+  "NR-12 Reciclagem": {
+    "nr": "NR-12",
+    "titulo": "CERTIFICADO DE RECICLAGEM — NR-12",
+    "sigla": "NR-12 Reciclagem",
+    "curso": "CURSO DE RECICLAGEM EM SEGURANÇA NO TRABALHO EM MÁQUINAS E EQUIPAMENTOS",
+    "baseLegal": "",
+    "carga": "04 horas",
+    "cargaLabel": "Carga horária da reciclagem",
+    "cargaOpcoes": [
+      { "h": 4, "label": "04 horas — reciclagem padrão" },
+      { "h": 8, "label": "08 horas" }
+    ],
+    "validadeMeses": 24,
+    "fecho": "obtendo o grau de conclusão ao final do curso",
+    "conteudo": "1. ATUALIZAÇÃO DO PERÍODO: Alterações na NR-12 e nas normas técnicas aplicáveis desde o último treinamento; Máquinas e equipamentos novos, modificados ou realocados; Mudanças em métodos, processos e organização do trabalho que impliquem novos riscos; Acidentes e quase-acidentes ocorridos que motivaram revisão de procedimento.\n\n2. NR-12 – REVISÃO: Objetivo e campo de aplicação; Responsabilidades do empregador e do trabalhador; Trabalhador capacitado, qualificado, habilitado e autorizado; Direito de recusa diante de risco grave e iminente.\n\n3. RISCOS DAS MÁQUINAS E EQUIPAMENTOS DO SETOR: Descrição e identificação dos riscos associados a cada máquina e equipamento e as proteções específicas contra cada um deles; Riscos mecânicos – zonas de prensagem, corte, arraste, esmagamento e projeção de partículas; Riscos elétricos e outros riscos relevantes.\n\n4. PROTEÇÕES E SISTEMAS DE SEGURANÇA: Proteções fixas e móveis; Dispositivos de intertravamento; Funcionamento das proteções – como e por que devem ser usadas; Como, em que circunstâncias e por quem uma proteção pode ser removida; O que fazer se uma proteção foi danificada ou perdeu sua função.\n\n5. DISPOSITIVOS DE PARTIDA, ACIONAMENTO E PARADA: Comandos de partida e parada; Parada de emergência – localização, teste e rearme; Instalações e dispositivos elétricos.\n\n6. MÉTODO DE TRABALHO SEGURO: Princípios de segurança na utilização da máquina ou equipamento; Inspeção antes do uso; Permissão de trabalho; Sistema de bloqueio e etiquetagem durante inspeção, limpeza, lubrificação e manutenção.\n\n7. MEDIDAS DE CONTROLE E SINALIZAÇÃO: Hierarquia das medidas de controle; EPC e EPI; Sinalização de segurança em máquinas e equipamentos.\n\n8. SITUAÇÕES DE EMERGÊNCIA: Procedimentos em situação de emergência; Noções básicas de primeiros socorros.\n\n9. PRÁTICA: Verificação das proteções e dos dispositivos de parada de emergência; Bloqueio e etiquetagem; Uso seguro de ferramentas como furadeira, parafusadeira elétrica (a bateria) e esmerilhadeira.\n\nOBS: A NR-12 exige capacitação para reciclagem sempre que ocorrerem modificações significativas nas instalações e na operação de máquinas ou troca de métodos, processos e organização do trabalho que impliquem novos riscos; a validade de 24 meses é a periodicidade adotada pela empresa. Pressupõe capacitação inicial válida e não a substitui. Não capacita o aluno como multiplicador/instrutor deste treinamento."
   },
   "NR-33": {
     "nr": "NR-33",
