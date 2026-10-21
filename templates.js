@@ -99,6 +99,13 @@
 //           Anexo A conforme ocupação/risco — confirmar no PPCI antes de emitir; e
 //           o curso só vale com instrutor credenciado no CBMRS (item 5.6.1.1).
 //           Texto conferido na minuta de 2023 da RT 15; conferir a versão publicada no DOE.
+//   Primeiros Socorros — treinamento avulso, separado da brigada. Base: NR-07,
+//           que manda guardar o material de primeiros socorros aos cuidados de
+//           pessoa treinada (confirmar o subitem com o RT — 7.5.19.1 na redação
+//           de 2020; baseLegal fica vazia até lá). Nenhuma norma fixa carga nem
+//           periodicidade: 4h (2T + 2P) é o piso do seletor, 24 meses é prática da
+//           empresa. Conteúdo segue os módulos 15–25 do Anexo D da RT CBMRS 15.
+//           NÃO substitui o certificado de brigadista (que já inclui 1ºs socorros).
 //   NR-37 — plataformas de petróleo. 3 variantes: Básico (integração/1º embarque,
 //           item 37.9.6.3, 8h) · Avançado (item 37.9.6.5, 8h + 1h prática) · Reciclagem (item 37.9.6.6,
 //           4h). ⚠ No Avançado e na Reciclagem o RT DEVE ser ENGENHEIRO DE SEGURANÇA
@@ -318,6 +325,28 @@ const TEMPLATES = {
     "validadeMeses": 48,
     "fecho": "tendo obtido rendimento satisfatório nas avaliações teórica e prática",
     "conteudo": "PARTE TEÓRICA – COMBATE A INCÊNDIO (2 h/a)\n\n1. Introdução – objetivos do curso e o brigadista; 2. Aspectos legais – responsabilidade do brigadista; 3. Teoria do fogo – combustão, seus elementos, ponto de fulgor, ignição e combustão e reação em cadeia; 4. Propagação do fogo – condução, convecção e irradiação; 5. Classes de incêndio; 6. Prevenção de incêndio – técnicas de prevenção e avaliação dos riscos em potencial; 7. Métodos de extinção – isolamento, abafamento, resfriamento e extinção química; 8. Agentes extintores – água, PQS, CO2, espumas e outros; 9. EPI – proteção da cabeça, olhos, tronco, membros superiores e inferiores e corpo todo; 10. Equipamentos de combate a incêndio – extintores: aplicação, manuseio e inspeção; 13. Abandono de área – saída organizada, pontos de encontro, chamada e controle de pânico; 26. Riscos específicos da planta e plano de emergência contra incêndio; 35. Comunicação de emergência – serviços públicos e privados de emergência e meios de acionamento.\n\nPARTE TEÓRICA – PRIMEIROS SOCORROS (1 h/a)\n\n15. Avaliação inicial – cenário, mecanismo de lesão, número de vítimas e exame físico; 16. Vias aéreas – sinais de obstrução em adultos, crianças e bebês e desobstrução; 17. RCP – ventilação artificial e compressão cardíaca externa em adultos, crianças e bebês; 20. Hemorragias – classificação e técnicas de hemostasia; 25. Movimentação, remoção e transporte de vítimas.\n\nPARTE PRÁTICA – COMBATE A INCÊNDIO (1 h/a)\n\n5. Reconhecimento das classes de incêndio; 7. Aplicação dos métodos de extinção; 8. Aplicação dos agentes extintores; 10. Operação de extintores de incêndio.\n\nPARTE PRÁTICA – PRIMEIROS SOCORROS (1 h/a)\n\n15. Avaliação de cenário e da vítima; 16. Desobstrução de vias aéreas; 17. Técnicas de RCP; 20. Contenção de hemorragias; 25. Retirada rápida de vítima.\n\nOBS: Curso de formação de brigadista de incêndio de nível BÁSICO 1, com conteúdo programático e carga horária mínima conforme os Anexos D e E da Resolução Técnica CBMRS n.º 15 – Parte 01 (1 hora-aula = 50 minutos). Validade de 4 anos (item 5.6.4), renovada mediante curso de reciclagem. O nível de brigada exigido depende da ocupação e do risco da edificação (Anexo A) — este certificado não atende plantas que exijam nível Básico 2, Intermediário ou Avançado. Válido somente se ministrado por instrutor com credenciamento vigente no CBMRS na data do curso (item 5.6.1.1). Não capacita o aluno como multiplicador/instrutor deste treinamento."
+  },
+  "Primeiros Socorros": {
+    "nr": "NR-07",
+    "titulo": "CERTIFICADO DE TREINAMENTO EM PRIMEIROS SOCORROS",
+    "sigla": "Primeiros Socorros",
+    "curso": "CURSO DE PRIMEIROS SOCORROS",
+    "baseLegal": "",
+    "carga": "04 horas",
+    "cargaLabel": "Carga horária do treinamento",
+    "cargaOpcoes": [
+      {
+        "h": 4,
+        "label": "04 horas — 2h teoria + 2h prática"
+      },
+      {
+        "h": 8,
+        "label": "08 horas"
+      }
+    ],
+    "validadeMeses": 24,
+    "fecho": "tendo obtido rendimento satisfatório nas avaliações teórica e prática",
+    "conteudo": "PARTE TEÓRICA\n\n1. AVALIAÇÃO INICIAL: Segurança do cenário; Mecanismo de lesão; Número de vítimas; Exame físico da vítima; Acionamento do serviço de emergência (192/193).\n\n2. VIAS AÉREAS: Sinais de obstrução em adultos, crianças e bebês, conscientes e inconscientes; Manobras de desobstrução (OVACE).\n\n3. RCP – REANIMAÇÃO CARDIOPULMONAR: Reconhecimento da parada cardiorrespiratória; Compressão torácica e ventilação em adultos, crianças e bebês; Uso do DEA (desfibrilador externo automático).\n\n4. ESTADO DE CHOQUE: Sinais, sintomas, prevenção e tratamento.\n\n5. HEMORRAGIAS: Classificação; Técnicas de hemostasia – compressão direta, curativo compressivo e torniquete.\n\n6. FRATURAS E FERIMENTOS: Fraturas abertas e fechadas; Imobilização; Cuidados com ferimentos.\n\n7. QUEIMADURAS: Tipos (térmicas, químicas e elétricas) e graus; Condutas de socorro.\n\n8. EMERGÊNCIAS CLÍNICAS: Desmaio (síncope); Convulsão; AVC; Infarto; Crise hipertensiva e hipotensiva; Hipoglicemia.\n\n9. MOVIMENTAÇÃO E TRANSPORTE DE VÍTIMAS: Retirada rápida; Suspeita de lesão na coluna; Técnicas de transporte.\n\nPARTE PRÁTICA\n\n10. Avaliação da vítima; Desobstrução de vias aéreas em manequim; RCP em manequim e uso do DEA; Contenção de hemorragias; Imobilização de fraturas; Movimentação e transporte de vítimas.\n\nOBS: Treinamento de primeiros socorros para atender a NR-07, que exige o material de primeiros socorros sob os cuidados de pessoa treinada para esse fim. A NR-07 não fixa carga horária nem periodicidade; a validade de 24 meses é a periodicidade adotada pela empresa. Não substitui a formação de brigadista de incêndio, que segue a legislação estadual. Não habilita o aluno a realizar procedimentos privativos de profissionais de saúde. Não capacita o aluno como multiplicador/instrutor deste treinamento."
   },
   "NR-37 Básico": {
     "nr": "NR-37",
