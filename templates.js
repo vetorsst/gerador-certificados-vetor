@@ -90,6 +90,15 @@
 //           atua em Sistema Elétrico de Potência precisa também do complementar SEP.
 //   NR-23 — proteção contra incêndios, 8h; validade 24 meses (prática da empresa;
 //           treinamento de brigada segue NBR 14276/Corpo de Bombeiros, não a NR-23).
+//   Brigada de Incêndio (Básico 1) — formação de brigadista pela RT CBMRS n.º 15
+//           – Parte 01 (RS). A NR-23 só remete à legislação estadual. Nível BÁSICO 1
+//           = o MÍNIMO da RT: 5 h/a (1 h/a = 50 min, ≈ 4h10 de relógio), sendo 2 h/a
+//           teoria de incêndio + 1 h/a teoria de 1ºs socorros + 1 h/a prática de
+//           cada; módulos do Anexo E (01–10, 13, 26, 35 / 15, 16, 17, 20, 25).
+//           Validade 4 anos (item 5.6.4; avançado é 2). ⚠ O nível exigido vem do
+//           Anexo A conforme ocupação/risco — confirmar no PPCI antes de emitir; e
+//           o curso só vale com instrutor credenciado no CBMRS (item 5.6.1.1).
+//           Texto conferido na minuta de 2023 da RT 15; conferir a versão publicada no DOE.
 //   NR-37 — plataformas de petróleo. 3 variantes: Básico (integração/1º embarque,
 //           item 37.9.6.3, 8h) · Avançado (item 37.9.6.5, 8h + 1h prática) · Reciclagem (item 37.9.6.6,
 //           4h). ⚠ No Avançado e na Reciclagem o RT DEVE ser ENGENHEIRO DE SEGURANÇA
@@ -298,6 +307,17 @@ const TEMPLATES = {
     "validadeMeses": 24,
     "fecho": "obtendo o grau de conclusão ao final do curso",
     "conteudo": "Introdução;\nLegislação pertinente;\nTeoria do fogo;\nMeios de propagação do fogo;\nClassificação do fogo;\nEquipamentos de combate ao fogo;\nTécnicas de combate ao fogo;\nAbandono de área;\nTécnicas de prevenção de incêndios;\nReconhecimento e utilização de extintores de incêndio e hidrantes;\nProcedimentos para evacuação dos locais de trabalho com segurança;\nAvaliação primária;\nManobras de reanimação;\nFerimentos e hemorragias;\nFraturas e imobilização;\nQueimaduras;\nEmergências clínicas;\nRealização de manobras de reanimação cardíaca em manequim de treinamento."
+  },
+  "Brigada de Incêndio (Básico 1)": {
+    "nr": "NR-23",
+    "titulo": "CERTIFICADO DE FORMAÇÃO DE BRIGADISTA DE INCÊNDIO — NÍVEL BÁSICO 1",
+    "sigla": "Brigada de Incêndio Básico 1",
+    "curso": "CURSO DE FORMAÇÃO DE BRIGADISTA DE INCÊNDIO – NÍVEL BÁSICO 1 (COMBATE A INCÊNDIO E PRIMEIROS SOCORROS)",
+    "baseLegal": "Resolução Técnica CBMRS n.º 15 – Parte 01",
+    "carga": "05 horas-aula",
+    "validadeMeses": 48,
+    "fecho": "tendo obtido rendimento satisfatório nas avaliações teórica e prática",
+    "conteudo": "PARTE TEÓRICA – COMBATE A INCÊNDIO (2 h/a)\n\n1. Introdução – objetivos do curso e o brigadista; 2. Aspectos legais – responsabilidade do brigadista; 3. Teoria do fogo – combustão, seus elementos, ponto de fulgor, ignição e combustão e reação em cadeia; 4. Propagação do fogo – condução, convecção e irradiação; 5. Classes de incêndio; 6. Prevenção de incêndio – técnicas de prevenção e avaliação dos riscos em potencial; 7. Métodos de extinção – isolamento, abafamento, resfriamento e extinção química; 8. Agentes extintores – água, PQS, CO2, espumas e outros; 9. EPI – proteção da cabeça, olhos, tronco, membros superiores e inferiores e corpo todo; 10. Equipamentos de combate a incêndio – extintores: aplicação, manuseio e inspeção; 13. Abandono de área – saída organizada, pontos de encontro, chamada e controle de pânico; 26. Riscos específicos da planta e plano de emergência contra incêndio; 35. Comunicação de emergência – serviços públicos e privados de emergência e meios de acionamento.\n\nPARTE TEÓRICA – PRIMEIROS SOCORROS (1 h/a)\n\n15. Avaliação inicial – cenário, mecanismo de lesão, número de vítimas e exame físico; 16. Vias aéreas – sinais de obstrução em adultos, crianças e bebês e desobstrução; 17. RCP – ventilação artificial e compressão cardíaca externa em adultos, crianças e bebês; 20. Hemorragias – classificação e técnicas de hemostasia; 25. Movimentação, remoção e transporte de vítimas.\n\nPARTE PRÁTICA – COMBATE A INCÊNDIO (1 h/a)\n\n5. Reconhecimento das classes de incêndio; 7. Aplicação dos métodos de extinção; 8. Aplicação dos agentes extintores; 10. Operação de extintores de incêndio.\n\nPARTE PRÁTICA – PRIMEIROS SOCORROS (1 h/a)\n\n15. Avaliação de cenário e da vítima; 16. Desobstrução de vias aéreas; 17. Técnicas de RCP; 20. Contenção de hemorragias; 25. Retirada rápida de vítima.\n\nOBS: Curso de formação de brigadista de incêndio de nível BÁSICO 1, com conteúdo programático e carga horária mínima conforme os Anexos D e E da Resolução Técnica CBMRS n.º 15 – Parte 01 (1 hora-aula = 50 minutos). Validade de 4 anos (item 5.6.4), renovada mediante curso de reciclagem. O nível de brigada exigido depende da ocupação e do risco da edificação (Anexo A) — este certificado não atende plantas que exijam nível Básico 2, Intermediário ou Avançado. Válido somente se ministrado por instrutor com credenciamento vigente no CBMRS na data do curso (item 5.6.1.1). Não capacita o aluno como multiplicador/instrutor deste treinamento."
   },
   "NR-37 Básico": {
     "nr": "NR-37",
