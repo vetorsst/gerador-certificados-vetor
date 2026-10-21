@@ -51,6 +51,15 @@
 //           baseLegal fica vazia pelo mesmo motivo da NR-33 inicial (ver nota
 //           abaixo); se o RT quiser citar o item, confirmar o subitem de 33.3.5.
 //   NR-6  — EPI/EPC; validade 24 meses (prática da empresa; a NR-6 não fixa prazo).
+//   NR-11 — operador de empilhadeira. Treinamento específico dado pela empresa
+//           (item 11.1.5) + cartão de identificação com nome e foto (11.1.6),
+//           válido por 1 ano e revalidado mediante exame de saúde (11.1.6.1).
+//           A NR-11 NÃO fixa carga nem periodicidade do treinamento: validade de
+//           12 meses acompanha o ciclo do cartão; 16h (8T + 8P) é a prática de
+//           mercado e o piso do seletor. Para ponte rolante, talha ou outro
+//           equipamento motorizado, ajustar curso/título/conteúdo em "Ajustar
+//           modelo" — a prática precisa ser no equipamento que o aluno vai operar.
+//           O Anexo I (rochas ornamentais) tem capacitação própria e não é este.
 //   NR-12 — máquinas e equipamentos; validade 24 meses (prática da empresa).
 //   NR-12 Reciclagem — a NR-12 NÃO fixa periodicidade nem carga da reciclagem:
 //           exige reciclagem por evento (modificação significativa nas instalações
@@ -161,6 +170,21 @@ const TEMPLATES = {
     "validadeMeses": 24,
     "fecho": "obtendo o grau de conclusão ao final do curso",
     "conteudo": "1. Definições da Norma Regulamentadora;\n2. Tipos de E.P.I. e E.P.C. conforme atividade exercida;\n3. Uso adequado;\n4. Substituição e Devolução;\n5. Higienização de EPI's;\n6. Equipamento de uso Permanente (Pessoal);\n7. Equipamentos Reserva;\n8. Capacete de segurança, bota de segurança, óculos de segurança, protetor auricular, luvas;\n9. EPI Específico;\n10. EPIs exclusivos para funções ou atividades específicas: cinto de segurança, vestimenta para arco voltaico;\n11. Vestimenta química, máscara autônoma, luva de malha de aço, protetor facial, vestimenta de aproximação ao fogo;\n12. Circunstâncias para uso do E.P.I. e E.P.C;\n13. Responsabilidade do empregador, do empregado, do fabricante e do importador;\n14. Certificado de aprovação."
+  },
+  "NR-11": {
+    "nr": "NR-11",
+    "titulo": "CERTIFICADO DE CAPACITAÇÃO — OPERADOR DE EMPILHADEIRA",
+    "curso": "CURSO DE OPERADOR DE EMPILHADEIRA",
+    "baseLegal": "item 11.1.5",
+    "carga": "16 horas",
+    "cargaLabel": "Carga horária do treinamento",
+    "cargaOpcoes": [
+      { "h": 16, "label": "16 horas — 8h teoria + 8h prática" },
+      { "h": 24, "label": "24 horas" }
+    ],
+    "validadeMeses": 12,
+    "fecho": "tendo obtido rendimento satisfatório nas avaliações teórica e prática",
+    "conteudo": "1. LEGISLAÇÃO E RESPONSABILIDADES: NR-11 – transporte, movimentação, armazenagem e manuseio de materiais; Treinamento específico e habilitação do operador (item 11.1.5); Cartão de identificação com nome e fotografia (item 11.1.6) e sua revalidação anual mediante exame de saúde (item 11.1.6.1); Responsabilidades do empregador e do operador; Direito de recusa diante de condição insegura.\n\n2. A EMPILHADEIRA: Tipos – elétrica, a combustão (GLP, diesel), patolada, retrátil e trilateral; Componentes – chassi, torre, garfos, contrapeso, protetor do operador, cinto de segurança; Sistemas hidráulico, de tração, de direção e de freios; Painel, comandos e dispositivos de segurança; Sinalização sonora e luminosa de ré.\n\n3. CAPACIDADE E ESTABILIDADE: Placa de capacidade nominal; Centro de carga e triângulo de estabilidade; Efeito da altura de elevação, da inclinação da torre e dos implementos na capacidade; Causas de tombamento lateral e frontal; Conduta em caso de tombamento – permanecer na cabine, segurar firme e inclinar-se para o lado oposto.\n\n4. INSPEÇÃO E MANUTENÇÃO DO OPERADOR: Check-list diário antes do uso – garfos, correntes, mastro, pneus, freios, direção, buzina, luzes, vazamentos, cinto; Bloqueio e comunicação de equipamento com defeito; Abastecimento e troca de cilindro de GLP; Recarga de bateria – área ventilada, EPI e riscos do eletrólito e do hidrogênio.\n\n5. OPERAÇÃO SEGURA: Embarque e desembarque com três pontos de apoio; Uso obrigatório do cinto de segurança; Velocidade compatível com o local e a carga; Trânsito com garfos baixos e torre inclinada para trás; Trânsito em rampas – carregado com a carga voltada para o topo; Visibilidade – trafegar de ré quando a carga obstruir a visão; Cruzamentos, portas e áreas de pedestres; Proibição de transportar pessoas e de elevar pessoas nos garfos sem plataforma própria; Estacionamento – garfos no chão, freio acionado, chave retirada.\n\n6. MOVIMENTAÇÃO E ARMAZENAGEM DE MATERIAIS: Paletes e cargas – inspeção, amarração e centralização; Empilhamento e desempilhamento em porta-paletes e blocados; Altura e afastamento das pilhas, corredores e distância de paredes e estruturas; Carga e descarga de caminhões e uso de docas e niveladoras; Materiais perigosos e frágeis.\n\n7. RISCOS E MEDIDAS DE CONTROLE: Atropelamento, colisão, tombamento, queda de carga e prensamento; Monóxido de carbono em ambientes fechados; Ruído e vibração; Ergonomia na operação; EPI do operador; Sinalização e demarcação de áreas de circulação.\n\n8. EMERGÊNCIAS: Procedimento em caso de acidente; Princípio de incêndio e uso de extintor; Vazamento de GLP, de combustível e de eletrólito; Noções de primeiros socorros.\n\n9. PRÁTICA: Inspeção pré-uso com check-list; Manobras em circuito com cones; Elevação, transporte e empilhamento de paletes em diferentes alturas; Operação em rampa; Estacionamento correto; Avaliação prática individual no equipamento.\n\nOBS: Capacitação conforme a NR-11, item 11.1.5. O operador só está habilitado a operar após receber o cartão de identificação com nome e fotografia, em lugar visível, previsto no item 11.1.6, com validade de um ano e revalidação condicionada a exame de saúde completo (item 11.1.6.1). A habilitação vale para o empregador que ministrou o treinamento e para o tipo de equipamento em que o operador foi avaliado na prática. Não substitui a CNH quando o equipamento transitar em via pública. Não capacita o aluno como multiplicador/instrutor deste treinamento."
   },
   "NR-12": {
     "nr": "NR-12",

@@ -173,6 +173,7 @@ Confirmadas contra o texto vigente das normas:
 
 | NR | Base legal (capacitação) | Periodicidade do periódico |
 |----|--------------------------|----------------------------|
+| NR-11 | item **11.1.5** (operador de empilhadeira) + cartão do item **11.1.6** | não fixada — **12 meses** acompanhando o cartão anual (11.1.6.1) |
 | NR-18 | item **18.12** + Anexo I (Portaria SEPRT 3.733/2020) | bienal — **24 meses** |
 | NR-34 | item **34.5** (trabalho a quente) | anual — **12 meses** |
 | NR-35 | item **35.3** | bienal — **24 meses** |
