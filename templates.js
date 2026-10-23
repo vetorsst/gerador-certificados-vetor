@@ -51,6 +51,11 @@
 //           baseLegal fica vazia pelo mesmo motivo da NR-33 inicial (ver nota
 //           abaixo); se o RT quiser citar o item, confirmar o subitem de 33.3.5.
 //   NR-6  — EPI/EPC; validade 24 meses (prática da empresa; a NR-6 não fixa prazo).
+//   NR-6 Reciclagem — a NR-6 NÃO fixa carga nem periodicidade (só obriga a orientar
+//           e treinar sobre uso, guarda e conservação). 24 meses repete o NR-6
+//           inicial. Carga é decisão da empresa: seletor 2/4/6h, default 4h; 6h =
+//           refazer na carga do inicial. Antecipar na troca de EPI, mudança de
+//           procedimento/condição, evento ou retorno de afastamento (NR-01, 1.7).
 //   NR-11 Empilhadeira — operador de empilhadeira (sigla própria no nome do PDF
 //           para não colidir com o modelo de movimentação). Treinamento específico dado pela empresa
 //           (item 11.1.5) + cartão de identificação com nome e foto (11.1.6),
@@ -195,7 +200,33 @@ const TEMPLATES = {
     "validadeMeses": 24,
     "fecho": "obtendo o grau de conclusão ao final do curso",
     "conteudo": "1. Definições da Norma Regulamentadora;\n2. Tipos de E.P.I. e E.P.C. conforme atividade exercida;\n3. Uso adequado;\n4. Substituição e Devolução;\n5. Higienização de EPI's;\n6. Equipamento de uso Permanente (Pessoal);\n7. Equipamentos Reserva;\n8. Capacete de segurança, bota de segurança, óculos de segurança, protetor auricular, luvas;\n9. EPI Específico;\n10. EPIs exclusivos para funções ou atividades específicas: cinto de segurança, vestimenta para arco voltaico;\n11. Vestimenta química, máscara autônoma, luva de malha de aço, protetor facial, vestimenta de aproximação ao fogo;\n12. Circunstâncias para uso do E.P.I. e E.P.C;\n13. Responsabilidade do empregador, do empregado, do fabricante e do importador;\n14. Certificado de aprovação."
+  },  "NR-6 Reciclagem": {
+    "nr": "NR-6",
+    "titulo": "CERTIFICADO DE RECICLAGEM — NR-6",
+    "sigla": "NR-6 Reciclagem",
+    "curso": "CURSO DE RECICLAGEM EM EQUIPAMENTO DE PROTEÇÃO INDIVIDUAL (EPI) E EQUIPAMENTO DE PROTEÇÃO COLETIVA (EPC)",
+    "baseLegal": "",
+    "carga": "04 horas",
+    "cargaLabel": "Carga horária da reciclagem",
+    "cargaOpcoes": [
+      {
+        "h": 2,
+        "label": "02 horas"
+      },
+      {
+        "h": 4,
+        "label": "04 horas — reciclagem padrão"
+      },
+      {
+        "h": 6,
+        "label": "06 horas — mesma carga do curso inicial"
+      }
+    ],
+    "validadeMeses": 24,
+    "fecho": "obtendo o grau de conclusão ao final do curso",
+    "conteudo": "1. ATUALIZAÇÃO DO PERÍODO: Alterações na NR-6 desde o último treinamento; EPI novos, substituídos ou com troca de modelo/fornecedor; Mudanças nos riscos, nos procedimentos e nas operações de trabalho; Ocorrências do período relacionadas ao uso de EPI.\n\n2. NR-6 – REVISÃO: Definição de EPI e de EPC; Hierarquia das medidas de prevenção – proteção coletiva e medidas administrativas antes do EPI; Certificado de Aprovação (CA) – como consultar número e validade.\n\n3. RESPONSABILIDADES: Obrigações do empregador – fornecer gratuitamente, exigir o uso, orientar e treinar, substituir quando danificado ou extraviado, registrar o fornecimento; Obrigações do empregado – usar para a finalidade a que se destina, guardar e conservar, comunicar alteração que o torne impróprio, cumprir as determinações sobre o uso.\n\n4. EPI DA ATIVIDADE: Seleção conforme os riscos da função; Proteção da cabeça, olhos e face, auditiva, respiratória, tronco, membros superiores e inferiores e contra quedas; EPI de uso específico da função.\n\n5. USO, GUARDA, CONSERVAÇÃO E HIGIENIZAÇÃO: Ajuste e colocação correta; Inspeção antes do uso; Limitações de uso e vida útil; Higienização e guarda; Critérios de substituição e devolução.\n\n6. PROTEÇÃO COLETIVA: Tipos de EPC presentes no local de trabalho; Cuidados para não remover ou inutilizar proteções coletivas.\n\n7. PRÁTICA: Colocação, ajuste e retirada dos EPI da função; Inspeção visual e identificação de EPI impróprio para uso; Verificação do CA.\n\nOBS: Treinamento periódico de reciclagem sobre uso adequado, guarda e conservação de EPI, conforme a NR-6. A NR-6 não fixa carga horária nem periodicidade; a validade de 24 meses é a periodicidade adotada pela empresa. Deve ser antecipado quando houver mudança de procedimentos, condições ou operações de trabalho, troca do EPI fornecido, evento que indique necessidade de novo treinamento ou retorno de afastamento prolongado. Pressupõe treinamento inicial e não o substitui. Não capacita o aluno como multiplicador/instrutor deste treinamento."
   },
+
   "NR-11 Empilhadeira": {
     "nr": "NR-11",
     "titulo": "CERTIFICADO DE CAPACITAÇÃO — OPERADOR DE EMPILHADEIRA",
