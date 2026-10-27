@@ -1,6 +1,6 @@
 // Biblioteca de modelos de NR — adicione novas NRs aqui.
 //
-// baseLegal contém SÓ o complemento (ex.: "item 18.12"); a NR já é citada
+// baseLegal contém SÓ o complemento (ex.: "item 18.14"); a NR já é citada
 // pelo campo "nr". validadeMeses = periodicidade do treinamento periódico
 // (use 0 para suprimir a linha "Validade" no verso).
 //
@@ -20,8 +20,14 @@
 //   cargaOpcoes: [{h:4},{h:6,label:"06 horas — turma estendida"}]
 //
 // Bases legais e periodicidades atualizadas conforme texto vigente (jun/2026):
-//   NR-18 — Portaria SEPRT 3.733/2020: capacitação no item 18.12 + Anexo I;
-//           treinamento inicial 4h; periódico BIENAL (24 meses).
+//   NR-18 — Portaria SEPRT 3.733/2020: capacitação no item 18.14 + Anexo I (18.12
+//           é andaimes — citação corrigida em out/2026); inicial 4h; periódico BIENAL.
+//   NR-18 Reciclagem — treinamento PERIÓDICO do básico em segurança do trabalho:
+//           Anexo I, Quadro 1 fixa 4 horas a cada 2 anos (sem seletor de carga). Deve
+//           ser PRESENCIAL (18.14.3) e, ao contrário do inicial, TEM avaliação
+//           (18.14.5). Conteúdo do periódico é definido pelo empregador; aqui revisa
+//           os cinco tópicos do inicial e atualiza a etapa de obra. O eventual
+//           (carga a critério do empregador) não é este modelo.
 //   NR-34 — trabalho a quente no item 34.5 (34.3 é a capacitação geral);
 //           periódico ANUAL (12 meses), mín. 4h.
 //   NR-35 — capacitação no item 35.3; periódico BIENAL (24 meses), 8h.
@@ -152,12 +158,23 @@ const TEMPLATES = {
   "NR-18": {
     "nr": "NR-18",
     "curso": "CURSO BÁSICO DE SEGURANÇA DO TRABALHO – ADMISSIONAL",
-    "baseLegal": "item 18.12 e Anexo I",
+    "baseLegal": "item 18.14 e Anexo I",
     "carga": "04 horas",
     "validadeMeses": 24,
     "fecho": "obtendo o grau de conclusão ao final do curso",
     "conteudo": "1. As condições e meio ambiente de trabalho;\n2. Os riscos inerentes às atividades desenvolvidas;\n3. Os equipamentos e proteção coletiva existentes no canteiro de obras;\n4. O uso adequado dos equipamentos de proteção individual;\n5. O PGR do canteiro de obras."
+  },  "NR-18 Reciclagem": {
+    "nr": "NR-18",
+    "titulo": "CERTIFICADO DE RECICLAGEM — NR-18",
+    "sigla": "NR-18 Reciclagem",
+    "curso": "CURSO BÁSICO DE SEGURANÇA DO TRABALHO – TREINAMENTO PERIÓDICO",
+    "baseLegal": "item 18.14 e Anexo I",
+    "carga": "04 horas",
+    "validadeMeses": 24,
+    "fecho": "tendo obtido rendimento satisfatório na avaliação",
+    "conteudo": "1. ATUALIZAÇÃO DO PERÍODO: Alterações na NR-18 e nas normas aplicáveis desde o último treinamento; Etapa atual da obra e mudanças no canteiro; Acidentes e quase-acidentes ocorridos e lições aprendidas.\n\n2. CONDIÇÕES E MEIO AMBIENTE DE TRABALHO: Organização do canteiro; Áreas de vivência; Circulação de pessoas, veículos e materiais; Sinalização de segurança e vestimenta de alta visibilidade; Ordem e limpeza.\n\n3. RISCOS INERENTES ÀS ATIVIDADES DESENVOLVIDAS: Queda de altura e de materiais; Choque elétrico; Soterramento em escavações; Máquinas, equipamentos e ferramentas; Movimentação de cargas; Riscos físicos, químicos e ergonômicos da função.\n\n4. EQUIPAMENTOS E PROTEÇÃO COLETIVA DO CANTEIRO: Guarda-corpo, rodapé e fechamento de aberturas; Plataformas de proteção e redes; Linhas de vida e pontos de ancoragem; Andaimes e escadas; Cuidados para não remover ou inutilizar proteções coletivas.\n\n5. USO ADEQUADO DOS EQUIPAMENTOS DE PROTEÇÃO INDIVIDUAL: EPI da função; Uso, guarda, conservação e higienização; Inspeção antes do uso e substituição; Certificado de Aprovação (CA).\n\n6. PGR DO CANTEIRO DE OBRAS: Inventário de riscos e plano de ação da obra; Medidas de prevenção previstas para cada etapa; Responsabilidades do trabalhador; Procedimentos em situação de emergência; Direito de recusa diante de risco grave e iminente.\n\n7. AVALIAÇÃO: Verificação do conhecimento adquirido.\n\nOBS: Treinamento periódico do curso básico em segurança do trabalho, conforme a NR-18, item 18.14 e Anexo I, Quadro 1: carga horária de 4 horas a cada 2 anos, ministrado de forma presencial (item 18.14.3) e com avaliação do conhecimento adquirido (item 18.14.5). Pressupõe o treinamento inicial e não o substitui. Não capacita o aluno como multiplicador/instrutor deste treinamento."
   },
+
   "NR-34": {
     "nr": "NR-34",
     "curso": "CURSO DE CONDIÇÕES E MEIO AMBIENTE DE TRABALHO NA INDÚSTRIA DA CONSTRUÇÃO E REPARAÇÃO NAVAL - TRABALHO A QUENTE",
@@ -174,7 +191,7 @@ const TEMPLATES = {
     "carga": "08 horas",
     "validadeMeses": 24,
     "fecho": "tendo obtido rendimento satisfatório",
-    "conteudo": "Noções de 1º Socorros e Resgate (Módulo 03): Conceitos de Emergência/Priorização de atendimento; Suporte básico à vida; Avaliação da Vítima; Ataque Cardíaco; Lesões; Queimaduras; Quedas; Técnica de Transporte; Tríplice manobra; Resgate.\n\nEquipamentos de Proteção (Módulo 08A): Tipos de equipamentos de segurança - EPI/EPC; Funcionamento dos Equipamentos de proteção coletivo e individual para proteção da Cabeça, Olhos, Face, Membros inferiores e superiores; Proteção coletiva e individual contra queda com diferença de nível; Inspeções diárias dos equipamentos e itens de segurança; Exigências e obrigatoriedade quanto ao uso, guarda, conservação e higienização dos EPI's e/ou EPC's; Obrigações do Empregador; Obrigações do empregado; Informações sobre as condições e meio ambiente de trabalho (NR-18, item 18.12); Uso adequado de EPI (NR-18, item 18.12); Informações sobre EPC (NR-18, item 18.12).\n\nTrabalho em Altura (Módulo 10A): Objetivo; Campo de Aplicação; Normas e Regulamentos aplicáveis ao trabalho em altura; Riscos potenciais inerentes ao trabalho em altura e medidas de prevenção e controle; Utilização de cordas; Sistemas, Equipamentos e Procedimentos de Proteção Coletiva; Equipamento de Proteção Individual para Trabalho em Altura; Acidentes Típicos em Trabalhos em Altura.\n\nTrabalho em Altura (Módulo 10B): Trabalho em Poste tipo Padrão, Poste de Madeira e Poste de Concreto; Trabalho em altura durante acesso em caixa subterrânea; Trabalho em Altura quando encontrado obstáculo (árvores, animais, insetos, etc.); Trabalho em Marquises; EPI para Trabalho em Altura: Seleção, Inspeção, Conservação e Limitação de Uso; LVM – Linha de Vida móvel: Objetivo, Campo de Aplicação, Componentes do kit, Orientação para Instalação, Guarda e Conservação; Obrigatoriedade, Montagem e Utilização da garra para cordoalha de aço (garra meio de vão); Resgate.\n\nAnálise de Risco e Permissão de Trabalho (Módulo 11B): Técnicas de Análise de Risco; Análise Preliminar de Risco (APR); Formalização da APR; Condições adversas e impeditivas; Riscos Adicionais; Riscos inerentes ao trabalho em altura; Riscos inerentes ao Espaço Confinado; Risco inerente ao trabalho em proximidade de redes elétricas; Riscos inerentes ao trabalho a quente; Colocação e remoção de postes; Permissão de Trabalho (PT); Risco inerente à sua função (NR-18, item 18.12); Travessia de via – Análise e meios de neutralizar o risco."
+    "conteudo": "Noções de 1º Socorros e Resgate (Módulo 03): Conceitos de Emergência/Priorização de atendimento; Suporte básico à vida; Avaliação da Vítima; Ataque Cardíaco; Lesões; Queimaduras; Quedas; Técnica de Transporte; Tríplice manobra; Resgate.\n\nEquipamentos de Proteção (Módulo 08A): Tipos de equipamentos de segurança - EPI/EPC; Funcionamento dos Equipamentos de proteção coletivo e individual para proteção da Cabeça, Olhos, Face, Membros inferiores e superiores; Proteção coletiva e individual contra queda com diferença de nível; Inspeções diárias dos equipamentos e itens de segurança; Exigências e obrigatoriedade quanto ao uso, guarda, conservação e higienização dos EPI's e/ou EPC's; Obrigações do Empregador; Obrigações do empregado; Informações sobre as condições e meio ambiente de trabalho (NR-18, item 18.14); Uso adequado de EPI (NR-18, item 18.14); Informações sobre EPC (NR-18, item 18.14).\n\nTrabalho em Altura (Módulo 10A): Objetivo; Campo de Aplicação; Normas e Regulamentos aplicáveis ao trabalho em altura; Riscos potenciais inerentes ao trabalho em altura e medidas de prevenção e controle; Utilização de cordas; Sistemas, Equipamentos e Procedimentos de Proteção Coletiva; Equipamento de Proteção Individual para Trabalho em Altura; Acidentes Típicos em Trabalhos em Altura.\n\nTrabalho em Altura (Módulo 10B): Trabalho em Poste tipo Padrão, Poste de Madeira e Poste de Concreto; Trabalho em altura durante acesso em caixa subterrânea; Trabalho em Altura quando encontrado obstáculo (árvores, animais, insetos, etc.); Trabalho em Marquises; EPI para Trabalho em Altura: Seleção, Inspeção, Conservação e Limitação de Uso; LVM – Linha de Vida móvel: Objetivo, Campo de Aplicação, Componentes do kit, Orientação para Instalação, Guarda e Conservação; Obrigatoriedade, Montagem e Utilização da garra para cordoalha de aço (garra meio de vão); Resgate.\n\nAnálise de Risco e Permissão de Trabalho (Módulo 11B): Técnicas de Análise de Risco; Análise Preliminar de Risco (APR); Formalização da APR; Condições adversas e impeditivas; Riscos Adicionais; Riscos inerentes ao trabalho em altura; Riscos inerentes ao Espaço Confinado; Risco inerente ao trabalho em proximidade de redes elétricas; Riscos inerentes ao trabalho a quente; Colocação e remoção de postes; Permissão de Trabalho (PT); Risco inerente à sua função (NR-18, item 18.14); Travessia de via – Análise e meios de neutralizar o risco."
   },
   "NR-35 Reciclagem": {
     "nr": "NR-35",

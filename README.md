@@ -175,7 +175,7 @@ Confirmadas contra o texto vigente das normas:
 |----|--------------------------|----------------------------|
 | NR-11 Empilhadeira | item **11.1.5** (operador de empilhadeira) + cartão do item **11.1.6** | não fixada — **12 meses** acompanhando o cartão anual (11.1.6.1) |
 | NR-11 Movimentação de Materiais | sem item específico (curso geral, não habilita operador) | não fixada — **24 meses** (prática da empresa) |
-| NR-18 | item **18.12** + Anexo I (Portaria SEPRT 3.733/2020) | bienal — **24 meses** |
+| NR-18 | item **18.14** + Anexo I (Portaria SEPRT 3.733/2020) | bienal — **24 meses**, periódico de **4h** presencial com avaliação |
 | NR-34 | item **34.5** (trabalho a quente) | anual — **12 meses** |
 | NR-35 | item **35.3** | bienal — **24 meses** |
 
@@ -194,7 +194,7 @@ bloqueada caso o campo seja apagado.
 - **Carga horária por NR** — a NR-18 mantém 4h (inicial, vigente); revisar caso
   a turma seja periódica/eventual (cargas distintas no Anexo I).
 - **Conteúdo programático da NR-35** — as referências internas a "NR-18 item
-  18.28.2" (capítulo revogado) foram remapeadas para o item **18.12**; revisar
+  18.28.2" (capítulo revogado) foram remapeadas para o item **18.14** (capacitação; o 18.12 é andaimes); revisar
   se o conteúdo de cada módulo segue adequado.
 - **Integração SST** — confirmar com o RT os incisos citados na base legal
   (NR-01 itens 1.4.1 e 1.7; NR-06 item 6.6.1 "d") e a **fonte do benzeno** no
