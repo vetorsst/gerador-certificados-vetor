@@ -88,6 +88,11 @@
 //           menos, mesmo critério conservador da NR-35. baseLegal fica vazia como
 //           na NR-12 inicial; se o RT quiser citar o item, confirmar o subitem de
 //           12.16 (numeração da Portaria SEPRT 916/2019).
+//   NR-17 — ergonomia, 4h, veio do PDF da Vetor. A NR-17 não fixa carga nem
+//           periodicidade para treinamento geral de ergonomia (só os Anexos I e II
+//           têm capacitação própria); 24 meses = prática da empresa, baseLegal vazia.
+//           curso = "TREINAMENTO DE ERGONOMIA" (o PDF dizia "TREINAMENTO DA NR-17:
+//           ERGONOMIA", que repetiria a NR na frase "em conformidade com a NR-17").
 //   NR-5  — CIPA (nome atualizado pela Lei 14.457/2022). Carga por grau de risco:
 //           GR1 8h, GR2 12h, GR3 16h, GR4 20h (Portaria MTP 4.219/2022) — o seletor
 //           de grau de risco vem de cargaOpcoes e preenche a carga (default GR1 = 8h).
@@ -155,6 +160,15 @@
 //           a capacitação da NR-20 (que é graduada pela classe da instalação) e
 //           não cobre o controle específico da exposição ao benzeno.
 const TEMPLATES = {
+  "NR-17": {
+    "nr": "NR-17",
+    "curso": "TREINAMENTO DE ERGONOMIA",
+    "baseLegal": "",
+    "carga": "04 horas",
+    "validadeMeses": 24,
+    "fecho": "obtendo o grau de conclusão ao final do curso",
+    "conteudo": "1. Introdução à Ergonomia;\n2. Resumo histórico da Ergonomia;\n3. As NR – Normas Regulamentadoras que citam a Ergonomia em seu conteúdo;\n4. Aplicações da Ergonomia;\n5. Estudo dirigido da NR-17;\n6. Levantamento, transporte e descarga individual de materiais;\n7. Mobiliário dos postos de trabalho;\n8. Equipamentos dos postos de trabalho;\n9. Condições ambientais de trabalho;\n10. Organização do trabalho;\n11. Anexo I – Trabalho dos operadores de checkout;\n12. Anexo II – Trabalho em teleatendimento/telemarketing;\n13. Física aplicada: repetitividade, postura estática e rotação do tronco;\n14. Medidas de prevenção;\n15. Organização do trabalho e aspectos psicossociais do trabalho;\n16. Agravos à saúde mais encontrados;\n17. Alturas recomendadas para o trabalho manual sentado ou em pé, posturas corretas e adequação de equipamentos."
+  },
   "NR-18": {
     "nr": "NR-18",
     "curso": "CURSO BÁSICO DE SEGURANÇA DO TRABALHO – ADMISSIONAL",
