@@ -175,6 +175,7 @@ Confirmadas contra o texto vigente das normas:
 |----|--------------------------|----------------------------|
 | NR-11 Empilhadeira | item **11.1.5** (operador de empilhadeira) + cartão do item **11.1.6** | não fixada — **12 meses** acompanhando o cartão anual (11.1.6.1) |
 | NR-11 Movimentação de Materiais | sem item específico (curso geral, não habilita operador) | não fixada — **24 meses** (prática da empresa) |
+| NR-17 | sem item específico (treinamento geral de ergonomia) | não fixada — **24 meses** (prática da empresa) |
 | NR-18 | item **18.14** + Anexo I (Portaria SEPRT 3.733/2020) | bienal — **24 meses**, periódico de **4h** presencial com avaliação |
 | NR-34 | item **34.5** (trabalho a quente) | anual — **12 meses** |
 | NR-35 | item **35.3** | bienal — **24 meses** |
