@@ -192,7 +192,7 @@ function checkReg(){
   if(/\bCRP\b/.test(reg)&&tecnico){
     msg='⚠ <b>CRP</b> é o registro do Conselho de <b>Psicologia</b> — incompatível com a titulação informada. Para TST o correto costuma ser o <b>registro no MTE/SRTE</b>; Eng. de Segurança → <b>CREA</b>; Médico do Trabalho → <b>CRM</b>. Confirme com o profissional.';
   }else if(TEMPLATES[v('c-nrpick')]&&TEMPLATES[v('c-nrpick')].rtEngenheiro&&!/engenh/.test(tit)){
-    msg='⚠ <b>NR-37 (treinamento avançado/reciclagem):</b> o responsável técnico deve ser <b>Engenheiro de Segurança do Trabalho</b> (registro no <b>CREA</b>), não Técnico — exigência do item 37.9.6.1. Ajuste o RT para este modelo antes de emitir.';
+    msg=TEMPLATES[v('c-nrpick')].rtAviso||'⚠ <b>NR-37 (treinamento avançado/reciclagem):</b> o responsável técnico deve ser <b>Engenheiro de Segurança do Trabalho</b> (registro no <b>CREA</b>), não Técnico — exigência do item 37.9.6.1. Ajuste o RT para este modelo antes de emitir.';
   }
   box.style.display=msg?'block':'none';box.innerHTML=msg;
 }
