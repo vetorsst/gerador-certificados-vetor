@@ -41,6 +41,15 @@
 //           Confirmar com o RT se a empresa pratica carga menor com respaldo.
 //           ⚠ Trabalhador autorizado = capacitado (este certificado) + apto em
 //           avaliação de saúde. O certificado sozinho não autoriza a subir.
+//   NR-13 — treinamento de segurança na operação de CALDEIRAS (Anexo I, item 1).
+//           Mín. 40h com currículo do item 1.9 e avaliação; pré-requisito ensino
+//           médio; supervisão técnica de PLH (flag rtEngenheiro + rtAviso). ⚠ O
+//           certificado NÃO qualifica sozinho: exige prática profissional
+//           supervisionada na própria caldeira — 80h (cat. A) / 60h (cat. B),
+//           item 1.5. Sem validade fixa (validadeMeses 0): atualização por evento
+//           (modificação na caldeira, acidente/incidente de alto potencial ou
+//           recorrência — item 1.7). Unidades de processo (Anexo I, item 2: 40h +
+//           300h de prática) é outro curso e não tem modelo ainda.
 //   NR-33 — espaços confinados; periódico ANUAL (12 meses).
 //   NR-33 com Anuência — mesma formação de 16h do modelo "NR-33", acrescida do
 //           bloco de anuência do RT no rodapé da frente (campo "anuencia"), com
@@ -293,7 +302,20 @@ const TEMPLATES = {
     "validadeMeses": 24,
     "fecho": "obtendo o grau de conclusão ao final do curso",
     "conteudo": "1. Introdução à NR-12;\n2. Instalações e dispositivos elétricos;\n3. Dispositivos de partida, acionamento e parada e parada de emergência;\n4. Sistemas de segurança;\n5. Descrição e identificação dos riscos associados com cada máquina e equipamento e as proteções específicas contra cada um deles;\n6. Funcionamento das proteções; como e porque devem ser usadas;\n7. Como, e em que circunstâncias e por quem uma proteção pode ser removida;\n8. O que fazer se uma proteção foi danificada ou se perdeu sua função;\n9. Princípios de segurança na utilização da máquina ou equipamento;\n10. Segurança para riscos mecânicos, elétricos e outros relevantes;\n11. Método de trabalho seguro;\n12. Permissão de trabalho;\n13. Sistema de bloqueio de funcionamento da máquina e equipamento durante operações de inspeção, limpeza, lubrificação e manutenção;\n14. Noções sobre legislação de trânsito e de legislação de segurança e saúde no trabalho;\n15. Medidas de controle dos riscos; EPC e EPI;\n16. Sinalização de segurança;\n17. Procedimentos em situação de emergência;\n18. Noções básicas de Primeiros Socorros;\n19. O colaborador foi treinado e capacitado para a utilização de ferramentas tais como: furadeiras, parafusadeira elétrica (a bateria) e esmerilhadeira."
+  },  "NR-13": {
+    "nr": "NR-13",
+    "titulo": "CERTIFICADO DE TREINAMENTO DE SEGURANÇA NA OPERAÇÃO DE CALDEIRAS",
+    "sigla": "NR-13 Caldeiras",
+    "curso": "CURSO DE TREINAMENTO DE SEGURANÇA NA OPERAÇÃO DE CALDEIRAS",
+    "baseLegal": "Anexo I, item 1",
+    "carga": "40 horas",
+    "validadeMeses": 0,
+    "fecho": "tendo obtido rendimento satisfatório na avaliação de aprendizagem",
+    "rtEngenheiro": true,
+    "rtAviso": "⚠ <b>NR-13 (operação de caldeiras):</b> o treinamento deve ser <b>supervisionado tecnicamente por Profissional Legalmente Habilitado (PLH)</b> — engenheiro com atribuição no <b>CREA</b> para caldeiras —, exigência do Anexo I, item 1.3 \"a\". Ajuste o RT para este modelo antes de emitir.",
+    "conteudo": "1. NOÇÕES DE FÍSICA APLICADA: Pressão – atmosférica, manométrica e absoluta; Pressão interna em caldeiras; Unidades de pressão; Transferência de calor – calor e temperatura, modos de transferência, calor específico e calor sensível, transferência de calor a temperatura constante; Termodinâmica – vapor saturado e vapor superaquecido; Mecânica dos fluidos – conceitos fundamentais, pressão em escoamento, escoamento de gases.\n\n2. NOÇÕES DE QUÍMICA APLICADA: Densidade; Solubilidade; Difusão de gases e vapores; Ácidos e bases (álcalis) – definição de pH; Fundamentos básicos sobre corrosão.\n\n3. CONSIDERAÇÕES GERAIS SOBRE CALDEIRAS: Tipos de caldeiras e suas utilizações; Caldeiras flamotubulares e aquatubulares; Caldeiras elétricas; Caldeiras a combustíveis sólidos, líquidos e a gás; Acessórios de caldeiras; Instrumentos e dispositivos de controle – dispositivo de alimentação, visor de nível, sistema de controle de nível, indicadores de pressão, dispositivos de segurança e auxiliares; Válvulas e tubulações; Tiragem de fumaça; Sistema instrumentado de segurança.\n\n4. OPERAÇÃO DE CALDEIRAS: Partida e parada; Regulagem e controle de temperatura, pressão, fornecimento de energia, nível de água, poluentes e combustão; Falhas de operação, causas e providências; Roteiro de vistoria diária; Operação de um sistema de várias caldeiras; Procedimentos para situações de emergência.\n\n5. TRATAMENTO DE ÁGUA DE CALDEIRAS: Impurezas da água e suas consequências; Tratamento de água de alimentação; Controle de água de caldeira.\n\n6. PREVENÇÃO CONTRA EXPLOSÕES E OUTROS RISCOS: Riscos gerais de acidentes e riscos à saúde; Riscos de explosão; Estudos de caso.\n\n7. LEGISLAÇÃO E NORMALIZAÇÃO: Norma Regulamentadora n.º 13 (NR-13); Categorias de caldeiras; Tópicos de inspeção e manutenção de equipamentos e registros.\n\n8. AVALIAÇÃO DE APRENDIZAGEM.\n\nOBS: Treinamento de segurança na operação de caldeiras conforme a NR-13, Anexo I, item 1 – currículo mínimo do item 1.9 e carga horária mínima de 40 horas, sob supervisão técnica de Profissional Legalmente Habilitado (PLH), com pré-requisito de conclusão do ensino médio. Este certificado, sozinho, não qualifica o operador: é obrigatória a prática profissional supervisionada na própria caldeira que irá operar, documentada e realizada após a conclusão deste conteúdo, com duração mínima de 80 horas para caldeiras de categoria A ou 60 horas para categoria B (item 1.5). A NR-13 não fixa validade para este treinamento; os conhecimentos devem ser atualizados quando houver modificação na caldeira, acidente ou incidente de alto potencial envolvendo sua operação, ou recorrência de incidentes (item 1.7). Não capacita o aluno como multiplicador/instrutor deste treinamento."
   },
+
   "NR-12 Reciclagem": {
     "nr": "NR-12",
     "titulo": "CERTIFICADO DE RECICLAGEM — NR-12",
