@@ -178,6 +178,7 @@ Confirmadas contra o texto vigente das normas:
 | NR-17 | sem item específico (treinamento geral de ergonomia) | não fixada — **24 meses** (prática da empresa) |
 | NR-13 | Anexo I, item **1** (operação de caldeiras) — mín. **40h** + prática supervisionada de **80h** (cat. A) / **60h** (cat. B) | não fixada — atualização por evento (item 1.7) |
 | NR-18 | item **18.14** + Anexo I (Portaria SEPRT 3.733/2020) | bienal — **24 meses**, periódico de **4h** presencial com avaliação |
+| NR-26 | item **26.5.2** (Portaria MTP 2.770/2022) — rotulagem GHS, FDS e uso seguro de produtos químicos | não fixada — **24 meses** (prática da empresa) |
 | NR-34 | item **34.5** (trabalho a quente) | anual — **12 meses** |
 | NR-35 | item **35.3** | bienal — **24 meses** |
 

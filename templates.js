@@ -50,6 +50,12 @@
 //           (modificação na caldeira, acidente/incidente de alto potencial ou
 //           recorrência — item 1.7). Unidades de processo (Anexo I, item 2: 40h +
 //           300h de prática) é outro curso e não tem modelo ainda.
+//   NR-26 — sinalização e identificação de segurança (Portaria MTP 2.770/2022).
+//           Treinamento no item 26.5.2: rotulagem preventiva + FDS e perigos, uso
+//           seguro e emergência com os produtos químicos do local (GHS). A NR-26
+//           NÃO fixa carga nem periodicidade: seletor 2/4/8h (default 4h), 24 meses
+//           = prática da empresa. O conteúdo da parte 6 deve ser adaptado aos
+//           produtos que o cliente realmente usa (FDS na mão).
 //   NR-33 — espaços confinados; periódico ANUAL (12 meses).
 //   NR-33 com Anuência — mesma formação de 16h do modelo "NR-33", acrescida do
 //           bloco de anuência do RT no rodapé da frente (campo "anuencia"), com
@@ -198,6 +204,32 @@ const TEMPLATES = {
     "conteudo": "1. ATUALIZAÇÃO DO PERÍODO: Alterações na NR-18 e nas normas aplicáveis desde o último treinamento; Etapa atual da obra e mudanças no canteiro; Acidentes e quase-acidentes ocorridos e lições aprendidas.\n\n2. CONDIÇÕES E MEIO AMBIENTE DE TRABALHO: Organização do canteiro; Áreas de vivência; Circulação de pessoas, veículos e materiais; Sinalização de segurança e vestimenta de alta visibilidade; Ordem e limpeza.\n\n3. RISCOS INERENTES ÀS ATIVIDADES DESENVOLVIDAS: Queda de altura e de materiais; Choque elétrico; Soterramento em escavações; Máquinas, equipamentos e ferramentas; Movimentação de cargas; Riscos físicos, químicos e ergonômicos da função.\n\n4. EQUIPAMENTOS E PROTEÇÃO COLETIVA DO CANTEIRO: Guarda-corpo, rodapé e fechamento de aberturas; Plataformas de proteção e redes; Linhas de vida e pontos de ancoragem; Andaimes e escadas; Cuidados para não remover ou inutilizar proteções coletivas.\n\n5. USO ADEQUADO DOS EQUIPAMENTOS DE PROTEÇÃO INDIVIDUAL: EPI da função; Uso, guarda, conservação e higienização; Inspeção antes do uso e substituição; Certificado de Aprovação (CA).\n\n6. PGR DO CANTEIRO DE OBRAS: Inventário de riscos e plano de ação da obra; Medidas de prevenção previstas para cada etapa; Responsabilidades do trabalhador; Procedimentos em situação de emergência; Direito de recusa diante de risco grave e iminente.\n\n7. AVALIAÇÃO: Verificação do conhecimento adquirido.\n\nOBS: Treinamento periódico do curso básico em segurança do trabalho, conforme a NR-18, item 18.14 e Anexo I, Quadro 1: carga horária de 4 horas a cada 2 anos, ministrado de forma presencial (item 18.14.3) e com avaliação do conhecimento adquirido (item 18.14.5). Pressupõe o treinamento inicial e não o substitui. Não capacita o aluno como multiplicador/instrutor deste treinamento."
   },
 
+  "NR-26": {
+    "nr": "NR-26",
+    "titulo": "CERTIFICADO DE TREINAMENTO — NR-26",
+    "sigla": "NR-26",
+    "curso": "CURSO DE SINALIZAÇÃO DE SEGURANÇA E IDENTIFICAÇÃO DE PRODUTOS QUÍMICOS (GHS)",
+    "baseLegal": "item 26.5.2",
+    "carga": "04 horas",
+    "cargaLabel": "Carga horária do treinamento",
+    "cargaOpcoes": [
+      {
+        "h": 2,
+        "label": "02 horas"
+      },
+      {
+        "h": 4,
+        "label": "04 horas — padrão"
+      },
+      {
+        "h": 8,
+        "label": "08 horas — muitos produtos químicos no local"
+      }
+    ],
+    "validadeMeses": 24,
+    "fecho": "obtendo o grau de conclusão ao final do curso",
+    "conteudo": "1. NR-26 – OBJETIVO E CAMPO DE APLICAÇÃO: Sinalização e identificação de segurança nos locais de trabalho; Responsabilidades da organização e dos trabalhadores.\n\n2. SINALIZAÇÃO POR COR: Uso de cores para indicar e advertir sobre perigos e riscos; Identificação de equipamentos de segurança, delimitação de áreas e identificação de tubulações de líquidos e gases conforme as normas técnicas oficiais; A cor não dispensa outras formas de prevenção de acidentes.\n\n3. CLASSIFICAÇÃO DE PRODUTOS QUÍMICOS – GHS: O Sistema Globalmente Harmonizado de Classificação e Rotulagem de Produtos Químicos (ONU); Classes e categorias de perigo físico, à saúde e ao meio ambiente.\n\n4. ROTULAGEM PREVENTIVA: Identificação e composição do produto; Pictogramas de perigo; Palavra de advertência; Frases de perigo; Frases de precaução; Informações suplementares; Rotulagem simplificada de produto não classificado como perigoso.\n\n5. FICHA COM DADOS DE SEGURANÇA (FDS): Estrutura e leitura das seções da FDS; Identificação dos perigos; Composição de misturas e limites de exposição ocupacional; Onde a FDS fica disponível no local de trabalho.\n\n6. PRODUTOS QUÍMICOS DO LOCAL DE TRABALHO: Perigos e riscos dos produtos utilizados; Medidas preventivas para o uso seguro – manuseio, armazenamento, incompatibilidades e EPI; Procedimentos para atuação em situações de emergência – derramamento, vazamento, incêndio, exposição e primeiros socorros.\n\n7. PRÁTICA: Leitura e interpretação de rótulos e FDS dos produtos químicos utilizados no local de trabalho; Identificação da sinalização de segurança do estabelecimento.\n\nOBS: Treinamento conforme a NR-26, item 26.5.2, para compreender a rotulagem preventiva e a ficha com dados de segurança do produto químico e sobre os perigos, os riscos, as medidas preventivas para o uso seguro e os procedimentos para atuação em situações de emergência com o produto químico. A NR-26 não fixa carga horária nem periodicidade; a validade de 24 meses é a periodicidade adotada pela empresa. Recomenda-se novo treinamento na introdução de produto químico novo no local de trabalho. Não capacita o aluno como multiplicador/instrutor deste treinamento."
+  },
   "NR-34": {
     "nr": "NR-34",
     "curso": "CURSO DE CONDIÇÕES E MEIO AMBIENTE DE TRABALHO NA INDÚSTRIA DA CONSTRUÇÃO E REPARAÇÃO NAVAL - TRABALHO A QUENTE",
