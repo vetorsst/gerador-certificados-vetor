@@ -126,6 +126,19 @@
 //           Para refazer as 40h integrais use o modelo "NR-10", não este.
 //           Esta é a reciclagem do BÁSICO; quem
 //           atua em Sistema Elétrico de Potência precisa também do complementar SEP.
+//   NR-20 — inflamáveis e combustíveis (texto consolidado 2025). Capacitação no item
+//           20.12 + Anexo I. Curso depende da ATIVIDADE e da CLASSE da instalação
+//           (Tabela 1): Iniciação 3h · Básico 4/6/8h (classe I/II/III) · Intermediário
+//           12/14/16h · Avançado I 20h (operação, classe II) · Avançado II 32h
+//           (operação, classe III) · Específico 14/16h (SST, classes II/III).
+//           Atualização 4h (Tabela 2): Básico trienal · Intermediário trienal (cl. I)
+//           ou bienal (cl. II/III) · Avançado I bienal · Avançado II anual. Iniciação e
+//           Específico não têm atualização periódica (validadeMeses 0). Opção de carga
+//           com "meses" ajusta a validade junto (Intermediário cl. I = 36m). A
+//           "Atualização Intermediário" sai com 24m (cl. II/III); classe I → 36m em
+//           "Ajustar modelo". Avançados e Específico exigem RT profissional habilitado
+//           com registro em conselho (20.12.12) — flag rtEngenheiro + rtAviso.
+//           Certificado só para quem teve aproveitamento satisfatório (20.12.13).
 //   NR-23 — proteção contra incêndios, 8h; validade 24 meses (prática da empresa;
 //           treinamento de brigada segue NBR 14276/Corpo de Bombeiros, não a NR-23).
 //   Brigada de Incêndio (Básico 1) — formação de brigadista pela RT CBMRS n.º 15
@@ -442,6 +455,166 @@ const TEMPLATES = {
     "validadeMeses": 24,
     "fecho": "obtendo o grau de conclusão ao final do curso",
     "conteudo": "1. ATUALIZAÇÃO NORMATIVA E DAS INSTALAÇÕES: Alterações na NR-10 e nas normas técnicas aplicáveis desde o último treinamento; Modificações significativas nas instalações elétricas, nos métodos, processos e na organização do trabalho; Revisão do prontuário das instalações elétricas.\n\n2. RISCOS EM INSTALAÇÕES E SERVIÇOS COM ELETRICIDADE – REVISÃO: Choque elétrico, mecanismos e efeitos; Arco elétrico; Queimaduras e quedas; Campos eletromagnéticos.\n\n3. TÉCNICAS DE ANÁLISE DE RISCO: Revisão da Análise Preliminar de Risco; Identificação de riscos adicionais na tarefa; Permissão de Trabalho.\n\n4. MEDIDAS DE CONTROLE DO RISCO ELÉTRICO: Desenergização e as etapas da sequência; Aterramento funcional, de proteção e temporário; Equipotencialização; Seccionamento automático da alimentação; Dispositivos a corrente de fuga; Barreiras, invólucros, bloqueios e impedimentos; Isolamento das partes vivas; Colocação fora de alcance.\n\n5. NORMAS TÉCNICAS E REGULAMENTAÇÃO: NBR 5410, NBR 14039 e demais normas aplicáveis; NR-10 – qualificação, habilitação, capacitação e autorização; Manutenção da condição de trabalhador autorizado.\n\n6. ROTINAS DE TRABALHO E PROCEDIMENTOS: Trabalho em instalações desenergizadas; Liberação para serviços; Sinalização e delimitação de área; Inspeção de áreas, serviços, ferramental e equipamentos; Trabalho sob tensão – condições e restrições.\n\n7. EQUIPAMENTOS DE PROTEÇÃO COLETIVA E INDIVIDUAL: Seleção conforme o risco e a tensão de trabalho; Inspeção antes do uso e periodicidade de ensaio dos equipamentos isolantes; Vestimenta para proteção contra arco elétrico; Guarda, conservação e substituição.\n\n8. RISCOS ADICIONAIS: Trabalho em altura; Espaços confinados; Áreas classificadas; Umidade e condições atmosféricas; Trabalho em proximidade de redes energizadas.\n\n9. PROTEÇÃO E COMBATE A INCÊNDIO: Noções básicas; Medidas preventivas; Métodos de extinção aplicáveis a incêndio de origem elétrica.\n\n10. ACIDENTES DE ORIGEM ELÉTRICA: Causas diretas e indiretas; Discussão dos acidentes e quase-acidentes ocorridos no período e lições aprendidas.\n\n11. PRIMEIROS SOCORROS: Priorização do atendimento; Atendimento a vítima de choque elétrico; Ressuscitação cardiopulmonar – prática em manequim; Técnicas de remoção e transporte de acidentados.\n\n12. RESPONSABILIDADES: Do empregador, dos trabalhadores e dos profissionais que projetam, executam e mantêm as instalações elétricas.\n\nOBS: Reciclagem bienal do curso básico, conforme a NR-10, item 10.8.8, exigida também na troca de função ou de empresa, no retorno de afastamento superior a três meses e na modificação significativa das instalações, métodos, processos ou organização do trabalho. NÃO habilita a atuação em Sistema Elétrico de Potência (SEP) e suas proximidades, que exige o curso complementar específico."
+  },
+  "NR-20 Iniciação": {
+    "nr": "NR-20",
+    "titulo": "CERTIFICADO DE CAPACITAÇÃO — NR-20 INICIAÇÃO",
+    "sigla": "NR-20 Iniciação",
+    "curso": "CURSO DE INICIAÇÃO SOBRE INFLAMÁVEIS E COMBUSTÍVEIS",
+    "baseLegal": "item 20.12 e Anexo I",
+    "carga": "03 horas",
+    "validadeMeses": 0,
+    "fecho": "tendo obtido aproveitamento satisfatório na avaliação",
+    "conteudo": "CONTEÚDO TEÓRICO:\n1. Inflamáveis: características, propriedades, perigos e riscos;\n2. Controles coletivo e individual para trabalhos com inflamáveis;\n3. Fontes de ignição e seu controle;\n4. Procedimentos básicos em situações de emergência com inflamáveis.\n\nAVALIAÇÃO de aprendizagem (item 20.12.13).\n\nOBS: Curso de Iniciação sobre Inflamáveis e Combustíveis conforme a NR-20, item 20.12.5 e Anexo I – 3 horas, para trabalhadores de instalações classes I, II ou III que adentram na área de inflamáveis e líquidos combustíveis, mas não mantêm contato direto com o processo ou processamento. A Tabela 2 do Anexo I não prevê atualização periódica para este curso; refazer nas situações do item 20.12.9.1. Não capacita o aluno como multiplicador/instrutor deste treinamento."
+  },
+  "NR-20 Básico": {
+    "nr": "NR-20",
+    "titulo": "CERTIFICADO DE CAPACITAÇÃO — NR-20 BÁSICO",
+    "sigla": "NR-20 Básico",
+    "curso": "CURSO BÁSICO DE SEGURANÇA E SAÚDE NO TRABALHO COM INFLAMÁVEIS E COMBUSTÍVEIS",
+    "baseLegal": "item 20.12 e Anexo I",
+    "carga": "04 horas",
+    "cargaLabel": "Classe da instalação (Anexo I, Tabela 1)",
+    "cargaOpcoes": [
+      {
+        "h": 4,
+        "label": "Classe I — 04 horas"
+      },
+      {
+        "h": 6,
+        "label": "Classe II — 06 horas"
+      },
+      {
+        "h": 8,
+        "label": "Classe III — 08 horas"
+      }
+    ],
+    "validadeMeses": 36,
+    "fecho": "tendo obtido aproveitamento satisfatório na avaliação",
+    "conteudo": "CONTEÚDO TEÓRICO:\n1. Inflamáveis: características, propriedades, perigos e riscos;\n2. Controles coletivo e individual para trabalhos com inflamáveis;\n3. Fontes de ignição e seu controle;\n4. Proteção contra incêndio com inflamáveis;\n5. Procedimentos básicos em situações de emergência com inflamáveis.\n\nCONTEÚDO PRÁTICO:\nConhecimentos e utilização dos sistemas de segurança contra incêndio com inflamáveis existentes na instalação.\n\nAVALIAÇÃO de aprendizagem (item 20.12.13).\n\nOBS: Curso Básico conforme a NR-20, item 20.12 e Anexo I, Tabela 1, para atividade específica, pontual e de curta duração – 4 horas (classe I), 6 horas (classe II) ou 8 horas (classe III). Atualização TRIENAL de 4 horas (Tabela 2), antecipada quando o histórico de acidentes/incidentes exigir, em até 30 dias após modificação significativa, em até 45 dias após ferimentos por explosão ou queimaduras de 2º ou 3º grau com internação e em até 90 dias após morte de trabalhador (item 20.12.9.1). Não capacita o aluno como multiplicador/instrutor deste treinamento."
+  },
+  "NR-20 Intermediário": {
+    "nr": "NR-20",
+    "titulo": "CERTIFICADO DE CAPACITAÇÃO — NR-20 INTERMEDIÁRIO",
+    "sigla": "NR-20 Intermediário",
+    "curso": "CURSO INTERMEDIÁRIO DE SEGURANÇA E SAÚDE NO TRABALHO COM INFLAMÁVEIS E COMBUSTÍVEIS",
+    "baseLegal": "item 20.12 e Anexo I",
+    "carga": "12 horas",
+    "cargaLabel": "Classe da instalação (Anexo I, Tabela 1)",
+    "cargaOpcoes": [
+      {
+        "h": 12,
+        "label": "Classe I — 12 horas (manutenção/inspeção ou operação/emergência)",
+        "meses": 36
+      },
+      {
+        "h": 14,
+        "label": "Classe II — 14 horas (manutenção e inspeção)",
+        "meses": 24
+      },
+      {
+        "h": 16,
+        "label": "Classe III — 16 horas (manutenção e inspeção)",
+        "meses": 24
+      }
+    ],
+    "validadeMeses": 36,
+    "fecho": "tendo obtido aproveitamento satisfatório na avaliação",
+    "conteudo": "CONTEÚDO TEÓRICO:\n1. Inflamáveis: características, propriedades, perigos e riscos;\n2. Controles coletivo e individual para trabalhos com inflamáveis;\n3. Fontes de ignição e seu controle;\n4. Proteção contra incêndio com inflamáveis;\n5. Procedimentos em situações de emergência com inflamáveis;\n6. Estudo da Norma Regulamentadora n.º 20;\n7. Análise Preliminar de Perigos/Riscos: conceitos e exercícios práticos;\n8. Permissão para Trabalho com Inflamáveis.\n\nCONTEÚDO PRÁTICO:\nConhecimentos e utilização dos sistemas de segurança contra incêndio com inflamáveis existentes na instalação.\n\nAVALIAÇÃO de aprendizagem (item 20.12.13).\n\nOBS: Curso Intermediário conforme a NR-20, item 20.12 e Anexo I, Tabela 1: manutenção e inspeção – 12 horas (classe I), 14 horas (classe II) ou 16 horas (classe III); operação e atendimento a emergências – 12 horas (classe I). Atualização de 4 horas TRIENAL na classe I e BIENAL nas classes II e III (Tabela 2), antecipada quando o histórico de acidentes/incidentes exigir, em até 30 dias após modificação significativa, em até 45 dias após ferimentos por explosão ou queimaduras de 2º ou 3º grau com internação e em até 90 dias após morte de trabalhador (item 20.12.9.1). Não capacita o aluno como multiplicador/instrutor deste treinamento."
+  },
+  "NR-20 Avançado I": {
+    "nr": "NR-20",
+    "titulo": "CERTIFICADO DE CAPACITAÇÃO — NR-20 AVANÇADO I",
+    "sigla": "NR-20 Avançado I",
+    "curso": "CURSO AVANÇADO I DE SEGURANÇA E SAÚDE NO TRABALHO COM INFLAMÁVEIS E COMBUSTÍVEIS",
+    "baseLegal": "item 20.12 e Anexo I",
+    "carga": "20 horas",
+    "validadeMeses": 24,
+    "fecho": "tendo obtido aproveitamento satisfatório na avaliação",
+    "rtEngenheiro": true,
+    "rtAviso": "⚠ <b>NR-20 (cursos Avançados e Específico):</b> o curso deve ter <b>profissional habilitado como responsável técnico</b> — com atribuição legal e <b>registro em conselho de classe</b> (CREA, CRQ…), item 20.12.12. Ajuste o RT para este modelo antes de emitir.",
+    "conteudo": "CONTEÚDO TEÓRICO:\n1. Inflamáveis: características, propriedades, perigos e riscos;\n2. Controles coletivo e individual para trabalhos com inflamáveis;\n3. Fontes de ignição e seu controle;\n4. Proteção contra incêndio com inflamáveis;\n5. Procedimentos em situações de emergência com inflamáveis;\n6. Estudo da Norma Regulamentadora n.º 20;\n7. Metodologias de Análise de Riscos: conceitos e exercícios práticos;\n8. Permissão para Trabalho com Inflamáveis;\n9. Acidentes com inflamáveis: análise de causas e medidas preventivas;\n10. Planejamento de Resposta a emergências com Inflamáveis.\n\nCONTEÚDO PRÁTICO:\nConhecimentos e utilização dos sistemas de segurança contra incêndio com inflamáveis existentes na instalação.\n\nAVALIAÇÃO de aprendizagem (item 20.12.13).\n\nOBS: Curso Avançado I conforme a NR-20, item 20.12 e Anexo I, Tabela 1 – 20 horas, para operação e atendimento a emergências em instalação classe II. Atualização BIENAL de 4 horas (Tabela 2), antecipada quando o histórico de acidentes/incidentes exigir, em até 30 dias após modificação significativa, em até 45 dias após ferimentos por explosão ou queimaduras de 2º ou 3º grau com internação e em até 90 dias após morte de trabalhador (item 20.12.9.1). Responsável técnico: profissional habilitado (item 20.12.12). Não capacita o aluno como multiplicador/instrutor deste treinamento."
+  },
+  "NR-20 Avançado II": {
+    "nr": "NR-20",
+    "titulo": "CERTIFICADO DE CAPACITAÇÃO — NR-20 AVANÇADO II",
+    "sigla": "NR-20 Avançado II",
+    "curso": "CURSO AVANÇADO II DE SEGURANÇA E SAÚDE NO TRABALHO COM INFLAMÁVEIS E COMBUSTÍVEIS",
+    "baseLegal": "item 20.12 e Anexo I",
+    "carga": "32 horas",
+    "validadeMeses": 12,
+    "fecho": "tendo obtido aproveitamento satisfatório na avaliação",
+    "rtEngenheiro": true,
+    "rtAviso": "⚠ <b>NR-20 (cursos Avançados e Específico):</b> o curso deve ter <b>profissional habilitado como responsável técnico</b> — com atribuição legal e <b>registro em conselho de classe</b> (CREA, CRQ…), item 20.12.12. Ajuste o RT para este modelo antes de emitir.",
+    "conteudo": "CONTEÚDO TEÓRICO:\n1. Inflamáveis: características, propriedades, perigos e riscos;\n2. Controles coletivo e individual para trabalhos com inflamáveis;\n3. Fontes de ignição e seu controle;\n4. Proteção contra incêndio com inflamáveis;\n5. Procedimentos em situações de emergência com inflamáveis;\n6. Estudo da Norma Regulamentadora n.º 20;\n7. Metodologias de Análise de Riscos: conceitos e exercícios práticos;\n8. Permissão para Trabalho com Inflamáveis;\n9. Acidentes com inflamáveis: análise de causas e medidas preventivas;\n10. Planejamento de Resposta a emergências com Inflamáveis;\n11. Noções básicas de segurança de processo da instalação;\n12. Noções básicas de gestão de mudanças.\n\nCONTEÚDO PRÁTICO:\nConhecimentos e utilização dos sistemas de segurança contra incêndio com inflamáveis existentes na instalação.\n\nAVALIAÇÃO de aprendizagem (item 20.12.13).\n\nOBS: Curso Avançado II conforme a NR-20, item 20.12 e Anexo I, Tabela 1 – 32 horas, para operação e atendimento a emergências em instalação classe III. Atualização ANUAL de 4 horas (Tabela 2), antecipada quando o histórico de acidentes/incidentes exigir, em até 30 dias após modificação significativa, em até 45 dias após ferimentos por explosão ou queimaduras de 2º ou 3º grau com internação e em até 90 dias após morte de trabalhador (item 20.12.9.1). Responsável técnico: profissional habilitado (item 20.12.12). Não capacita o aluno como multiplicador/instrutor deste treinamento."
+  },
+  "NR-20 Específico": {
+    "nr": "NR-20",
+    "titulo": "CERTIFICADO DE CAPACITAÇÃO — NR-20 ESPECÍFICO",
+    "sigla": "NR-20 Específico",
+    "curso": "CURSO ESPECÍFICO DE SEGURANÇA E SAÚDE NO TRABALHO COM INFLAMÁVEIS E COMBUSTÍVEIS",
+    "baseLegal": "item 20.12 e Anexo I",
+    "carga": "14 horas",
+    "cargaLabel": "Classe da instalação (Anexo I, Tabela 1)",
+    "cargaOpcoes": [
+      {
+        "h": 14,
+        "label": "Classe II — 14 horas"
+      },
+      {
+        "h": 16,
+        "label": "Classe III — 16 horas"
+      }
+    ],
+    "validadeMeses": 0,
+    "fecho": "tendo obtido aproveitamento satisfatório na avaliação",
+    "rtEngenheiro": true,
+    "rtAviso": "⚠ <b>NR-20 (cursos Avançados e Específico):</b> o curso deve ter <b>profissional habilitado como responsável técnico</b> — com atribuição legal e <b>registro em conselho de classe</b> (CREA, CRQ…), item 20.12.12. Ajuste o RT para este modelo antes de emitir.",
+    "conteudo": "CONTEÚDO TEÓRICO:\n1. Estudo da Norma Regulamentadora n.º 20;\n2. Metodologias de Análise de Riscos: conceitos e exercícios práticos;\n3. Permissão para Trabalho com Inflamáveis;\n4. Acidentes com inflamáveis: análise de causas e medidas preventivas;\n5. Planejamento de Resposta a emergências com Inflamáveis.\n\nAVALIAÇÃO de aprendizagem (item 20.12.13).\n\nOBS: Curso Específico conforme a NR-20, item 20.12 e Anexo I, Tabela 1, para profissionais de segurança e saúde no trabalho em instalações classe II (14 horas) ou classe III (16 horas). A Tabela 2 do Anexo I não prevê atualização periódica para este curso; refazer nas situações do item 20.12.9.1. Responsável técnico: profissional habilitado (item 20.12.12). Não capacita o aluno como multiplicador/instrutor deste treinamento."
+  },
+  "NR-20 Atualização Básico": {
+    "nr": "NR-20",
+    "titulo": "CERTIFICADO DE ATUALIZAÇÃO — NR-20 BÁSICO",
+    "sigla": "NR-20 Atualização Básico",
+    "curso": "CURSO DE ATUALIZAÇÃO — NR-20 BÁSICO",
+    "baseLegal": "item 20.12 e Anexo I",
+    "carga": "04 horas",
+    "validadeMeses": 36,
+    "fecho": "tendo obtido aproveitamento satisfatório na avaliação",
+    "conteudo": "1. Revisão dos perigos e riscos dos inflamáveis e combustíveis da instalação;\n2. Alterações na NR-20, nos procedimentos e nas instalações desde a última capacitação;\n3. Acidentes, incidentes e quase-acidentes ocorridos e lições aprendidas;\n4. Revisão dos procedimentos de emergência e dos sistemas de segurança contra incêndio da instalação.\n\nAVALIAÇÃO de aprendizagem.\n\nOBS: Curso de Atualização do curso Básico conforme a NR-20, item 20.12.9 e Anexo I, Tabela 2 – 4 horas, periodicidade TRIENAL, com conteúdo estabelecido pelo empregador; antecipada quando o histórico de acidentes/incidentes exigir, em até 30 dias após modificação significativa, em até 45 dias após ferimentos por explosão ou queimaduras de 2º ou 3º grau com internação e em até 90 dias após morte de trabalhador (item 20.12.9.1). Pressupõe o curso Básico e não o substitui. Não capacita o aluno como multiplicador/instrutor deste treinamento."
+  },
+  "NR-20 Atualização Intermediário": {
+    "nr": "NR-20",
+    "titulo": "CERTIFICADO DE ATUALIZAÇÃO — NR-20 INTERMEDIÁRIO",
+    "sigla": "NR-20 Atualização Intermediário",
+    "curso": "CURSO DE ATUALIZAÇÃO — NR-20 INTERMEDIÁRIO",
+    "baseLegal": "item 20.12 e Anexo I",
+    "carga": "04 horas",
+    "validadeMeses": 24,
+    "fecho": "tendo obtido aproveitamento satisfatório na avaliação",
+    "conteudo": "1. Revisão dos perigos e riscos dos inflamáveis e combustíveis da instalação;\n2. Alterações na NR-20, nos procedimentos e nas instalações desde a última capacitação;\n3. Acidentes, incidentes e quase-acidentes ocorridos e lições aprendidas;\n4. Revisão dos procedimentos de emergência e dos sistemas de segurança contra incêndio da instalação.\n\nAVALIAÇÃO de aprendizagem.\n\nOBS: Curso de Atualização do curso Intermediário conforme a NR-20, item 20.12.9 e Anexo I, Tabela 2 – 4 horas, periodicidade TRIENAL na classe I e BIENAL nas classes II e III, com conteúdo estabelecido pelo empregador; antecipada quando o histórico de acidentes/incidentes exigir, em até 30 dias após modificação significativa, em até 45 dias após ferimentos por explosão ou queimaduras de 2º ou 3º grau com internação e em até 90 dias após morte de trabalhador (item 20.12.9.1). Pressupõe o curso Intermediário e não o substitui. Não capacita o aluno como multiplicador/instrutor deste treinamento."
+  },
+  "NR-20 Atualização Avançado I": {
+    "nr": "NR-20",
+    "titulo": "CERTIFICADO DE ATUALIZAÇÃO — NR-20 AVANÇADO I",
+    "sigla": "NR-20 Atualização Avançado I",
+    "curso": "CURSO DE ATUALIZAÇÃO — NR-20 AVANÇADO I",
+    "baseLegal": "item 20.12 e Anexo I",
+    "carga": "04 horas",
+    "validadeMeses": 24,
+    "fecho": "tendo obtido aproveitamento satisfatório na avaliação",
+    "conteudo": "1. Revisão dos perigos e riscos dos inflamáveis e combustíveis da instalação;\n2. Alterações na NR-20, nos procedimentos e nas instalações desde a última capacitação;\n3. Acidentes, incidentes e quase-acidentes ocorridos e lições aprendidas;\n4. Revisão dos procedimentos de emergência e dos sistemas de segurança contra incêndio da instalação.\n\nAVALIAÇÃO de aprendizagem.\n\nOBS: Curso de Atualização do curso Avançado I conforme a NR-20, item 20.12.9 e Anexo I, Tabela 2 – 4 horas, periodicidade BIENAL, com conteúdo estabelecido pelo empregador; antecipada quando o histórico de acidentes/incidentes exigir, em até 30 dias após modificação significativa, em até 45 dias após ferimentos por explosão ou queimaduras de 2º ou 3º grau com internação e em até 90 dias após morte de trabalhador (item 20.12.9.1). Pressupõe o curso Avançado I e não o substitui. Não capacita o aluno como multiplicador/instrutor deste treinamento."
+  },
+  "NR-20 Atualização Avançado II": {
+    "nr": "NR-20",
+    "titulo": "CERTIFICADO DE ATUALIZAÇÃO — NR-20 AVANÇADO II",
+    "sigla": "NR-20 Atualização Avançado II",
+    "curso": "CURSO DE ATUALIZAÇÃO — NR-20 AVANÇADO II",
+    "baseLegal": "item 20.12 e Anexo I",
+    "carga": "04 horas",
+    "validadeMeses": 12,
+    "fecho": "tendo obtido aproveitamento satisfatório na avaliação",
+    "conteudo": "1. Revisão dos perigos e riscos dos inflamáveis e combustíveis da instalação;\n2. Alterações na NR-20, nos procedimentos e nas instalações desde a última capacitação;\n3. Acidentes, incidentes e quase-acidentes ocorridos e lições aprendidas;\n4. Revisão dos procedimentos de emergência e dos sistemas de segurança contra incêndio da instalação.\n\nAVALIAÇÃO de aprendizagem.\n\nOBS: Curso de Atualização do curso Avançado II conforme a NR-20, item 20.12.9 e Anexo I, Tabela 2 – 4 horas, periodicidade ANUAL, com conteúdo estabelecido pelo empregador; antecipada quando o histórico de acidentes/incidentes exigir, em até 30 dias após modificação significativa, em até 45 dias após ferimentos por explosão ou queimaduras de 2º ou 3º grau com internação e em até 90 dias após morte de trabalhador (item 20.12.9.1). Pressupõe o curso Avançado II e não o substitui. Não capacita o aluno como multiplicador/instrutor deste treinamento."
   },
   "NR-23": {
     "nr": "NR-23",
