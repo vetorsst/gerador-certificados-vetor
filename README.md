@@ -178,6 +178,7 @@ Confirmadas contra o texto vigente das normas:
 | NR-17 | sem item específico (treinamento geral de ergonomia) | não fixada — **24 meses** (prática da empresa) |
 | NR-13 | Anexo I, item **1** (operação de caldeiras) — mín. **40h** + prática supervisionada de **80h** (cat. A) / **60h** (cat. B) | não fixada — atualização por evento (item 1.7) |
 | NR-18 | item **18.14** + Anexo I (Portaria SEPRT 3.733/2020) | bienal — **24 meses**, periódico de **4h** presencial com avaliação |
+| NR-20 | item **20.12** + Anexo I — curso conforme atividade e **classe** da instalação (Iniciação 3h; Básico 4/6/8h; Intermediário 12/14/16h; Avançado I 20h; Avançado II 32h; Específico 14/16h) | atualização de **4h**: Básico trienal; Intermediário trienal (cl. I) / bienal (cl. II e III); Avançado I bienal; Avançado II anual |
 | NR-26 | item **26.5.2** (Portaria MTP 2.770/2022) — rotulagem GHS, FDS e uso seguro de produtos químicos | não fixada — **24 meses** (prática da empresa) |
 | NR-34 | item **34.5** (trabalho a quente) | anual — **12 meses** |
 | NR-35 | item **35.3** | bienal — **24 meses** |
@@ -205,9 +206,9 @@ bloqueada caso o campo seja apagado.
   13-A da NR-15 (PPEOB) em regra não se aplica e o controle corre por NR-20 +
   PCMSO; se vier de solvente/produto com ≥1% de benzeno, o PPEOB é exigível e
   este certificado não o supre.
-- **NR-20 não está na biblioteca** — a capacitação da NR-20 é graduada pela
-  classe da instalação e pela função (integração/básico/intermediário/avançado),
-  com cargas e reciclagens próprias. A Integração SST cobre só o bloco
-  informativo de inflamáveis; o treinamento normativo da NR-20 precisa de
-  modelo próprio.
+- **NR-20** — a biblioteca tem os seis cursos do Anexo I (Iniciação, Básico,
+  Intermediário, Avançado I e II, Específico) e as quatro atualizações. Escolher
+  o curso e a classe conforme a Tabela 1 e o enquadramento da instalação no PGR.
+  A Integração SST cobre só o bloco informativo de inflamáveis e não substitui
+  nenhum deles.
 ```

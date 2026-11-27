@@ -61,8 +61,11 @@ function buildCargaPick(t){
   if(!sel.value)sel.selectedIndex=0;
   wrap.style.display='block';
   setV('c-carga',cargaTxt(sel.value));
+  cargaMeses(t,sel.value);
 }
-function applyCarga(){setV('c-carga',cargaTxt(v('c-cargapick')));updateSummary();render();}
+/* opção de carga com "meses" também fixa a validade (ex.: NR-20, que varia por classe) */
+function cargaMeses(t,h){const o=(t.cargaOpcoes||[]).find(o=>String(o.h)===String(h));if(o&&o.meses!=null)setV('c-vmeses',o.meses);}
+function applyCarga(){setV('c-carga',cargaTxt(v('c-cargapick')));const t=TEMPLATES[v('c-nrpick')];if(t)cargaMeses(t,v('c-cargapick'));updateSummary();render();}
 function updateSummary(){
   const t=TEMPLATES[v('c-nrpick')];if(!t)return;
   const vm=parseInt(v('c-vmeses'),10);
